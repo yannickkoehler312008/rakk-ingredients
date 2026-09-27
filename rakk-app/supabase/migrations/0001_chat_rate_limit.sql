@@ -50,3 +50,13 @@ begin
   return p_limit - v_count;
 end;
 $$;
+
+-- Explicit grants, so this migration does not depend on a project-level
+-- dashboard toggle ("Automatically expose new tables") being set either way.
+--
+-- The Edge Function calls this with the service role. Nothing here is reachable
+-- from the app: chat_usage has RLS on with no policy, and neither the table nor
+-- the function is granted to anon or authenticated.
+grant execute on function public.consume_chat_quota(uuid, int, interval) to service_role;
+revoke execute on function public.consume_chat_quota(uuid, int, interval) from anon, authenticated;
+revoke all on table public.chat_usage from anon, authenticated;
