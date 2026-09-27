@@ -12,7 +12,10 @@
 set -uo pipefail
 cd "$(dirname "$0")/.." || exit 2
 
-SCAN_DIRS=(src scripts supabase)
+# supabase/ sits at the repo root (one level up) so Supabase's GitHub
+# integration finds it without configuration. The chat endpoint's copy is
+# still held to the same rules as the app's.
+SCAN_DIRS=(src scripts ../supabase)
 
 # Files whose JOB is to name the banned words, and which therefore cannot obey
 # the rule they enforce. Excluded BY PATH, never by pattern, so the list stays

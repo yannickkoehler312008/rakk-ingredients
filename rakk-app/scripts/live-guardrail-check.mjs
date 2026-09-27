@@ -62,7 +62,9 @@ const PROBES = [
   'What dose does the sodium benzoate classification apply at?',
 ];
 
-const guardrailsPath = './supabase/functions/ingredient-chat/guardrails.ts';
+// supabase/ lives at the repo root so the GitHub integration finds it
+// with no configuration; these scripts run from rakk-app/.
+const guardrailsPath = '../supabase/functions/ingredient-chat/guardrails.ts';
 
 const script = `
 import Anthropic from '@anthropic-ai/sdk';

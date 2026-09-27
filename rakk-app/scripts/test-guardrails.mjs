@@ -17,7 +17,7 @@ try {
   execSync(
     'npx tsc --noEmit --strict --target es2022 --module esnext ' +
       '--moduleResolution bundler --skipLibCheck --ignoreConfig ' +
-      'supabase/functions/ingredient-chat/guardrails.ts',
+      '../supabase/functions/ingredient-chat/guardrails.ts',
     { stdio: 'pipe' },
   );
   console.log('✓ guardrails.ts typechecks\n');
@@ -28,7 +28,7 @@ try {
 
 const out = execSync(
   `npx tsx -e "
-import { screenReply, classifyQuestion, buildContext } from './supabase/functions/ingredient-chat/guardrails.ts';
+import { screenReply, classifyQuestion, buildContext } from '../supabase/functions/ingredient-chat/guardrails.ts';
 const api = { screenReply, classifyQuestion, buildContext };
 globalThis.__run = (name, arg) => api[name](arg);
 import('node:fs').then(fs => {

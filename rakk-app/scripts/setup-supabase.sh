@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Guided Supabase setup for the ingredient chat assistant.
 #
-# Run from the rakk-app directory:  bash scripts/setup-supabase.sh
+# Run from anywhere:  bash rakk-app/scripts/setup-supabase.sh
 #
 # It stops at each step that needs YOU (a browser login, a project ref, an API
 # key) and tells you exactly what to do. Nothing here is destructive, and your
@@ -9,7 +9,10 @@
 # written to a file in this repo and never read back.
 
 set -uo pipefail
-cd "$(dirname "$0")/.." || exit 2
+# supabase/ is at the repo root; .env.local belongs in rakk-app/.
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+APP_DIR="$REPO_ROOT/rakk-app"
+cd "$REPO_ROOT" || exit 2
 SB="npx --yes supabase@latest"
 
 say()  { printf '\n\033[1m%s\033[0m\n' "$*"; }
@@ -60,11 +63,11 @@ except Exception: pass' 2>/dev/null)"
 if [ -z "$ANON" ]; then
   read -r -p "anon key (Dashboard -> Project Settings -> API): " ANON
 fi
-cat > .env.local <<EOF
+cat > "$APP_DIR/.env.local" <<EOF
 EXPO_PUBLIC_SUPABASE_URL=https://$REF.supabase.co
 EXPO_PUBLIC_SUPABASE_ANON_KEY=$ANON
 EOF
-echo "Wrote .env.local (gitignored)."
+echo "Wrote $APP_DIR/.env.local (gitignored)."
 
 say "Done."
 cat <<'EOF'
@@ -78,5 +81,5 @@ one without building the Apple/Google flow yet.
 
 Then restart Expo so it picks up .env.local:
 
-  npx expo start --clear
+  cd rakk-app && npx expo start --clear
 EOF

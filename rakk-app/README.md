@@ -89,17 +89,23 @@ does.
 
 You need a Supabase project. None of this ships a key in the app.
 
+**`supabase/` lives at the REPO ROOT**, not inside `rakk-app/`, so Supabase's
+GitHub integration finds it with no configuration. Run CLI commands from the
+repo root; run Expo commands from `rakk-app/`.
+
+Guided setup, from anywhere in the repo:
+
 ```bash
-npm i -g supabase && supabase login
-supabase link --project-ref <your-project-ref>
-supabase db push                                  # creates the rate-limit table
-supabase secrets set ANTHROPIC_API_KEY=sk-ant-...  # server-side ONLY
-supabase functions deploy ingredient-chat
+bash rakk-app/scripts/setup-supabase.sh
 ```
 
-Then copy `.env.example` to `.env.local` and fill in your project URL and anon
-key. Enable **anonymous sign-ins** in Authentication → Providers: §7 wants a
-session per user so usage can be metered, and real Apple/Google auth is §4's
+With the GitHub integration connected, migrations and Edge Functions deploy on
+every push to `main` — the CLI is then only needed for secrets and local work.
+Note that this means **a push to `main` deploys to your live project**.
+
+The script writes `rakk-app/.env.local` for you. One thing no CLI can do:
+enable **anonymous sign-ins** in Authentication → Sign In / Providers. §7 wants
+a session per user so usage can be metered, and real Apple/Google auth is §4's
 onboarding work, not built yet.
 
 Until that's done the chat shows a designed "not switched on yet" state and the
