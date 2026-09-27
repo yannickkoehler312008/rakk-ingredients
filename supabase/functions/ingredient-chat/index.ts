@@ -205,7 +205,12 @@ Deno.serve(async (req: Request) => {
   } catch (err) {
     const status = err instanceof Anthropic.APIError ? err.status : undefined;
     if (status === 429) return fail('rate_limited', 429, 'upstream is busy');
-    return fail('upstream', 502, 'the assistant could not be reached');
+    // Pass the upstream reason through in `detail`. The app never shows this —
+    // it renders its own designed state (§9) — but without it, every failure
+    // looks identical from the outside and is undiagnosable in production.
+    const reason = err instanceof Error ? err.message : String(err);
+    console.error(`[upstream] ${status ?? '?'} ${reason}`);
+    return fail('upstream', 502, `upstream ${status ?? ''}: ${reason}`.slice(0, 300));
   }
 
   if (!raw) return fail('upstream', 502, 'empty reply');
