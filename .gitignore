@@ -1,0 +1,32 @@
+# ─── dependencies ───
+node_modules/
+
+# ─── Expo / React Native ───
+.expo/
+dist/
+web-build/
+*.jsbundle
+
+# Native projects are generated (Continuous Native Generation) — never commit
+# them. Native behaviour is configured in app.json and config plugins.
+ios/
+android/
+
+# ─── secrets ───
+# EXPO_PUBLIC_* values are safe to expose, but .env files also tend to collect
+# things that are not. Nothing here is committed; .env.example is the template.
+.env
+.env.local
+.env.*.local
+
+# ─── generated reports ───
+citation-report.json
+
+# ─── macOS ───
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ─── editors ───
+.idea/
+*.swp
