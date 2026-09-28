@@ -82,7 +82,12 @@ interface IndexEntry {
  * "whole grain oats" claims the text before "oats" can, and "soy lecithin"
  * before "lecithin".
  */
+let indexCache: { catalog: Ingredient[]; entries: IndexEntry[] } | null = null;
+
 export function buildIndex(catalog: Ingredient[]): IndexEntry[] {
+  // Re-matching happens on every history read now, and the catalog is a
+  // constant, so building this once matters.
+  if (indexCache && indexCache.catalog === catalog) return indexCache.entries;
   const entries: IndexEntry[] = [];
   for (const ingredient of catalog) {
     const names = new Set<string>();
@@ -97,6 +102,7 @@ export function buildIndex(catalog: Ingredient[]): IndexEntry[] {
     for (const needle of names) entries.push({ needle, ingredient });
   }
   entries.sort((a, b) => b.needle.length - a.needle.length);
+  indexCache = { catalog, entries };
   return entries;
 }
 

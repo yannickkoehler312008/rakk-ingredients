@@ -4,7 +4,7 @@ React Native (Expo) app for iOS and Android. Built against
 `../MD Files/rakk-phase1-app-build.md`. Section references in code comments
 (§4, §5, §9…) point at that file.
 
-**Current state: build-order step 6 — photo/OCR fallback for unbarcoded products.**
+**Current state: build-order step 7 — Compare wired to real scans. Phase 1 build order complete except the step 8 data cutover.**
 
 ## Run it
 
@@ -44,6 +44,38 @@ their job is to name the banned words: the guard itself, `guardrails.ts`, and
 the guardrail test fixtures.
 
 Wire it into CI before the first build that leaves this machine.
+
+## Step 7: Compare
+
+Two real scans side by side. Open it from a Label screen and that product is
+side A; pick side B from your own scan history.
+
+§4's brief is one sentence, and its second half does more work than the first:
+*"each row with a colored dot per product showing which one(s) contain it — no
+ranking of 'better,' just factual overlap."* Two consequences:
+
+- **The dots are one colour**, filled or outlined. A second colour would read
+  as a ranking; filled/outlined encodes presence and nothing else.
+- **Rows don't mark which ingredients are flagged.** The per-product counts
+  already state that. Repeating it per row would invite the eye to total two
+  columns and pick a winner — the one thing this screen must not do.
+
+Unmatched printed names are included alongside matched records: an ingredient
+the database doesn't know yet is still an ingredient the two packages differ
+on, and dropping it would overstate how similar they are.
+
+### A cache bug this step surfaced
+
+Comparing two real scans showed Cheerios as 18 ingredients / 14 flagged — the
+numbers from *before* the familiar-nutrient allow-list landed in step 4.
+
+The cache was storing the **computed match result**, so a scan taken before a
+seed or matcher change kept replaying the old matcher forever. §7 is explicit
+that the cache "is explicitly a cache, not the source of truth". It now stores
+the product and re-matches on read, so seed and matcher changes take effect
+immediately; the scan's id and timestamp are preserved so history stays stable.
+The matcher's name index is memoised, since re-matching now happens on every
+history read.
 
 ## Step 6: reading a photographed ingredient panel
 

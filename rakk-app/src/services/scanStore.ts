@@ -18,6 +18,29 @@
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ResolvedScan } from '../types/scan';
+import { resolveScan } from './matcher';
+import { SEED_INGREDIENTS } from '../data/seed';
+
+/**
+ * Re-run matching against the CURRENT seed data and matcher.
+ *
+ * §7: the cache "is explicitly a cache, not the source of truth". What is
+ * durable about a scan is the product and its printed ingredient text; the
+ * flags, counts and matched records are a derived view that changes whenever
+ * the database or the matching rules change.
+ *
+ * Storing the derived view was a real bug: a product scanned before the
+ * familiar-nutrient allow-list landed kept replaying its old numbers
+ * (Cheerios showed 18 ingredients / 14 flagged instead of 17 / 9) because the
+ * stored copy was a snapshot of an older matcher.
+ *
+ * The identity of the scan — its id and when it happened — is preserved, so
+ * history and navigation are stable.
+ */
+function rematch(stored: ResolvedScan): ResolvedScan {
+  const fresh = resolveScan(stored.product, SEED_INGREDIENTS, stored.method);
+  return { ...fresh, scan_id: stored.scan_id, scanned_at: stored.scanned_at };
+}
 
 // v2: step 2 cached scans with `runs: []` (unmatched). Step 3 always matches,
 // so the key is bumped rather than serving stale unmatched copies forever.
@@ -48,7 +71,7 @@ export async function getHistory(): Promise<ResolvedScan[]> {
     const raw = await AsyncStorage.getItem(HISTORY_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw) as ResolvedScan[];
-    return Array.isArray(parsed) ? parsed : [];
+    return Array.isArray(parsed) ? parsed.map(rematch) : [];
   } catch {
     // A corrupt store must not brick Home. Start clean rather than throw.
     return [];
@@ -62,7 +85,7 @@ export async function getCached(barcode: string): Promise<ResolvedScan | null> {
     const { scan, cached_at } = JSON.parse(raw) as { scan: ResolvedScan; cached_at: number };
     if (!scan) return null;
     if (Date.now() - cached_at > CACHE_TTL_MS) return null;
-    return scan;
+    return rematch(scan);
   } catch {
     return null;
   }
@@ -92,6 +115,7 @@ export async function recordScan(scan: ResolvedScan): Promise<void> {
 }
 
 export async function getScanById(scanId: string): Promise<ResolvedScan | null> {
+  // getHistory already re-matches.
   const history = await getHistory();
   return history.find((h) => h.scan_id === scanId) ?? null;
 }

@@ -82,7 +82,7 @@ export default function Label() {
 
   return (
     <SafeAreaView style={s.safe} edges={['top']}>
-      <TopBar showCompare />
+      <TopBar showCompare scanId={scan.scan_id} />
 
       <ScrollView contentContainerStyle={s.scroll} showsVerticalScrollIndicator={false}>
         <Text style={serif.title}>{scan.product.name}</Text>
@@ -150,7 +150,7 @@ export default function Label() {
   );
 }
 
-function TopBar({ showCompare }: { showCompare: boolean }) {
+function TopBar({ showCompare, scanId }: { showCompare: boolean; scanId?: string }) {
   return (
     <View style={s.topBar}>
       <Pressable onPress={() => goBack()} hitSlop={14} accessibilityRole="button">
@@ -158,7 +158,7 @@ function TopBar({ showCompare }: { showCompare: boolean }) {
       </Pressable>
       {showCompare ? (
         <Pressable
-          onPress={() => router.push('/compare')}
+          onPress={() => router.push({ pathname: '/compare', params: scanId ? { scanId } : {} })}
           hitSlop={14}
           accessibilityRole="button"
           style={s.compareBtn}
