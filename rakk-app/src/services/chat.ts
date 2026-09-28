@@ -8,47 +8,10 @@
  * designed to be public and are protected by row-level security.
  */
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { ResolvedScan } from '../types/scan';
+import { accessToken, isChatConfigured, SUPABASE_URL } from './supabaseClient';
 
-const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
-const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
-
-/** Not configured is a designed state (§9), not a crash. */
-export const isChatConfigured = () => Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
-
-let client: SupabaseClient | null = null;
-function supabase(): SupabaseClient {
-  if (!client) {
-    client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
-      auth: {
-        storage: AsyncStorage,
-        persistSession: true,
-        autoRefreshToken: true,
-        // No deep-link callback to handle in this phase.
-        detectSessionInUrl: false,
-      },
-    });
-  }
-  return client;
-}
-
-/**
- * §7 requires an auth session for this call, because rate limiting is per user.
- * Real one-tap Apple/Google auth is §4's onboarding work and isn't built yet,
- * so an anonymous session stands in: it yields a durable user id to meter
- * against without inventing a sign-in flow ahead of the build order.
- */
-async function accessToken(): Promise<string | null> {
-  const sb = supabase();
-  const { data } = await sb.auth.getSession();
-  if (data.session?.access_token) return data.session.access_token;
-
-  const { data: signedIn, error } = await sb.auth.signInAnonymously();
-  if (error || !signedIn.session) return null;
-  return signedIn.session.access_token;
-}
+export { isChatConfigured };
 
 export interface ChatTurn {
   role: 'user' | 'assistant';

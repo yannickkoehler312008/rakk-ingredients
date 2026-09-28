@@ -1,9 +1,10 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { Keyboard, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { ActivityIndicator, Keyboard, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router } from 'expo-router';
 import { goBack } from '../services/navigation';
 import { CameraView, useCameraPermissions, BarcodeScanningResult } from 'expo-camera';
+import { useRef as useReactRef } from 'react';
 import Feather from '@expo/vector-icons/Feather';
 import { color, gutter, radius, scrim, space } from '../theme/tokens';
 import { mono, sans, serif } from '../theme/type';
@@ -11,6 +12,8 @@ import { PrimaryButton, SecondaryButton } from '../components/primitives';
 import { ScanProgress, ScanStep } from '../components/states';
 import { lookupBarcode } from '../services/openFoodFacts';
 import { resolveScan } from '../services/matcher';
+import { readLabelPhoto } from '../services/ocr';
+import { ConfirmLabelText } from '../components/ConfirmLabelText';
 import { SEED_INGREDIENTS } from '../data/seed';
 import { getCached, recordScan } from '../services/scanStore';
 
@@ -36,6 +39,12 @@ type Phase =
   | { kind: 'scanning' }
   /** §4's "always give the user an out" when the camera can't get a read. */
   | { kind: 'manual' }
+  /** §8: the OCR path is slower than barcode and needs its own progress state. */
+  | { kind: 'reading' }
+  /** The transcription, shown for confirmation before it is matched. */
+  | { kind: 'confirm'; text: string; markers: number }
+  /** §9's designed "OCR failed" state, carrying the real reason. */
+  | { kind: 'unreadable'; reason: string }
   | { kind: 'working'; step: ScanStep; barcode: string }
   | { kind: 'not_found'; barcode: string }
   | { kind: 'no_ingredients'; name: string; brand: string }
@@ -52,6 +61,81 @@ export default function Scan() {
   // The camera fires continuously while a barcode is in frame; without this a
   // single scan would launch a dozen lookups.
   const busy = useRef(false);
+  const cameraRef = useReactRef<CameraView | null>(null);
+
+  /**
+   * §6's photo path. Capture, send for transcription, then show the reading
+   * for confirmation before anything is matched — see ConfirmLabelText for
+   * why that step exists.
+   */
+  const capturePanel = useCallback(async () => {
+    if (busy.current || !cameraRef.current) return;
+    busy.current = true;
+    setPhase({ kind: 'reading' });
+
+    let uri: string | undefined;
+    try {
+      const shot = await cameraRef.current.takePictureAsync({ quality: 0.9, skipProcessing: true });
+      uri = shot?.uri;
+    } catch {
+      busy.current = false;
+      setPhase({ kind: 'error', detail: 'the camera could not take a photo' });
+      return;
+    }
+    if (!uri) {
+      busy.current = false;
+      setPhase({ kind: 'error', detail: 'the camera returned no photo' });
+      return;
+    }
+
+    const result = await readLabelPhoto(uri);
+    busy.current = false;
+
+    switch (result.kind) {
+      case 'text':
+        setPhase({ kind: 'confirm', text: result.raw_ingredient_text, markers: result.unreadable_markers });
+        return;
+      case 'unreadable':
+        setPhase({ kind: 'unreadable', reason: result.reason });
+        return;
+      case 'offline':
+        setPhase({ kind: 'offline', barcode: '' });
+        return;
+      case 'rate_limited':
+        setPhase({ kind: 'error', detail: result.detail ?? 'too many photos for now' });
+        return;
+      case 'not_configured':
+        setPhase({ kind: 'error', detail: 'reading photos is not switched on in this build' });
+        return;
+      case 'unauthenticated':
+        setPhase({ kind: 'error', detail: 'could not start a session' });
+        return;
+      default:
+        setPhase({ kind: 'error', detail: result.detail ?? 'that did not go through' });
+    }
+  }, []);
+
+  /**
+   * A confirmed transcription goes through exactly the same matcher as a
+   * barcode scan (§10 step 6 is a new input, not a second pipeline).
+   */
+  const acceptTranscription = useCallback(async (text: string) => {
+    const scan = resolveScan(
+      {
+        id: `ocr_${Date.now()}`,
+        barcode: null,
+        name: 'Photographed label',
+        brand: '',
+        image_url: null,
+        raw_ingredient_text: text,
+      },
+      SEED_INGREDIENTS,
+      'photo_ocr',
+    );
+    await recordScan(scan);
+    busy.current = false;
+    router.replace({ pathname: '/label', params: { scanId: scan.scan_id } });
+  }, []);
 
   /** One path, whether the barcode came from the camera or was typed in. */
   const runLookup = useCallback(async (barcode: string) => {
@@ -133,6 +217,7 @@ export default function Scan() {
     <View style={[s.root, !granted && s.rootLight]}>
       {granted ? (
         <CameraView
+          ref={cameraRef}
           style={StyleSheet.absoluteFill}
           facing="back"
           barcodeScannerSettings={{ barcodeTypes: [...BARCODE_TYPES] }}
@@ -180,12 +265,22 @@ export default function Scan() {
               </View>
               <Text style={[sans.meta, s.hint]}>
                 {mode === 'panel'
-                  ? 'Reading a printed panel needs the photo path, which lands shortly.'
+                  ? 'Fit the whole ingredients panel in the frame, as square-on as you can.'
                   : 'Line the barcode up inside the frame.'}
               </Text>
             </View>
 
             <View style={s.bottom}>
+              {mode === 'panel' ? (
+                <Pressable
+                  onPress={capturePanel}
+                  style={s.shutter}
+                  accessibilityRole="button"
+                  accessibilityLabel="Photograph the ingredients panel"
+                >
+                  <View style={s.shutterInner} />
+                </Pressable>
+              ) : null}
               <Pressable
                 onPress={() => setPhase({ kind: 'manual' })}
                 style={s.fallback}
@@ -211,7 +306,17 @@ export default function Scan() {
         />
       ) : null}
 
-      {phase.kind !== 'scanning' ? (
+      {phase.kind === 'confirm' ? (
+        <View style={s.fullOverlay}>
+          <ConfirmLabelText
+            initialText={phase.text}
+            unreadableMarkers={phase.markers}
+            onConfirm={acceptTranscription}
+            onRetake={resume}
+            onCancel={resume}
+          />
+        </View>
+      ) : phase.kind !== 'scanning' ? (
         <ResultSheet phase={phase} onDismiss={resume} onSubmitBarcode={runLookup} />
       ) : null}
     </View>
@@ -274,6 +379,29 @@ function ResultSheet({
       <View style={s.sheet}>
         {phase.kind === 'manual' ? (
           <ManualEntry onSubmit={onSubmitBarcode} onCancel={onDismiss} />
+        ) : null}
+
+        {/* §8: OCR is slower than a barcode read, so it gets its own progress
+            rather than sharing the barcode sequence. */}
+        {phase.kind === 'reading' ? (
+          <>
+            <Text style={sans.sectionLabel}>Reading the panel</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', marginTop: space.base }}>
+              <ActivityIndicator size="small" color={color.primary} />
+              <Text style={[sans.body, { marginLeft: space.md, color: color.textMuted }]}>
+                Transcribing what&apos;s printed on the package…
+              </Text>
+            </View>
+          </>
+        ) : null}
+
+        {phase.kind === 'unreadable' ? (
+          <Outcome
+            icon="image"
+            title="We couldn't read that label."
+            body={`${phase.reason.charAt(0).toUpperCase()}${phase.reason.slice(1)}. More light helps, and so does getting the whole panel square-on in the frame.`}
+            primary={{ label: 'Take another photo', onPress: onDismiss }}
+          />
         ) : null}
 
         {phase.kind === 'working' ? (
@@ -455,6 +583,21 @@ const s = StyleSheet.create({
   framePanel: { width: '100%', aspectRatio: 0.82 },
   hint: { color: scrim.onDarkMuted, marginTop: space.lg, textAlign: 'center' },
   bottom: { alignItems: 'center', paddingBottom: space.md },
+  shutter: {
+    width: 68,
+    height: 68,
+    borderRadius: radius.pill,
+    borderWidth: 3,
+    borderColor: scrim.shutterRing,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  shutterInner: {
+    width: 52,
+    height: 52,
+    borderRadius: radius.pill,
+    backgroundColor: color.surface,
+  },
   fallback: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -481,6 +624,14 @@ const s = StyleSheet.create({
     fontSize: 18,
     letterSpacing: 1.5,
     color: color.text,
+  },
+  fullOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: color.bg,
   },
   sheetWrap: {
     position: 'absolute',

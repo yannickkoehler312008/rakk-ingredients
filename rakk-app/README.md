@@ -4,7 +4,7 @@ React Native (Expo) app for iOS and Android. Built against
 `../MD Files/rakk-phase1-app-build.md`. Section references in code comments
 (§4, §5, §9…) point at that file.
 
-**Current state: build-order step 5 — the ingredient chat assistant.**
+**Current state: build-order step 6 — photo/OCR fallback for unbarcoded products.**
 
 ## Run it
 
@@ -23,7 +23,8 @@ on a laptop. The product is native — not a web app, not a PWA (§6). Nothing i
 npx tsc --noEmit                   # types
 bash scripts/check-copy.sh         # positioning constraints — see below
 node scripts/check-seed.mjs        # seed integrity
-node scripts/test-guardrails.mjs   # chat assistant guardrails
+node scripts/test-guardrails.mjs    # chat assistant guardrails
+node scripts/test-transcription.mjs # OCR transcription safeguards
 node scripts/verify-citations.mjs  # every US CFR citation, against eCFR
 ```
 
@@ -43,6 +44,51 @@ their job is to name the banned words: the guard itself, `guardrails.ts`, and
 the guardrail test fixtures.
 
 Wire it into CI before the first build that leaves this machine.
+
+## Step 6: reading a photographed ingredient panel
+
+When a barcode isn't in Open Food Facts — or is there with no ingredient list,
+which happens constantly — the "Ingredients panel" mode photographs the pack
+instead. The transcription then goes through **the same matcher** as a barcode
+scan; step 6 adds an input, not a second pipeline.
+
+### The OCR engine, and the risk it carries
+
+§6 suggests "Google Vision API or similar". We use Claude's vision capability
+as the "or similar", so the project needs one provider and one key.
+
+That choice has a real cost, and it is the reason this step has more
+safeguards than it looks like it needs. **A dedicated OCR engine transcribes;
+a language model interprets.** Shown a blurry `sodium ben?oate`, an OCR engine
+emits garbage that is visibly garbage. A language model helpfully writes
+`sodium benzoate`. Shown a list cut off by a fold, it may complete it from what
+such lists usually contain.
+
+For this product that failure is severe: an invented ingredient is a confident
+false statement about a real package someone is holding.
+
+Three defences:
+
+1. **The prompt** (`transcription.ts`) forbids correcting, completing,
+   reordering and translating, and requires `[?]` for unreadable characters.
+2. **`parseTranscription()`** treats refusals, conversational replies and
+   heavily-damaged readings as failures rather than salvaging them.
+3. **The user confirms the text before it is matched** — a deliberate addition
+   to §4's flow, documented in `ConfirmLabelText.tsx`. It is editable, because
+   a one-character slip turns a matched ingredient into an unmatched one.
+
+```bash
+node scripts/test-transcription.mjs   # 14 cases, no API key needed
+```
+
+The case that matters most in that suite: a printed misprint (`sodum benzoate`)
+must survive **verbatim** rather than being silently corrected.
+
+### Rate limiting
+
+Photos are metered separately from chat (20/hour vs 30/hour) — migration
+`0002` generalises the quota table so each costed capability has its own
+counter. Scanning should not eat someone's chat allowance.
 
 ## Step 5: the ingredient chat assistant
 
@@ -261,6 +307,8 @@ src/
     scanStore.ts      on-device cache + history (§8)
     matcher.ts        parsing, matching, flagging (§3, §12.C)
     chat.ts           chat client — never sees an LLM key (§7)
+    ocr.ts            photographed-panel client (§6)
+    supabaseClient.ts shared session handling for both
     navigation.ts     back that survives a deep link
   theme/          §5's tokens and type scale, replicated exactly
   types/          Appendix A schema + §7's resolved-scan contract
@@ -290,7 +338,7 @@ code change (§10.8).
 
 ## Not built yet (later in §10's build order)
 
-OCR / photo path (6), Compare wired to real product selection (7). Billing is out of this phase entirely — the trial line in onboarding and
+Compare wired to real product selection (7). Billing is out of this phase entirely — the trial line in onboarding and
 on Home is Appendix B's structural countdown, with no paywall attached.
 
 ## OS floors (§8)

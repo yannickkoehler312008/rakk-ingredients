@@ -42,3 +42,5 @@ yarn-error.*
 citation-report.json
 .env
 .env.local
+.transcription-cases.json
+.transcription-driver.ts

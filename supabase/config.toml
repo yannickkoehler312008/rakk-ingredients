@@ -424,3 +424,7 @@ enabled = true
 # itself to get the user id for rate limiting.
 [functions.ingredient-chat]
 verify_jwt = true
+
+# ─── Photographed ingredient panel (§6) ───────────────────────────────────
+[functions.read-label]
+verify_jwt = true
