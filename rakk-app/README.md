@@ -23,6 +23,7 @@ on a laptop. The product is native — not a web app, not a PWA (§6). Nothing i
 npx tsc --noEmit                   # types
 bash scripts/check-copy.sh         # positioning constraints — see below
 node scripts/check-seed.mjs        # seed integrity
+node scripts/test-matcher.mjs      # matcher invariants (round-trip, flagging, counts)
 node scripts/test-guardrails.mjs    # chat assistant guardrails
 node scripts/test-transcription.mjs # OCR transcription safeguards
 node scripts/verify-citations.mjs  # every US CFR citation, against eCFR
