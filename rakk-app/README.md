@@ -4,7 +4,7 @@ React Native (Expo) app for iOS and Android. Built against
 `../MD Files/rakk-phase1-app-build.md`. Section references in code comments
 (§4, §5, §9…) point at that file.
 
-**Current state: build-order step 7 — Compare wired to real scans. Phase 1 build order complete except the step 8 data cutover.**
+**Current state: Phase 1 build order complete, including the step 8 data cutover — the app matches against the Phase 2 database (`../pipeline/`, `../PHASE-2-REPORT.md`). The database migrations are written but not yet deployed.**
 
 ## Run it
 
@@ -24,9 +24,11 @@ npx tsc --noEmit                   # types
 bash scripts/check-copy.sh         # positioning constraints — see below
 node scripts/check-seed.mjs        # seed integrity
 node scripts/test-matcher.mjs      # matcher invariants (round-trip, flagging, counts)
+node scripts/test-catalog-lookup.mjs # §7: bundled subset + server lookup ≡ full database
 node scripts/test-guardrails.mjs    # chat assistant guardrails
 node scripts/test-transcription.mjs # OCR transcription safeguards
-node scripts/verify-citations.mjs  # every US CFR citation, against eCFR
+node scripts/verify-citations.mjs  # every seed US CFR citation, against live eCFR
+npx tsx ../pipeline/verify.ts      # the whole database, re-checked against its sources
 ```
 
 `scripts/check-copy.sh` is the guard for the two non-negotiables:
@@ -261,7 +263,8 @@ signal that a row has not been reviewed end-to-end.
 
 ```bash
 node scripts/check-seed.mjs        # duplicate ids, alias collisions, coverage
-node scripts/verify-citations.mjs  # every US CFR citation, against eCFR
+node scripts/verify-citations.mjs  # every seed US CFR citation, against live eCFR
+npx tsx ../pipeline/verify.ts      # the whole database, re-checked against its sources
 ```
 
 The allow-list includes familiar nutrient names (Vitamin C, Iron, Zinc). Labels

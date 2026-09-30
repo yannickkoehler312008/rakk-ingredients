@@ -1,5 +1,8 @@
 # Phase 1 → Phase 2 handoff
 
+> **Phase 2 is done — read `PHASE-2-REPORT.md`.** This file is kept as Phase 1
+> wrote it; the report says which of its open items were closed and how.
+
 Written at the end of the Phase 1 app build, for whoever picks up
 `MD Files/rakk-phase2-database-population.md`.
 
