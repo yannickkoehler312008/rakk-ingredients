@@ -100,7 +100,8 @@ export const TEXTURE: SeedIngredient[] = [
     cas_number: '9004-34-6', e_number_ins_code: 'E460', category: 'thickener', origin: 'natural',
     typical_uses: ['food', 'pharmaceutical'],
     plain_explanation: 'Purified plant cellulose ground very fine. It adds body, stops caking, and is the usual bulking agent in tablets.',
-    us: { status: 'Generally Recognized as Safe (GRAS)', cfr: '182.90' },
+    // Was cited to 21 CFR 182.90 — substances migrating from paper PACKAGING,
+    // not a food-ingredient listing. Removed in Phase 2.
     eu: { status: 'Authorised food additive' },
   },
   {
@@ -124,12 +125,34 @@ export const TEXTURE: SeedIngredient[] = [
     eu: { status: 'Authorised food additive' },
   },
   // ─── Emulsifiers ───
+  // Lecithin is split three ways on purpose. Phase 1 had one "Soy lecithin"
+  // row that also answered to "lecithin", "E322" and "sunflower lecithin" —
+  // so a sunflower-lecithin label was told it was derived from soy. §15 calls
+  // a wrong allergen claim the sharpest liability in the product; a soy flag
+  // now appears only where the label itself says soy.
   {
-    id: 'ing_soy_lecithin', canonical_name: 'Soy lecithin', aka: ['lecithin', 'soya lecithin', 'soybean lecithin', 'E322', 'sunflower lecithin'],
+    id: 'ing_lecithin', canonical_name: 'Lecithin', aka: ['E322', 'lecithins'],
     cas_number: '8002-43-5', e_number_ins_code: 'E322', category: 'emulsifier', origin: 'natural',
-    typical_uses: ['food', 'cosmetics', 'pharmaceutical'], allergen_flags: ['soybean'],
-    plain_explanation: 'A fatty substance extracted from soybeans. It keeps oil and water from separating, so the product stays evenly mixed instead of splitting.',
+    typical_uses: ['food', 'cosmetics', 'pharmaceutical'],
+    plain_explanation: 'A fatty substance that keeps oil and water from separating, so the product stays evenly mixed. It is extracted from plant oils such as soy or sunflower; the name alone does not say which.',
     us: { status: 'Generally Recognized as Safe (GRAS)', cfr: '184.1400' },
+    eu: { status: 'Authorised food additive' },
+  },
+  {
+    id: 'ing_soy_lecithin', canonical_name: 'Soy lecithin', aka: ['soya lecithin', 'soybean lecithin'],
+    e_number_ins_code: 'E322', category: 'emulsifier', origin: 'natural',
+    typical_uses: ['food', 'cosmetics', 'pharmaceutical'], allergen_flags: ['soybean'],
+    plain_explanation: 'Lecithin extracted from soybeans. It keeps oil and water from separating, so the product stays evenly mixed instead of splitting.',
+    us: { status: 'Generally Recognized as Safe (GRAS)', cfr: '184.1400' },
+    eu: { status: 'Authorised food additive' },
+  },
+  {
+    id: 'ing_sunflower_lecithin', canonical_name: 'Sunflower lecithin', aka: ['sunflower seed lecithin'],
+    e_number_ins_code: 'E322', category: 'emulsifier', origin: 'natural',
+    typical_uses: ['food', 'cosmetics'],
+    plain_explanation: 'Lecithin extracted from sunflower seeds, used to keep oil and water from separating.',
+    // No US citation: 21 CFR 184.1400 names lecithin from soy, safflower and
+    // corn oils, not sunflower.
     eu: { status: 'Authorised food additive' },
   },
   {

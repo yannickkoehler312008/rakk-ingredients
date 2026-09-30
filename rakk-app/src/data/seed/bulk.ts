@@ -76,7 +76,8 @@ export const BULK: SeedIngredient[] = [
     id: 'ing_cellulose_powder', canonical_name: 'Powdered cellulose', aka: ['cellulose', 'wood pulp cellulose', 'E460ii'],
     category: 'filler', origin: 'natural',
     plain_explanation: 'Purified plant fibre ground to a powder. It adds bulk and fibre and stops shredded cheese clumping.',
-    us: { status: 'Generally Recognized as Safe (GRAS)', cfr: '182.90' },
+    // Was cited to 21 CFR 182.90 — substances migrating from paper PACKAGING,
+    // not a food-ingredient listing. Removed in Phase 2.
   },
   // ─── Proteins ───
   {

@@ -1,0 +1,22 @@
+{
+  "verified_at": "2026-09-29T19:40:38.620Z",
+  "rows": 4719,
+  "passed": {
+    "GRN is a \"no questions\" notice": 567,
+    "parsed excerpt found in source": 13536,
+    "FEMA number on inventory row": 1678,
+    "US entry: inventory listing only": 365,
+    "US CFR citation names the substance": 1910,
+    "not matchable from a label: only systematic names (reported)": 88,
+    "dosage has a source": 108,
+    "EFSA ADI traced to OpenFoodTox": 32,
+    "EU E-number in Annex II Part B": 341,
+    "HK entry found in regulation text": 114,
+    "colour status is the list’s own wording": 4,
+    "flaggable without jurisdiction (reported, not failed)": 12,
+    "EU absence confirmed": 1,
+    "US entry from seed without CFR citation (reported)": 3
+  },
+  "failed": {},
+  "failures": []
+}

@@ -15,7 +15,13 @@ cd "$(dirname "$0")/.." || exit 2
 # supabase/ sits at the repo root (one level up) so Supabase's GitHub
 # integration finds it without configuration. The chat endpoint's copy is
 # still held to the same rules as the app's.
-SCAN_DIRS=(src scripts ../supabase)
+#
+# pipeline/ builds the ingredient database, and its vocabulary (lib/vocab.mjs)
+# writes the explanation of every bulk row, so it is held to the same rules.
+# Its downloaded sources (pipeline/sources/) and provenance excerpts
+# (pipeline/out/) are regulators' own text, not our copy, and are not scanned;
+# the data it emits is, via ../supabase/migrations and src/data/catalog.
+SCAN_DIRS=(src scripts ../supabase ../pipeline/lib ../pipeline/parse ../pipeline/build.ts ../pipeline/verify.ts ../pipeline/emit.ts ../pipeline/fetch.mjs ../pipeline/sources.mjs)
 
 # Files whose JOB is to name the banned words, and which therefore cannot obey
 # the rule they enforce. Excluded BY PATH, never by pattern, so the list stays

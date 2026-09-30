@@ -1,9 +1,13 @@
 /**
- * THE SEED DATASET — build-order step 3.
+ * THE SEED DATASET — build-order step 3, and since Phase 2 the CURATED LAYER.
  *
- * ⚠️  THIS IS NOT THE DATABASE. §9 requires effectively complete coverage of
- *     the FDA/GRAS/Codex set at launch; this is a few hundred hand-written
- *     entries whose only job is to unblock the app build. Phase 2 replaces it.
+ * ⚠️  THIS IS NOT THE DATABASE. The app matches against the Phase 2 database
+ *     (pipeline/ → Supabase, plus the bundled offline subset in
+ *     src/data/catalog/). The pipeline reads these records as its curated
+ *     input: where a human wrote an explanation, allow-list membership or a
+ *     dosage figure, it wins over bulk data; everything else is filled and
+ *     checked from the regulators' own documents. Change a record here, then
+ *     rebuild (pipeline/README.md).
  *     Every record has `source: 'manual_curation'` and `last_full_review_at:
  *     null` — Appendix A's own signal that a row has not been reviewed
  *     end-to-end against primary sources.

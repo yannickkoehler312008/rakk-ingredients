@@ -1,0 +1,11 @@
+{
+  "name": "rakk-ingredient-pipeline",
+  "private": true,
+  "type": "module",
+  "description": "Builds the Rakk Ingredients database from bulk regulatory sources. No dependencies; see README.md.",
+  "scripts": {
+    "fetch": "node fetch.mjs",
+    "build": "cd ../rakk-app && npx tsx ../pipeline/build.ts",
+    "verify": "node verify.mjs"
+  }
+}

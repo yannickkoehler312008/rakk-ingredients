@@ -4,7 +4,14 @@
  * §9 makes citation accuracy the entire trust proposition, and the seed data
  * was written by hand. This checks two things per citation:
  *   1. the section exists in 21 CFR at all
- *   2. the section text actually names the substance
+ *   2. the section LISTS the substance — as its subject, in its identity
+ *      paragraph, or as one entry of a list section
+ *
+ * Phase 2 tightened (2): the first version accepted a name whose words
+ * appeared anywhere in the section, which passed three wrong citations —
+ * § 184.1434 is magnesium phosphate (it merely mentions potassium), and
+ * § 182.90 lists substances migrating from paper packaging. The rule now
+ * lives in pipeline/parse/ecfr.mjs and is shared with the database build.
  *
  * What it CANNOT check: whether the cited section is the most apt one, or
  * whether the status wording is right. Those still need a human.
@@ -13,6 +20,7 @@
  */
 import { execSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
+import { listsSubstance, parseSectionXml } from '../../pipeline/parse/ecfr.mjs';
 
 const UA = 'RakkIngredients/0.1.0 (seed-data verification)';
 const CONCURRENCY = 3;
@@ -37,41 +45,9 @@ console.log(JSON.stringify(rows));
 const rows = JSON.parse(raw.trim().split('\n').filter((l) => l.startsWith('[')).pop());
 console.log(`Verifying ${rows.length} US CFR citations against eCFR…\n`);
 
-/** Words worth matching on, beyond the exact name. */
-function needles(row) {
-  const out = new Set();
-  const add = (s) => { if (s && s.length > 3) out.add(s.toLowerCase()); };
-  add(row.name);
-  for (const a of row.aka ?? []) add(a);
-  // Salts: the CFR often titles the parent acid ("Sorbic acid" for "Potassium
-  // sorbate"), so also try the distinctive last word and the parent form.
-  const words = row.name.split(/\s+/);
-  if (words.length > 1) add(words[words.length - 1]);
-  return [...out];
-}
-
-/**
- * eCFR returns XML, so the section text carries escaped entities: "FD&C Red
- * No. 40" arrives as "FD&amp;C Red No. 40". Matching raw would fail every
- * ampersand-bearing name. Decode entities and strip tags before comparing.
- */
-function plainText(xml) {
-  return xml
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&quot;/g, '"')
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
-    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
-    .replace(/\s+/g, ' ')
-    .toLowerCase();
-}
-
 async function fetchSection(section) {
   const part = section.split('.')[0];
-  const url = `https://www.ecfr.gov/api/versioner/v1/full/2026-01-01/title-21.xml?part=${part}&section=${section}`;
+  const url = `https://www.ecfr.gov/api/versioner/v1/full/2026-09-25/title-21.xml?part=${part}&section=${section}`;
   let last = 'no attempt';
   // eCFR throttles under concurrency; a single failed read is not evidence
   // that a section is missing, so retry with backoff before concluding.
@@ -85,7 +61,7 @@ async function fetchSection(section) {
       if (!res.ok) { last = `HTTP ${res.status}`; }
       else {
         const body = await res.text();
-        if (body.trim().length > 200) return { ok: true, text: plainText(body) };
+        if (body.trim().length > 200) return { ok: true, section: parseSectionXml(body) };
         last = 'short body';
       }
     } catch (e) {
@@ -103,17 +79,10 @@ async function check(row) {
       ? { ...row, status: 'SECTION_MISSING', detail: res.detail }
       : { ...row, status: 'ERROR', detail: res.detail };
   }
-  const hit = needles(row).find((n) => res.text.includes(n));
-  if (hit) return { ...row, status: 'OK', detail: `matched "${hit}"` };
-
-  // CFR headings interpolate: § 184.1343 is "Locust (carob) bean gum", which no
-  // contiguous form of "locust bean gum" matches. If every significant word of
-  // the name is present, the citation is sound and the wording merely differs.
-  const words = row.name.toLowerCase().split(/[^a-z0-9]+/).filter((w) => w.length > 3);
-  if (words.length > 1 && words.every((w) => res.text.includes(w))) {
-    return { ...row, status: 'OK', detail: 'all name words present' };
-  }
-  return { ...row, status: 'NAME_NOT_FOUND', detail: 'section exists, substance not named' };
+  const v = listsSubstance(res.section, [row.name, ...(row.aka ?? [])]);
+  if (v.ok) return { ...row, status: 'OK', detail: `${v.reason}: "${v.matched}"` };
+  if (/does not exist|Reserved/.test(v.reason)) return { ...row, status: 'SECTION_MISSING', detail: v.reason };
+  return { ...row, status: 'NAME_NOT_FOUND', detail: v.reason };
 }
 
 const results = [];

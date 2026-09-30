@@ -1,0 +1,8 @@
+# Raw downloads are large and re-fetchable; manifest.json records exactly what
+# was fetched (URL, date, sha256) so a build can be reproduced or diffed.
+sources/raw/
+# Intermediate parse output — derived, rebuilt by `node build.mjs`.
+work/
+# Codex material is placed here by hand (FAO is behind a bot challenge).
+# It is not committed until its redistribution terms are confirmed.
+sources/manual/

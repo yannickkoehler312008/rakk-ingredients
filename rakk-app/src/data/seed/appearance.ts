@@ -219,7 +219,8 @@ export const APPEARANCE: SeedIngredient[] = [
     id: 'ing_potassium_phosphate', canonical_name: 'Tripotassium phosphate', aka: ['potassium phosphate', 'E340'],
     e_number_ins_code: 'E340', category: 'acidity_regulator', origin: 'synthetic',
     plain_explanation: 'A phosphate salt used to hold acidity steady in cereals and drinks, and to stop them reacting with trace metals.',
-    us: { status: 'Generally Recognized as Safe (GRAS)', cfr: '184.1434' },
+    // Was cited to 21 CFR 184.1434, which is magnesium phosphate. Removed in
+    // Phase 2; the pipeline attaches the inventory's verified citation instead.
     eu: { status: 'Authorised food additive, use levels set by category' },
   },
   {

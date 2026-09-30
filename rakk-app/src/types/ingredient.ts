@@ -85,12 +85,20 @@ export interface UsageContext {
   product_type_context: ProductTypeContext;
 }
 
+/**
+ * Where a row's core classification comes from. The last two were added in
+ * Phase 2 (flagged to the spec owner): §11's list has no value for a row that
+ * only the FDA colour-additive list or only the EU additives regulation
+ * describes, and labelling those `manual_curation` would be false.
+ */
 export type IngredientSource =
   | 'fda_substances_added_to_food'
   | 'fda_gras_notice'
   | 'codex_alimentarius'
   | 'usda_fooddata_central'
-  | 'manual_curation';
+  | 'manual_curation'
+  | 'fda_color_additives'
+  | 'eu_additives_regulation';
 
 /** ISO 8601 date, `YYYY-MM-DD`. */
 export type IsoDate = string;

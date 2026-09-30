@@ -145,6 +145,16 @@ export const DOSAGE: Record<string, DosageEntry> = {
     '0.1–0.5% in chocolate and baked goods',
     ['JECFA, evaluation of lecithin — ADI not specified'],
   ),
+  ing_lecithin: ingested(
+    'JECFA concluded no numerical Acceptable Daily Intake was needed ("ADI not specified")',
+    '0.1–0.5% in chocolate and baked goods',
+    ['JECFA, evaluation of lecithin — ADI not specified'],
+  ),
+  ing_sunflower_lecithin: ingested(
+    'JECFA concluded no numerical Acceptable Daily Intake was needed ("ADI not specified")',
+    '0.1–0.5% in chocolate and baked goods',
+    ['JECFA, evaluation of lecithin — ADI not specified'],
+  ),
   ing_mono_diglycerides: ingested(
     'JECFA concluded no numerical Acceptable Daily Intake was needed ("ADI not specified")',
     '0.2–1% in baked goods',

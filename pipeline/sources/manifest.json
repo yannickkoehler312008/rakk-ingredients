@@ -1,0 +1,113 @@
+{
+  "fda_saf": {
+    "title": "FDA Substances Added to Food inventory (formerly EAFUS) — full export",
+    "url": "https://hfpappexternal.fda.gov/scripts/fdcc/cfc/XMLService.cfm?method=downloadxls&set=FoodSubstances",
+    "fetched_at": "2026-09-29T18:47:22.945Z",
+    "bytes": 1452910,
+    "sha256": "f1d5669d33a31bfea87049ad6c05ae0b1f9f43796bfa4f40840519da999b833c",
+    "source_last_updated": "7/28/2026"
+  },
+  "fda_gras_notices": {
+    "title": "FDA GRAS Notice Inventory — full export",
+    "url": "https://hfpappexternal.fda.gov/scripts/fdcc/cfc/XMLService.cfm?method=downloadxls&set=GRASNotices",
+    "fetched_at": "2026-09-29T18:47:24.538Z",
+    "bytes": 749611,
+    "sha256": "1e151525d042e09087662161727972542c7f4cdf315a83956e51e24f6c9646da",
+    "source_last_updated": "9/24/2026"
+  },
+  "fda_color_additives": {
+    "title": "FDA Color Additive Status List — full export",
+    "url": "https://hfpappexternal.fda.gov/scripts/fdcc/cfc/XMLService.cfm?method=downloadxls&set=ColorAdditives",
+    "fetched_at": "2026-09-29T18:47:26.384Z",
+    "bytes": 318705,
+    "sha256": "31ff8984ed0a598c70b8870baa36f932f0e7f1bab3f363e6654ee679efde1dbd",
+    "source_last_updated": "8/14/2026"
+  },
+  "ecfr_21_subchapter_b": {
+    "title": "21 CFR Chapter I Subchapter B (Parts 100–199), Food for Human Consumption",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-25/title-21.xml?subchapter=B",
+    "fetched_at": "2026-09-29T18:47:27.668Z",
+    "bytes": 21365348,
+    "sha256": "93bc446ddeff55dc8f4d22835b7aa37665f4e03f06a350fb60c151364ce5159a",
+    "ecfr_date": "2026-09-25"
+  },
+  "ecfr_21_part_73": {
+    "title": "21 CFR Part 73 (color additives)",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-25/title-21.xml?part=73",
+    "fetched_at": "2026-09-29T18:47:30.085Z",
+    "bytes": 281927,
+    "sha256": "02054a73f0e229f85ad886a002ac432ac547b305d0cde03eca1312b60125ae18",
+    "ecfr_date": "2026-09-25"
+  },
+  "ecfr_21_part_74": {
+    "title": "21 CFR Part 74 (color additives)",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-25/title-21.xml?part=74",
+    "fetched_at": "2026-09-29T18:47:33.002Z",
+    "bytes": 185651,
+    "sha256": "1519b68d755b7fbaa568fb77225de5317de1ee29cf43ef524dcbdaa0756eaea7",
+    "ecfr_date": "2026-09-25"
+  },
+  "ecfr_21_part_81": {
+    "title": "21 CFR Part 81 (color additives)",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-25/title-21.xml?part=81",
+    "fetched_at": "2026-09-29T18:47:34.754Z",
+    "bytes": 31781,
+    "sha256": "1d521b6771a8031609717ee8cefdd94f931bbb1ed9091d709341304974b11469",
+    "ecfr_date": "2026-09-25"
+  },
+  "ecfr_21_part_82": {
+    "title": "21 CFR Part 82 (color additives)",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-09-25/title-21.xml?part=82",
+    "fetched_at": "2026-09-29T18:47:37.246Z",
+    "bytes": 29698,
+    "sha256": "b2d2b12f110bab19e7e11c14a799cccf577deb7835bc5172e3e11806bede7d03",
+    "ecfr_date": "2026-09-25"
+  },
+  "eu_1333_2008": {
+    "title": "Regulation (EC) No 1333/2008 on food additives — latest consolidated text",
+    "url": "https://publications.europa.eu/resource/celex/02008R1333-20260818",
+    "fetched_at": "2026-09-29T18:47:58.934Z",
+    "bytes": 4408536,
+    "sha256": "52ec5710c690bcd174ef7f5dfb463e1d2113103a1368851eca683c3ce2944e8c",
+    "celex": "02008R1333-20260818"
+  },
+  "efsa_openfoodtox": {
+    "title": "EFSA OpenFoodTox 3.0 — chemical hazards database export",
+    "url": "https://zenodo.org/api/records/19388272/files/OFT3.0%20export%20repository.xlsx/content",
+    "fetched_at": "2026-09-29T18:48:18.013Z",
+    "bytes": 22595502,
+    "sha256": "5181661e921651d4087b544981e1e5a63b99532844eac0112732806a00a85eda"
+  },
+  "hk_legislation": {
+    "title": "Hong Kong e-Legislation bulk XML, Caps. 1–300 (current) — Cap. 132BD, 132H, 132U, 132AR extracted",
+    "url": "https://resource.data.one.gov.hk/doj/data/hkel_c_leg_cap_1_cap_300_en.zip",
+    "fetched_at": "2026-09-29T18:48:25.415Z",
+    "bytes": 235926039,
+    "sha256": "2fdaf438e45a03f60bb48e3fb1f496e8809846c12201c3d30563dbee79eebb85",
+    "extracted": [
+      {
+        "file": "hk/cap132AR.xml",
+        "sha256": "317e3d0c5ee525213183f5d2c848798fb1307e8c2d78b38f1e39387c4667e701"
+      },
+      {
+        "file": "hk/cap132BD.xml",
+        "sha256": "622c89a3d4cf59d50be418fa73ac1a4708ab788f298b5a7c998e5e935f4ad09d"
+      },
+      {
+        "file": "hk/cap132H.xml",
+        "sha256": "50c965a6ca8baeef03d72cacc3e952e7bf407f62aff54733a83bd69766bd2de3"
+      },
+      {
+        "file": "hk/cap132U.xml",
+        "sha256": "cd83a454aa72c3fc2e88e45ee752c5ae4b7c556e6af5b36d8416ea1bf01057a7"
+      }
+    ]
+  },
+  "codex_ins": {
+    "title": "Codex CXG 36-1989 — Class Names and the International Numbering System for Food Additives",
+    "url": "https://www.fao.org/fao-who-codexalimentarius/sh-proxy/en/?lnk=1&url=https%253A%252F%252Fworkspace.fao.org%252Fsites%252Fcodex%252FStandards%252FCXG%2B36-1989%252FCXG_036e.pdf",
+    "manual": true,
+    "present": [],
+    "note": "Not present. FAO/WHO Codex Alimentarius Commission serves this behind a bot challenge, which this pipeline does not bypass. Download it in a browser and place it in sources/manual/codex/."
+  }
+}

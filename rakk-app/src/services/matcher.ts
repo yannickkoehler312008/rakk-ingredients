@@ -78,6 +78,69 @@ interface IndexEntry {
 }
 
 /**
+ * Every string that finds this ingredient in a label.
+ *
+ * Exported because the database has to agree with it exactly: the ingredient
+ * name lookup table is built from this function (pipeline/), so a phrase the
+ * server says names an ingredient is precisely one this matcher would claim.
+ */
+export function needlesFor(ingredient: Pick<Ingredient, 'canonical_name' | 'aka'>): string[] {
+  const names = new Set<string>();
+  for (const name of [ingredient.canonical_name, ...ingredient.aka]) {
+    const n = normalize(name);
+    // A name is only matchable if it starts and ends on a word character and
+    // is no longer than MAX_NEEDLE_WORDS — the same shape `candidatePhrases`
+    // produces. "(-)-Menthol" or "β-carotene" still display on the card; they
+    // are found through a word-bounded alias ("menthol", "beta-carotene").
+    if (!isMatchable(n)) continue;
+    names.add(n);
+    // Labels pluralise freely — Nutella prints "lecithins", not "lecithin".
+    if (!n.endsWith('s')) names.add(`${n}s`);
+    if (n.endsWith('y')) names.add(`${n.slice(0, -1)}ies`);
+  }
+  return Array.from(names);
+}
+
+/**
+ * Longest needle, in words, the lookup will ever be asked about. Longer names
+ * (full IUPAC names, mostly) are never printed on a label and are not indexed.
+ */
+export const MAX_NEEDLE_WORDS = 12;
+
+function isMatchable(n: string): boolean {
+  if (!/^[a-z0-9]/.test(n) || !/[a-z0-9]$/.test(n)) return false;
+  return (n.match(/[a-z0-9]+/g) ?? []).length <= MAX_NEEDLE_WORDS;
+}
+
+/**
+ * Every phrase in a label that COULD be an ingredient name: each run of 1 to
+ * MAX_NEEDLE_WORDS whole words, taken from the same normalised text
+ * `matchLabel` searches.
+ *
+ * This is what lets the client ask the database "which of these are
+ * ingredients?" instead of holding the whole database (§7). A needle only
+ * matches at word boundaries and always starts and ends on a word character
+ * (the pipeline enforces that), so every needle that can match a label is one
+ * of these phrases — nothing is missed, and a label's result is the same as if
+ * the full catalog were on the device.
+ */
+export function candidatePhrases(raw: string): string[] {
+  const haystack = normalize(raw);
+  const search = haystack.length === raw.length ? haystack : raw.toLowerCase();
+  const words = Array.from(search.matchAll(/[a-z0-9]+/g), (m) => ({
+    start: m.index ?? 0,
+    end: (m.index ?? 0) + m[0].length,
+  }));
+  const out = new Set<string>();
+  for (let a = 0; a < words.length; a++) {
+    for (let b = a; b < Math.min(words.length, a + MAX_NEEDLE_WORDS); b++) {
+      out.add(search.slice(words[a].start, words[b].end));
+    }
+  }
+  return Array.from(out);
+}
+
+/**
  * Every name an ingredient can appear under, longest first so that
  * "whole grain oats" claims the text before "oats" can, and "soy lecithin"
  * before "lecithin".
@@ -90,18 +153,17 @@ export function buildIndex(catalog: Ingredient[]): IndexEntry[] {
   if (indexCache && indexCache.catalog === catalog) return indexCache.entries;
   const entries: IndexEntry[] = [];
   for (const ingredient of catalog) {
-    const names = new Set<string>();
-    for (const name of [ingredient.canonical_name, ...ingredient.aka]) {
-      const n = normalize(name);
-      if (!n) continue;
-      names.add(n);
-      // Labels pluralise freely — Nutella prints "lecithins", not "lecithin".
-      if (!n.endsWith('s')) names.add(`${n}s`);
-      if (n.endsWith('y')) names.add(`${n.slice(0, -1)}ies`);
-    }
-    for (const needle of names) entries.push({ needle, ingredient });
+    for (const needle of needlesFor(ingredient)) entries.push({ needle, ingredient });
   }
-  entries.sort((a, b) => b.needle.length - a.needle.length);
+  // Longest first; ties broken by the needle and then the id, never by the
+  // catalog's order — the device holds a subset of the database, and a subset
+  // in a different order must claim a label exactly as the whole would.
+  entries.sort(
+    (a, b) =>
+      b.needle.length - a.needle.length ||
+      (a.needle < b.needle ? -1 : a.needle > b.needle ? 1 : 0) ||
+      (a.ingredient.id < b.ingredient.id ? -1 : a.ingredient.id > b.ingredient.id ? 1 : 0),
+  );
   indexCache = { catalog, entries };
   return entries;
 }
