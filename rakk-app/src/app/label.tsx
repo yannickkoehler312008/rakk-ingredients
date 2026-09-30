@@ -13,6 +13,8 @@ import { ChatBar } from '../components/ChatBar';
 import { ChatSheet } from '../components/ChatSheet';
 import { ResolvedScan } from '../types/scan';
 import { getScanById } from '../services/scanStore';
+import { ensureCatalogFor } from '../services/catalog';
+import { track } from '../services/analytics';
 import { scanById as mockScanById } from '../data/mockScans';
 
 /**
@@ -48,8 +50,17 @@ export default function Label() {
       }
       const found = await getScanById(scanId ?? '');
       if (!alive) return;
-      if (found) setScan(found);
-      else setMissing(true);
+      if (!found) {
+        setMissing(true);
+        return;
+      }
+      setScan(found);
+      // Scanned offline, opened online: an unmatched name may only be one the
+      // device had not fetched yet. Ask the database, and re-match if it knew.
+      if (found.unmatched_names.length > 0 && (await ensureCatalogFor(found.product.raw_ingredient_text)) === 'complete') {
+        const again = await getScanById(scanId ?? '');
+        if (alive && again) setScan(again);
+      }
     })();
     return () => {
       alive = false;
@@ -135,7 +146,12 @@ export default function Label() {
       {/* §4: the chat entry point sits at the bottom of this screen, expanding
           into a thread scoped to this product. */}
       <View style={s.chatDock}>
-        <ChatBar onPress={() => setChatOpen(true)} />
+        <ChatBar
+          onPress={() => {
+            track({ event: 'chat_opened', barcode: scan.product.barcode });
+            setChatOpen(true);
+          }}
+        />
       </View>
 
       <Modal

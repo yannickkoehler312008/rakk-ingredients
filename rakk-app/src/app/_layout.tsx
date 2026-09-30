@@ -20,6 +20,7 @@ import {
   IBMPlexMono_600SemiBold,
 } from '@expo-google-fonts/ibm-plex-mono';
 import { color } from '../theme/tokens';
+import { refreshCatalogIfStale } from '../services/catalog';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
 
@@ -45,6 +46,12 @@ export default function RootLayout() {
   useEffect(() => {
     if (fontsLoaded || fontError) SplashScreen.hideAsync().catch(() => {});
   }, [fontsLoaded, fontError]);
+
+  // §7: cached ingredient rows are refreshed in the background when the
+  // database publishes a new release, not only when the app updates.
+  useEffect(() => {
+    void refreshCatalogIfStale();
+  }, []);
 
   // Hold the splash rather than flash the whole app in a fallback font — §9's
   // "premium, not vibe-coded" bar, and the three-family split is load-bearing.

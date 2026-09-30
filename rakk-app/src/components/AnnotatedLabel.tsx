@@ -4,6 +4,7 @@ import { ResolvedScan, LabelRun, ingredientById } from '../types/scan';
 import { color, radius, space } from '../theme/tokens';
 import { mono, sans } from '../theme/type';
 import { IngredientCard, UnmatchedIngredientCard } from './IngredientCard';
+import { track } from '../services/analytics';
 
 /**
  * ═══ THE SIGNATURE INTERACTION (§5) ═══
@@ -123,7 +124,13 @@ function Paragraph({
 export function AnnotatedLabel({ scan }: { scan: ResolvedScan }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const toggle = (index: number) => setOpenIndex((prev) => (prev === index ? null : index));
+  const toggle = (index: number) => {
+    // §14: a card opening IS the scan-frequency signal that decides which
+    // ingredients get dosage research first (§12.B2). The ingredient id only.
+    const id = scan.runs[index]?.ingredient_id;
+    if (id && openIndex !== index) track({ event: 'card_expanded', ingredient_id: id });
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
 
   /**
    * THE INVARIANT: `runs: []` means this label has not been through matching.

@@ -16,6 +16,7 @@ import { color, gutter, radius, space } from '../theme/tokens';
 import { mono, sans, serif } from '../theme/type';
 import { ResolvedScan } from '../types/scan';
 import { askAboutProduct, ChatResult, ChatTurn, isChatConfigured } from '../services/chat';
+import { track } from '../services/analytics';
 
 /**
  * The ingredient chat assistant — §4, build-order step 5.
@@ -62,6 +63,9 @@ export function ChatSheet({ scan, onClose }: { scan: ResolvedScan; onClose: () =
       setState(null);
       setMessages((prev) => [...prev, { id: `u${Date.now()}`, role: 'user', text: question }]);
       setPending(true);
+      // §14: that a question was asked, and about which product — never the
+      // question itself.
+      track({ event: 'chat_question', barcode: scan.product.barcode });
 
       // Only completed exchanges go back as history.
       const history: ChatTurn[] = messages.map((m) => ({ role: m.role, content: m.text }));

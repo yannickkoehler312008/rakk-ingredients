@@ -19,10 +19,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ResolvedScan } from '../types/scan';
 import { resolveScan } from './matcher';
-import { SEED_INGREDIENTS } from '../data/seed';
+import { currentCatalog, hydrateCatalog } from './catalog';
 
 /**
- * Re-run matching against the CURRENT seed data and matcher.
+ * Re-run matching against the CURRENT catalog and matcher.
  *
  * §7: the cache "is explicitly a cache, not the source of truth". What is
  * durable about a scan is the product and its printed ingredient text; the
@@ -38,7 +38,7 @@ import { SEED_INGREDIENTS } from '../data/seed';
  * history and navigation are stable.
  */
 function rematch(stored: ResolvedScan): ResolvedScan {
-  const fresh = resolveScan(stored.product, SEED_INGREDIENTS, stored.method);
+  const fresh = resolveScan(stored.product, currentCatalog(), stored.method);
   return { ...fresh, scan_id: stored.scan_id, scanned_at: stored.scanned_at };
 }
 
@@ -67,6 +67,9 @@ function emit() {
 }
 
 export async function getHistory(): Promise<ResolvedScan[]> {
+  // Rows fetched for earlier scans live in the catalog cache; load them
+  // before re-matching, or an offline read would lose them.
+  await hydrateCatalog();
   try {
     const raw = await AsyncStorage.getItem(HISTORY_KEY);
     if (!raw) return [];
@@ -79,6 +82,7 @@ export async function getHistory(): Promise<ResolvedScan[]> {
 }
 
 export async function getCached(barcode: string): Promise<ResolvedScan | null> {
+  await hydrateCatalog();
   try {
     const raw = await AsyncStorage.getItem(CACHE_PREFIX + barcode);
     if (!raw) return null;

@@ -17,7 +17,8 @@ export const SUPABASE_URL = process.env.EXPO_PUBLIC_SUPABASE_URL ?? '';
 const SUPABASE_ANON_KEY = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY ?? '';
 
 /** Not configured is a designed state (§9), not a crash. */
-export const isChatConfigured = () => Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
+export const isBackendConfigured = () => Boolean(SUPABASE_URL && SUPABASE_ANON_KEY);
+export const isChatConfigured = isBackendConfigured;
 
 let client: SupabaseClient | null = null;
 export function supabase(): SupabaseClient {

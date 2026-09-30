@@ -14,6 +14,7 @@ import Feather from '@expo/vector-icons/Feather';
 import { color, gutter, radius, space } from '../theme/tokens';
 import { mono, sans, serif } from '../theme/type';
 import { PrimaryButton, SecondaryButton, TextButton } from '../components/primitives';
+import { markOnboardingCompleted } from '../services/analytics';
 
 /**
  * Sign up / Onboarding — §4, plus Appendix B's trial mechanics.
@@ -83,7 +84,10 @@ export default function Onboarding() {
     if (index < total - 1) listRef.current?.scrollToIndex({ index: index + 1, animated: true });
   };
 
-  const finish = () => router.replace('/home');
+  const finish = () => {
+    void markOnboardingCompleted();
+    router.replace('/home');
+  };
 
   return (
     <SafeAreaView style={s.safe} edges={['top', 'bottom']}>

@@ -11,10 +11,10 @@ import { mono, sans, serif } from '../theme/type';
 import { PrimaryButton, SecondaryButton } from '../components/primitives';
 import { ScanProgress, ScanStep } from '../components/states';
 import { lookupBarcode } from '../services/openFoodFacts';
-import { resolveScan } from '../services/matcher';
 import { readLabelPhoto } from '../services/ocr';
 import { ConfirmLabelText } from '../components/ConfirmLabelText';
-import { SEED_INGREDIENTS } from '../data/seed';
+import { resolveWithDatabase } from '../services/catalog';
+import { markScanCompleted, track } from '../services/analytics';
 import { getCached, recordScan } from '../services/scanStore';
 
 /**
@@ -96,9 +96,11 @@ export default function Scan() {
         setPhase({ kind: 'confirm', text: result.raw_ingredient_text, markers: result.unreadable_markers });
         return;
       case 'unreadable':
+        track({ event: 'scan_outcome', outcome: 'ocr_unreadable' });
         setPhase({ kind: 'unreadable', reason: result.reason });
         return;
       case 'offline':
+        track({ event: 'scan_outcome', outcome: 'offline' });
         setPhase({ kind: 'offline', barcode: '' });
         return;
       case 'rate_limited':
@@ -120,7 +122,7 @@ export default function Scan() {
    * barcode scan (§10 step 6 is a new input, not a second pipeline).
    */
   const acceptTranscription = useCallback(async (text: string) => {
-    const scan = resolveScan(
+    const scan = await resolveWithDatabase(
       {
         id: `ocr_${Date.now()}`,
         barcode: null,
@@ -129,16 +131,19 @@ export default function Scan() {
         image_url: null,
         raw_ingredient_text: text,
       },
-      SEED_INGREDIENTS,
       'photo_ocr',
     );
     await recordScan(scan);
+    track({ event: 'scan_outcome', outcome: 'ocr_succeeded' });
+    void markScanCompleted();
     busy.current = false;
     router.replace({ pathname: '/label', params: { scanId: scan.scan_id } });
   }, []);
 
   /** One path, whether the barcode came from the camera or was typed in. */
-  const runLookup = useCallback(async (barcode: string) => {
+  const runLookup = useCallback(async (barcode: string, via: 'camera' | 'manual' = 'camera') => {
+    // §14: every scan attempt and how it ended — where the funnel breaks.
+    const resolved = via === 'manual' ? 'manual_search_used' : 'barcode_resolved';
     busy.current = true;
     setPhase({ kind: 'working', step: 'read', barcode });
 
@@ -150,6 +155,7 @@ export default function Scan() {
       // minting a new id here would strand the row we then navigate to.
       const replay = { ...cached, scanned_at: new Date().toISOString() };
       await recordScan(replay);
+      track({ event: 'scan_outcome', outcome: resolved, barcode });
       busy.current = false;
       router.replace({ pathname: '/label', params: { scanId: replay.scan_id } });
       return;
@@ -161,14 +167,19 @@ export default function Scan() {
     switch (result2.kind) {
       case 'found': {
         // §7's one assembled response: product + matched ingredients + the
-        // flagged subset, built here only because there is no backend yet.
-        const scan = resolveScan(result2.product, SEED_INGREDIENTS);
+        // flagged subset. Matching is its own visible step now that it asks
+        // the database (§9: real progress, not a spinner).
+        setPhase({ kind: 'working', step: 'match', barcode });
+        const scan = await resolveWithDatabase(result2.product, via === 'manual' ? 'manual_search' : 'barcode');
         await recordScan(scan);
+        track({ event: 'scan_outcome', outcome: resolved, barcode });
+        void markScanCompleted();
         busy.current = false;
         router.replace({ pathname: '/label', params: { scanId: scan.scan_id } });
         return;
       }
       case 'no_ingredients':
+        track({ event: 'scan_outcome', outcome: 'no_ingredients', barcode });
         setPhase({
           kind: 'no_ingredients',
           name: result2.product.name,
@@ -176,12 +187,15 @@ export default function Scan() {
         });
         return;
       case 'not_found':
+        track({ event: 'scan_outcome', outcome: 'not_found', barcode });
         setPhase({ kind: 'not_found', barcode });
         return;
       case 'offline':
+        track({ event: 'scan_outcome', outcome: 'offline', barcode });
         setPhase({ kind: 'offline', barcode });
         return;
       case 'error':
+        track({ event: 'scan_outcome', outcome: 'lookup_failed', barcode });
         setPhase({ kind: 'error', detail: result2.detail });
         return;
     }
@@ -317,7 +331,7 @@ export default function Scan() {
           />
         </View>
       ) : phase.kind !== 'scanning' ? (
-        <ResultSheet phase={phase} onDismiss={resume} onSubmitBarcode={runLookup} />
+        <ResultSheet phase={phase} onDismiss={resume} onSubmitBarcode={(b) => runLookup(b, 'manual')} />
       ) : null}
     </View>
   );
