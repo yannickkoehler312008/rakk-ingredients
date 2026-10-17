@@ -4,9 +4,10 @@ Builds the Rakk Ingredients database from bulk regulatory sources
 (`MD Files/rakk-phase2-database-population.md` §11–§13) and ships it to
 Supabase and to the app's offline bundle.
 
-No dependencies beyond Node 24, Python 3 (stdlib, for reading `.xlsx`), and
-`tsx` (already used by `rakk-app/scripts`). Everything a build reads is listed
-in `sources.mjs`.
+Needs Node 24, Python 3 (stdlib, for reading `.xlsx`), `tsx` (already used by
+`rakk-app/scripts`), and one pinned npm package, `pdfjs-dist`, for reading the
+Codex PDF — run `npm ci` in `pipeline/` once. Everything a build reads is
+listed in `sources.mjs`.
 
 ## Run
 
@@ -39,11 +40,18 @@ replaced by the next `emit`; once committed it is history.
 | `eu_1333_2008` | Reg. (EC) 1333/2008, latest consolidated text | EU Publications Office (Cellar) | reuse with acknowledgement — **confirm** |
 | `efsa_openfoodtox` | EFSA OpenFoodTox 3.0 (ADIs, formulas) | Zenodo | CC BY-ND 4.0 — **confirm** |
 | `hk_legislation` | HK Cap. 132BD, 132H, 132U, 132AR | DATA.GOV.HK bulk XML | DATA.GOV.HK terms — **confirm** |
-| `codex_ins` | Codex CXG 36 (INS list) | **manual**: FAO serves it behind a bot challenge, which this pipeline does not bypass | FAO/WHO; likely NC — **confirm** |
+| `codex_ins` | Codex CXG 36-1989, 2026 edition (674 INS entries, 27 functional classes) | FAO Open Knowledge repository (the fao.org copy is behind a bot challenge) | CC BY 4.0 — credit FAO and WHO |
 
-EUR-Lex's own website and FAO sit behind bot challenges; the pipeline uses
-documented machine interfaces only (Cellar for EU law) and never works around
-a challenge.
+EUR-Lex's own website and fao.org sit behind bot challenges; the pipeline uses
+documented machine interfaces and public repositories only (Cellar for EU law,
+FAO Open Knowledge for Codex) and never works around a challenge.
+
+**Codex is an identifier, not an approval.** CXG 36's introduction: "Inclusion
+in the INS does not imply approval by Codex for use as food additives." Codex
+chips say exactly that, and `verify.ts` fails any that don't. The table is read
+from the PDF's own drawn rules (a rule crossing the INS column is a row edge),
+because merged cells make text spacing ambiguous; the parser fails loudly
+rather than guess.
 
 ## The rules the build holds to
 
@@ -86,7 +94,8 @@ The grounded LLM extraction pass in §13 is the way to do better; see
 ```
 sources.mjs         source registry (URLs, terms)
 fetch.mjs           downloader; writes sources/manifest.json (committed)
-parse/              one parser per source; ecfr.mjs also holds listsSubstance()
+parse/              one parser per source; ecfr.mjs also holds listsSubstance(),
+                    codex-ins.mjs reads the CXG 36 PDF
 lib/text.mjs        entities, CSV, CAS check digit, name keys
 lib/vocab.mjs       the fixed vocabularies (effects, US status wording, allergen rules)
 lib/xlsx2csv.py     stdlib .xlsx reader (OpenFoodTox)

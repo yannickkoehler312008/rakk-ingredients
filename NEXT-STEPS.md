@@ -59,22 +59,15 @@ no and note it in `pipeline/sources.mjs` (set `confirmed: true`).
 | EU Reg. 1333/2008 | https://eur-lex.europa.eu/content/legal-notice/legal-notice.html | Reuse needs "the source is acknowledged". Plan an **attribution line in the app** (settings/about): "Contains EU legal text © European Union, https://eur-lex.europa.eu" |
 | EFSA OpenFoodTox | https://zenodo.org/records/19388272 (CC BY-ND 4.0) | We show EFSA's ADI numbers with a DOI citation to the opinion. Is quoting a figure from an ND-licensed database a "derivative"? If unsure, ask the lawyer in step 6 |
 | Hong Kong | https://data.gov.hk/en/terms-and-conditions | Commercial reuse with attribution: add HK to the same attribution line |
-| Codex (step 4) | https://www.fao.org/contact-us/terms/en/ | FAO often uses CC BY-NC-SA. **NC (non-commercial) is a problem for a paid app.** Answer this before step 4 |
+| Codex | https://openknowledge.fao.org/handle/20.500.14283/cd8953en | **Settled:** the repository lists CC BY 4.0, commercial use allowed with attribution. Add to the credits line: "FAO and WHO. 2026. Class names and the international numbering system for food additives. Codex Alimentarius Guideline No. CXG 36-1989." |
 | FDA / eCFR | — | US government works, public domain. Nothing to do |
 
-## 4. Codex INS list (you download it, I parse it)
+## 4. Codex INS list — done (2026-10-17)
 
-FAO blocks automated downloads with a bot challenge, and the pipeline won't go
-around it.
-
-1. In a normal browser, open the Codex guidelines list
-   (https://www.fao.org/fao-who-codexalimentarius/codex-texts/guidelines/en/),
-   find **CXG 36-1989, Class Names and the International Numbering System for
-   Food Additives**, and download the English PDF.
-2. Save it as `pipeline/sources/manual/codex/CXG_036e.pdf`. That folder is
-   git-ignored until the licence in step 3 is confirmed.
-3. Tell me it's there. I'll write the parser against the real file, rebuild,
-   and Codex entries will attach to rows by INS number the way HK's do.
+FAO's public repository has the 2026 edition under CC BY 4.0, so the pipeline
+now downloads it like any other source (`pipeline/sources.mjs` → `codex_ins`).
+620 ingredients carry a Codex entry, including 163 additives only Codex lists.
+Ships with release `0006_ingredient_release_2026-10-17_f9bf311a.sql`.
 
 ## 5. Anthropic credit — unblocks three things
 

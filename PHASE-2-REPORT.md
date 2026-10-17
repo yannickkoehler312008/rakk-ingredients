@@ -2,6 +2,11 @@
 
 Picks up from `PHASE-2-HANDOFF.md`. Spec: `MD Files/rakk-phase2-database-population.md`.
 
+> **Update 2026-10-17 — Codex added.** CXG 36-1989 (2026 edition) is now an
+> automatic source from FAO's public repository (CC BY 4.0), parsed from its
+> ruled table and checked by an independent pass. Release `f9bf311a`
+> (`0006_…`) adds it. Figures below are current.
+
 **State:** the ingredient database is built, verified and wired into the app.
 It is **not deployed**: the three new migrations take effect once they are
 pushed (see "To ship"). Until then the app falls back to its bundled offline
@@ -13,16 +18,16 @@ subset, and it was checked working in that state.
 
 | | |
 |---|---|
-| **Ingredients** | **4,719** rows satisfying `rakk-app/src/types/ingredient.ts` (Phase 1: 270) |
-| from | FDA Substances Added to Food 3,773 · GRAS notices 549 · EU-only 112 · FDA colour list 13 · curated seed 272 |
+| **Ingredients** | **4,882** rows satisfying `rakk-app/src/types/ingredient.ts` (Phase 1: 270) |
+| from | FDA Substances Added to Food 3,773 · GRAS notices 549 · Codex-only 163 · EU-only 112 · FDA colour list 13 · curated seed 272 |
 | US FDA status | 4,527 rows; **1,910 with a 21 CFR citation verified to list the substance** |
 | EU status | 346 rows, from Reg. (EC) 1333/2008 Annex II (consolidated 2026-08-18) |
-| HK status | 114 rows, from Cap. 132BD / 132H / 132U |
-| Codex | 3 (seed only; see §4) |
+| HK status | 120 rows, from Cap. 132BD / 132H / 132U |
+| Codex | 620 rows, from CXG 36-1989 (2026 edition) — an INS number and functional class, stated as **not** an approval |
 | Dosage context | 108 rows (76 seed + 32 new from EFSA opinions, each with a DOI) |
-| Identifiers | CAS 3,286 · E-number 344 · formula 1,664 |
-| Flaggable with no regulatory entry | 12 (was 31) |
-| Verification | 0 failures across ~18,700 independent checks |
+| Identifiers | CAS 3,286 · E-number / INS code 634 · formula 1,664 |
+| Flaggable with no regulatory entry | 11 (was 31) |
+| Verification | 0 failures across ~19,400 independent checks |
 
 Every field of every row has provenance in `pipeline/out/provenance.json`,
 covering the source, where in it the value came from, the verbatim text, and
@@ -98,8 +103,12 @@ that has not been mechanically verified"). It held.
   and synonyms directly, and EFSA OpenFoodTox supplies formulas.
 - EU: EUR-Lex's website sits behind a bot challenge, but the Publications
   Office's Cellar API serves the same consolidated text by CELEX number.
-- **Codex is blocked.** FAO serves CXG 36 and GSFA behind a Cloudflare
-  challenge, and the pipeline does not bypass it.
+- **Codex**: fao.org serves CXG 36 behind a Cloudflare challenge (and its
+  proxy later returned 502), but the same guideline, in a newer 2026 edition,
+  is on FAO's public repository under CC BY 4.0. That copy is what the
+  pipeline uses. Its introduction matters for the app: "Inclusion in the INS
+  does not imply approval by Codex", so the Codex chip states the number and
+  class and says it is not an approval.
 - HK: all of Cap. 132 is on DATA.GOV.HK as bulk XML. Preservatives are keyed
   by INS number, so they join cleanly.
 
@@ -108,7 +117,7 @@ that has not been mechanically verified"). It held.
 | # | What | Why it isn't done | What unblocks it |
 |---|---|---|---|
 | 1 | **Deploy** | Deploying is pushing to `main`, which I don't do without a go-ahead | Commit and push; the GitHub integration applies 0003–0005. Then scan once and check that `lookup_ingredients` returns 200 |
-| 2 | **Codex INS** | FAO bot challenge | Download CXG 36 in a browser into `pipeline/sources/manual/codex/`; a parser then needs writing against the real file. Confirm the licence first: FAO material is commonly CC BY-NC-SA, and NC matters for a paid app |
+| 2 | ~~Codex INS~~ | **Done 2026-10-17** (release `f9bf311a`). The app needs a credit line: "FAO and WHO. 2026. Class names and the international numbering system for food additives. CXG 36-1989. CC BY 4.0" | — |
 | 3 | **Licences** | §13 says confirm, don't assume | A human read of the EU (acknowledgement required, so it likely needs an in-app attribution), EFSA OpenFoodTox (**CC BY-ND**: is showing an extracted ADI a derivative?), and DATA.GOV.HK terms. Status per source is in `pipeline/sources.mjs` |
 | 4 | **§15 food-science review** | Needs a qualified person | `pipeline/out/review-sample.csv`: 821 claims from 355 ingredients. It covers every dosage claim, every name-derived allergen flag, 60 common additives, and a spread of bulk rows, each paired with its source text |
 | 5 | **Grounded LLM extraction** (§13) | The handoff says Anthropic billing was blocked; I didn't build an LLM path I couldn't run | Numeric use-level limits are still in the CFR text, unextracted. ~4,400 bulk explanations are templated from FDA's technical-effect codes: accurate, but generic. The verification half already exists (`verify.ts` re-checks every excerpt against its source) |
