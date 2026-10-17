@@ -43,7 +43,21 @@ if (verify.failures.length) {
 const raw = readFileSync(ingredientsPath, 'utf8');
 const rows: Ingredient[] = JSON.parse(raw);
 const report = JSON.parse(readFileSync(join(OUT, 'build-report.json'), 'utf8'));
-const version = `${report.built_at.slice(0, 10)}.${createHash('sha256').update(raw).digest('hex').slice(0, 8)}`;
+const hash = createHash('sha256').update(raw).digest('hex').slice(0, 8);
+const version = `${report.built_at.slice(0, 10)}.${hash}`;
+
+const committed = (f: string) => {
+  try { execFileSync('git', ['ls-files', '--error-unmatch', join(MIGRATIONS, f)], { cwd: REPO, stdio: 'ignore' }); return true; } catch { return false; }
+};
+
+// The version carries the build date, but a release IS its data. Identical
+// rows rebuilt on another day are not a new release: re-emitting them would
+// reload all 4,719 rows and make every device refetch for nothing.
+const released = readdirSync(MIGRATIONS).find((f) => f.includes('_ingredient_release_') && f.endsWith(`_${hash}.sql`) && committed(f));
+if (released) {
+  console.log(`no change: this build's data is already released as ${released}`);
+  process.exit(0);
+}
 
 // ─── the name lookup, from the matcher's own function ───
 const names: Record<string, string[]> = {};
@@ -108,9 +122,6 @@ delete from public.ingredients where dataset_version <> ${q(version)};
 // A release migration that is not yet committed has not been deployed, so a
 // rebuild replaces it instead of stacking a second release behind it. Once
 // committed, a release is history: the next build gets a new file.
-const committed = (f: string) => {
-  try { execFileSync('git', ['ls-files', '--error-unmatch', join(MIGRATIONS, f)], { cwd: REPO, stdio: 'ignore' }); return true; } catch { return false; }
-};
 let existing = readdirSync(MIGRATIONS).filter((f) => /^\d{4}_/.test(f)).sort();
 for (const f of existing.filter((f) => f.includes('_ingredient_release_') && !committed(f) && !f.includes(version.replace('.', '_')))) {
   unlinkSync(join(MIGRATIONS, f));
