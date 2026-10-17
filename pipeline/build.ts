@@ -37,8 +37,9 @@ import { parseGrasNotices, parseColorAdditives } from './parse/fda-other.mjs';
 import { parseEu1333, EU_REG_URL } from './parse/eu-1333.mjs';
 import { parseHk } from './parse/hk.mjs';
 import { parseOpenFoodTox, adiSentence, adiReference } from './parse/efsa-oft.mjs';
+import { parseCodexIns, CODEX_URL } from './parse/codex-ins.mjs';
 import { joinKey, nameKey, sentenceCase, decodeEntities, parseCsv } from './lib/text.mjs';
-import { EFFECT_BY_NAME, EFFECTS, US_PART_STATUS, US_PART_PRIORITY, ALLERGEN_RULES, GENERIC_NAMES } from './lib/vocab.mjs';
+import { EFFECT_BY_NAME, EFFECTS, US_PART_STATUS, US_PART_PRIORITY, ALLERGEN_RULES, GENERIC_NAMES, CODEX_CLASS_CATEGORY } from './lib/vocab.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const RAW = join(ROOT, 'sources/raw');
@@ -60,10 +61,11 @@ interface Prov {
 
 interface Row extends Ingredient {
   _prov: Prov[];
-  _kind: 'seed' | 'fda_saf' | 'fda_color' | 'gras_notice' | 'eu';
+  _kind: 'seed' | 'fda_saf' | 'fda_color' | 'gras_notice' | 'eu' | 'codex';
   _keys: Set<string>; // joinKeys of every name, for cross-source joins
   _saf?: any;
   _color?: any;
+  _codex?: any;
   _review: string[]; // reasons a human should look at this row
 }
 
@@ -102,6 +104,7 @@ const colors = parseColorAdditives(join(RAW, 'fda_color_additives.csv'));
 const eu = parseEu1333(join(RAW, 'eu_1333_2008.xhtml'), manifest.eu_1333_2008?.celex);
 const hk = parseHk(join(RAW, 'hk'));
 const oft = parseOpenFoodTox(join(RAW, 'efsa_openfoodtox.xlsx'), join(ROOT, 'work'));
+const codex = await parseCodexIns(join(RAW, 'codex_cxg36.pdf'));
 
 const SAF_DATE = fdaDate(saf.updated);
 const GRN_DATE = fdaDate(grn.updated);
@@ -639,6 +642,104 @@ for (const row of seedRows) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// 5b. Codex — CXG 36-1989's International Numbering System
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// "Inclusion in the INS does not imply approval by Codex for use as food
+// additives" (CXG 36-1989, introduction). So the CODEX entry states the number
+// and functional class and says plainly that it is not an approval — it must
+// never read like the EU's or HK's authorisations.
+
+const insBy = new Map(codex.entries.map((e: any) => [e.ins, e]));
+const classDef = new Map(codex.classes.map((c: any) => [c.name, c.definition]));
+/** A group heading ("322 Lecithins") has no class of its own; its members do. */
+const classesOf = (e: any): string[] =>
+  e.functional_classes.length
+    ? e.functional_classes
+    : [...new Set(codex.entries.filter((m: any) => m.ins.startsWith(`${e.ins}(`)).flatMap((m: any) => m.functional_classes))] as string[];
+
+function setCodex(row: Row, e: any) {
+  const cls = classesOf(e);
+  setJurisdiction(row, {
+    jurisdiction: 'CODEX',
+    status: `Has Codex INS number ${e.ins}${cls.length ? ` (${cls.map((c) => c.toLowerCase()).join(', ')})` : ''}. An INS number identifies an additive; it is not a Codex approval.`,
+    citation: `CXG 36-1989 — INS ${e.ins}`,
+    citation_url: CODEX_URL,
+  }, { source: 'codex_ins', locator: `CXG 36-1989 Section 3, INS ${e.ins}, p. ${e.page}`, excerpt: e.excerpt, method: 'parsed' });
+  row._codex = e;
+}
+
+const codexUsed = new Set<string>();
+report.codex_replaced_seed = [] as string[];
+// 1) Rows that already carry an E-number: the INS number is the same number.
+for (const row of rows) {
+  const e = row.e_number_ins_code?.match(/^(?:E|INS )\s?(\d{3,4}[a-z]?(?:\([ivx]+\))?)$/)?.[1];
+  if (!e) continue;
+  const entry = insBy.get(e);
+  if (!entry) continue;
+  const seedCodex = row.jurisdictions.find((j) => j.jurisdiction === 'CODEX');
+  if (seedCodex) report.codex_replaced_seed.push(`${row.id}: "${seedCodex.status}" → CXG 36 INS ${e}`);
+  setCodex(row, entry);
+  codexUsed.add(e);
+}
+// 2) Remaining INS entries: by exact name, else a row of their own.
+report.codex_created = [] as string[];
+report.codex_conflicts = [] as any[];
+for (const entry of codex.entries) {
+  if (codexUsed.has(entry.ins)) continue;
+  const base = entry.name.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  const synonym = entry.name.match(/\(([^)]+)\)\s*$/)?.[1];
+  let row = findByName([entry.name, base, ...(synonym ? [synonym] : [])]);
+  const insBase = (code: string) => code.replace(/^(E|INS )\s?/, '').replace(/[a-z]?(\([ivx]+\))?$/, '');
+  if (row?.e_number_ins_code && insBase(row.e_number_ins_code) === insBase(entry.ins)) {
+    // A member of a family the row already represents (INS 100(i) Curcumin on
+    // the E100 row): the row's Codex entry covers it.
+    continue;
+  }
+  if (row?.e_number_ins_code) {
+    // The name belongs to a row with another number: two additives, one
+    // name. Leave both alone and report it.
+    report.codex_conflicts.push({ ins: entry.ins, name: entry.name, row: row.id || row.canonical_name, row_code: row.e_number_ins_code });
+    continue;
+  }
+  if (!row) {
+    // A group heading with no class of its own describes its members; it only
+    // becomes a row if nothing else does.
+    if (!entry.functional_classes.length) continue;
+    row = blankRow('codex');
+    row.canonical_name = base;
+    row.source = 'codex_alimentarius';
+    row.source_updated_at = today;
+    const first = entry.functional_classes[0];
+    row.category = (CODEX_CLASS_CATEGORY[first] ?? 'other') as IngredientCategory;
+    // Codex's own definition of the class, quoted whole: rewording the
+    // regulator risks changing what it says.
+    const def = (classDef.get(first) ?? '').trim();
+    const article = /^[aeiou]/i.test(first) ? 'an' : 'a';
+    row.plain_explanation = def
+      ? `Codex classes it as ${article} ${first.toLowerCase()}: “${def}”`
+      : `Codex classes it as ${article} ${first.toLowerCase()}.`;
+    row._keys = keysOf([entry.name, base, ...(synonym ? [synonym] : [])]);
+    row._prov.push({ field: 'canonical_name', source: 'codex_ins', locator: `INS ${entry.ins}`, excerpt: entry.excerpt, method: 'parsed' });
+    row._prov.push({ field: 'plain_explanation', source: 'codex_ins', locator: `CXG 36-1989 Section 2, ${first}`, excerpt: `${first}: ${classDef.get(first) ?? ''}`, method: 'vocabulary' });
+    row._prov.push({ field: 'category', source: 'codex_ins', locator: first, excerpt: entry.functional_classes.join('; '), method: 'vocabulary' });
+    rows.push(row);
+    report.codex_created.push(`INS ${entry.ins} ${entry.name}`);
+  }
+  row.e_number_ins_code = `INS ${entry.ins}`;
+  row._prov.push({ field: 'e_number_ins_code', source: 'codex_ins', locator: `INS ${entry.ins}`, excerpt: entry.excerpt, method: 'parsed' });
+  for (const k of keysOf([entry.name, base, ...(synonym ? [synonym] : [])])) row._keys.add(k);
+  indexRow(row);
+  setCodex(row, entry);
+  codexUsed.add(entry.ins);
+}
+// The seed's own Codex entries that no INS number confirmed stay, for review.
+for (const row of seedRows) {
+  const p = row._prov.find((x) => x.field === 'jurisdictions.CODEX');
+  if (row.jurisdictions.some((j) => j.jurisdiction === 'CODEX') && (!p || p.source === 'seed')) row._review.push('Codex status from seed, not confirmed against CXG 36');
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 // 6. Hong Kong — by INS number (preservatives), Colour Index and exact name
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -727,12 +828,14 @@ for (const row of rows) {
   if (row._kind === 'seed') continue;
   const candidates: string[] = [];
   if (row.e_number_ins_code) candidates.push(row.e_number_ins_code, row.e_number_ins_code.replace(/^E/, 'E '));
+  if (row._codex) candidates.push(row._codex.name, ...(row._codex.name.match(/\(([^)]+)\)\s*$/) ? [row._codex.name.match(/\(([^)]+)\)\s*$/)[1]] : []));
   if (row._color) candidates.push(...row._color.name.split(/\s+\/\s+/), ...row._color.other_names);
   if (row._saf) candidates.push(row._saf.name, row._saf.name_upper, ...row._saf.other_names);
   const seen = new Set([nameKey(row.canonical_name)]);
   const aka: string[] = [];
   for (const c of candidates) {
-    const a = /^E ?\d/.test(c) ? c : usableAlias(c);
+    // E-numbers and INS codes are kept exactly as written.
+    const a = /^(E ?|INS )\d/.test(c) ? c : usableAlias(c);
     if (!a) continue;
     const k = nameKey(a);
     if (seen.has(k)) continue;
@@ -779,7 +882,7 @@ for (const row of rows) {
 // rows that share an E-number (the lecithins) never contest it.
 for (const row of rows) {
   const e = row.e_number_ins_code;
-  if (!e || !row.aka.some((a) => nameKey(a) === nameKey(e))) continue;
+  if (!e || !/^E\d/.test(e) || !row.aka.some((a) => nameKey(a) === nameKey(e))) continue;
   const n = e.replace(/^E/, '');
   for (const form of [`E ${n}`, `INS ${n}`]) {
     if (!row.aka.some((a) => nameKey(a) === nameKey(form))) row.aka.push(form);
@@ -791,7 +894,7 @@ for (const row of rows) {
 //    own needles — plural forms included — so the lookup table can key on them.
 // ─────────────────────────────────────────────────────────────────────────────
 
-const KIND_RANK = { seed: 0, fda_saf: 1, fda_color: 2, eu: 3, gras_notice: 4 };
+const KIND_RANK = { seed: 0, fda_saf: 1, fda_color: 2, eu: 3, codex: 4, gras_notice: 5 };
 rows.sort((a, b) => KIND_RANK[a._kind] - KIND_RANK[b._kind]);
 
 const owner = new Map<string, Row>();
@@ -838,7 +941,7 @@ const final = rows.filter((r) => !dropped.has(r));
 
 for (const r of final) r.jurisdictions.sort((a, b) => ORDER.indexOf(a.jurisdiction) - ORDER.indexOf(b.jurisdiction));
 
-const strip = ({ _prov, _kind, _keys, _saf, _color, _review, ...i }: Row): Ingredient => i;
+const strip = ({ _prov, _kind, _keys, _saf, _color, _codex, _review, ...i }: Row): Ingredient => i;
 const ingredients = final.map(strip).sort((a, b) => a.id.localeCompare(b.id));
 const provenance = Object.fromEntries(final.map((r) => [r.id, { kind: r._kind, review: r._review, fields: r._prov }]));
 
@@ -854,6 +957,7 @@ report.counts = {
   us_any: count((i) => i.jurisdictions.some((j) => j.jurisdiction === 'US_FDA')),
   eu: count((i) => i.jurisdictions.some((j) => j.jurisdiction === 'EU_EFSA')),
   codex: count((i) => i.jurisdictions.some((j) => j.jurisdiction === 'CODEX')),
+  codex_only_rows: final.filter((r) => r._kind === 'codex').length,
   hk: count((i) => i.jurisdictions.some((j) => j.jurisdiction === 'HK_CFS')),
   no_jurisdiction_flaggable: count((i) => !i.everyday_allowlist && i.jurisdictions.length === 0),
   usage_context: count((i) => !!i.usage_context),
@@ -863,7 +967,7 @@ report.counts = {
   needs_review: final.filter((r) => r._review.length).length,
 };
 report.no_jurisdiction = ingredients.filter((i) => !i.everyday_allowlist && i.jurisdictions.length === 0).map((i) => i.canonical_name);
-report.codex_status = manifest.codex_ins?.present?.length ? 'present but not yet parsed' : 'NOT PRESENT — manual download required (see sources.mjs)';
+report.codex_status = `CXG 36-1989: ${codex.entries.length} INS entries, ${codex.classes.length} functional classes`;
 
 mkdirSync(OUT, { recursive: true });
 writeFileSync(join(OUT, 'ingredients.json'), JSON.stringify(ingredients, null, 1) + '\n');

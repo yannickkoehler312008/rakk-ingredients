@@ -1,235 +1,1688 @@
 # Ingredient database — change review
 
-Compared with: none — first release  ·  generated 2026-09-29
+Compared with: git HEAD (c600dd5)  ·  generated 2026-10-17
 
-## Source documents that changed (11)
-- fda_saf (new) — 7/28/2026
-- fda_gras_notices (new) — 9/24/2026
-- fda_color_additives (new) — 8/14/2026
-- ecfr_21_subchapter_b (new) — 2026-09-25
-- ecfr_21_part_73 (new) — 2026-09-25
-- ecfr_21_part_74 (new) — 2026-09-25
-- ecfr_21_part_81 (new) — 2026-09-25
-- ecfr_21_part_82 (new) — 2026-09-25
-- eu_1333_2008 (new) — 02008R1333-20260818
-- efsa_openfoodtox (new) — 2026-09-29T18:48:18.013Z
-- hk_legislation (new) — 2026-09-29T18:48:25.415Z
+## Source documents that changed (1)
+- codex_ins — 2026-10-17T16:36:28.480Z
 
-## Rows added (4719) / removed (0)
-- + 1,1,1,2-Tetrafluoroethane (`ing_1_1_1_2_tetrafluoroethane`)
-- + 1,1-dimethoxy-trans-2-hexene (`ing_1_1_dimethoxy_trans_2_hexene`)
-- + 1,1-dimethoxyethane (`ing_1_1_dimethoxyethane`)
-- + 1,1-dipropoxyethane (`ing_1_1_dipropoxyethane`)
-- + 1,1-propanedithiol (`ing_1_1_propanedithiol`)
-- + 1,1'-(tetrahydro-6A-hydroxy-2,3A,5-trimethylfuro[2,3-d]-1,3-dioxole-2,5-diyl)bis-ethanone (`ing_1_1_tetrahydro_6a_hydroxy_2_3a_5_trimethylfuro_2_3_d_1_3_dio`)
-- + 1,2,3-tris((1'-ethoxy)ethoxy)-propane (`ing_1_2_3_tris_1_ethoxy_ethoxy_propane`)
-- + 1,2,5,6-tetrahydrocuminic acid (`ing_1_2_5_6_tetrahydrocuminic_acid`)
-- + 1,2-butanedithiol (`ing_1_2_butanedithiol`)
-- + 1,2-(di(1'-ethoxy)ethoxy)propane (`ing_1_2_di_1_ethoxy_ethoxy_propane`)
-- + 1,2-dimethoxybenzene (`ing_1_2_dimethoxybenzene`)
-- + 1,2-ethanedithiol (`ing_1_2_ethanedithiol`)
-- + 1-(2-furfurylthio)propanone (`ing_1_2_furfurylthio_propanone`)
-- + 1-(2-furyl)-1,3-butanedione (`ing_1_2_furyl_1_3_butanedione`)
-- + 1-(2-furyl)butan-3-one (`ing_1_2_furyl_butan_3_one`)
-- + 1-(2-hydroxy-4-isobutoxyphenyl)-3-(pyridin-2-yl)propan-1-one (`ing_1_2_hydroxy_4_isobutoxyphenyl_3_pyridin_2_yl_propan_1_one`)
-- + 1-(2-hydroxy-4-methoxyphenyl)-3-(pyridin-2-yl)propan-1-one (`ing_1_2_hydroxy_4_methoxyphenyl_3_pyridin_2_yl_propan_1_one`)
-- + 1-(2-hydroxyphenyl)-3-(pyridin-4-yl)propan-1-one (`ing_1_2_hydroxyphenyl_3_pyridin_4_yl_propan_1_one`)
-- + 1,2-propanedithiol (`ing_1_2_propanedithiol`)
-- + 1-(2-thienyl)ethanethiol (`ing_1_2_thienyl_ethanethiol`)
-- + 1,3,3-trimethyl-2-norbornanyl acetate (`ing_1_3_3_trimethyl_2_norbornanyl_acetate`)
-- + 1,3,5,7-undecatetraene (`ing_1_3_5_7_undecatetraene`)
-- + 1,3,5-undecatriene (`ing_1_3_5_undecatriene`)
-- + 1,3-butanedithiol (`ing_1_3_butanedithiol`)
-- + 1,3-butylene glycol (`ing_1_3_butylene_glycol`)
-- + 1,3-diphenyl-2-propanone (`ing_1_3_diphenyl_2_propanone`)
-- + 1-(3-hydroxy-5-methyl-2-thienyl)ethanone (`ing_1_3_hydroxy_5_methyl_2_thienyl_ethanone`)
-- + 1-(3-(methylthio)-butyryl)-2,6,6-trimethylcyclohexene (`ing_1_3_methylthio_butyryl_2_6_6_trimethylcyclohexene`)
-- + 1,3-nonanediol acetate (mixed esters) (`ing_1_3_nonanediol_acetate_mixed_esters`)
-- + 1,3-P-menthadien-7-al (`ing_1_3_p_menthadien_7_al`)
-- + 1,3-propanediol (`ing_1_3_propanediol`)
-- + 1,3-propanedithiol (`ing_1_3_propanedithiol`)
-- + 1,4-cineole (`ing_1_4_cineole`)
-- + 1,4-dimethyl-4-acetyl-1-cyclohexene (`ing_1_4_dimethyl_4_acetyl_1_cyclohexene`)
-- + 1,4-dithiane (`ing_1_4_dithiane`)
-- + 1-(4-hydroxy-3-methoxyphenyl)decan-3-one (`ing_1_4_hydroxy_3_methoxyphenyl_decan_3_one`)
-- + 1-(4-methoxyphenyl)-4-methyl-1-penten-3-one (`ing_1_4_methoxyphenyl_4_methyl_1_penten_3_one`)
-- + 1,4-nonanediol diacetate (`ing_1_4_nonanediol_diacetate`)
-- + 1,5,5,9-tetramethyl-13-oxatricyclo(8.3.0.0(4,9))tridecane (`ing_1_5_5_9_tetramethyl_13_oxatricyclo_8_3_0_0_4_9_tridecane`)
-- + 1,5-octadien-3-one (`ing_1_5_octadien_3_one`)
-- + 1,6-hexanedithiol (`ing_1_6_hexanedithiol`)
-- + 1,8-octanedithiol (`ing_1_8_octanedithiol`)
-- + 1,9-nonanedithiol (`ing_1_9_nonanedithiol`)
-- + (+/-)-1-acetoxy-1-ethoxyethane (`ing_1_acetoxy_1_ethoxyethane`)
-- + 1-amino-2-propanol (`ing_1_amino_2_propanol`)
-- + 1-butanethiol (`ing_1_butanethiol`)
-- + 1-buten-1-yl methyl sulfide (`ing_1_buten_1_yl_methyl_sulfide`)
-- + 1-decanol (`ing_1_decanol`)
-- + 1-decen-3-ol (`ing_1_decen_3_ol`)
-- + 1-ethoxy-3-methyl-2-butene (`ing_1_ethoxy_3_methyl_2_butene`)
-- + 1-ethyl-2-acetylpyrrole (`ing_1_ethyl_2_acetylpyrrole`)
-- + 1-ethyl-2-pyrrolecarboxaldehyde (`ing_1_ethyl_2_pyrrolecarboxaldehyde`)
-- + 1-ethylhexyl tiglate (`ing_1_ethylhexyl_tiglate`)
-- + (+/-)-1-hepten-3-ol (`ing_1_hepten_3_ol`)
-- + 1-hexanethiol (`ing_1_hexanethiol`)
-- + 1-hexen-3-ol (`ing_1_hexen_3_ol`)
-- + 1-hydroxy-2-butanone (`ing_1_hydroxy_2_butanone`)
-- + 1-hydroxy-4-methyl-2-pentanone (`ing_1_hydroxy_4_methyl_2_pentanone`)
-- + 1-hydroxyethylidene-1,1-diphosphonic acid (`ing_1_hydroxyethylidene_1_1_diphosphonic_acid`)
-- + 1-menthyl methyl ether (`ing_1_menthyl_methyl_ether`)
-- + 1-mercapto-2-propanone (`ing_1_mercapto_2_propanone`)
-- + 1-methyl-1-cyclopenten-3-one (`ing_1_methyl_1_cyclopenten_3_one`)
-- + 1-methyl-1h-pyrrole-2-carboxaldehyde (`ing_1_methyl_1h_pyrrole_2_carboxaldehyde`)
-- + 1-methyl-2,3-cyclohexadione (`ing_1_methyl_2_3_cyclohexadione`)
-- + 1-methyl-2-acetylpyrrole (`ing_1_methyl_2_acetylpyrrole`)
-- + 1-methyl-3-methoxy-4-isopropylbenzene (`ing_1_methyl_3_methoxy_4_isopropylbenzene`)
-- + 1-methylcyclopropene complex (`ing_1_methylcyclopropene_complex`)
-- + 1-(methyldithio)-2-propanone (`ing_1_methyldithio_2_propanone`)
-- + 1-methylnaphthalene (`ing_1_methylnaphthalene`)
-- + 1-(methylthio)-2-butanone (`ing_1_methylthio_2_butanone`)
-- + 1-methylthio-2-propanone (`ing_1_methylthio_2_propanone`)
-- + 1-(methylthio)-3-octanone (`ing_1_methylthio_3_octanone`)
-- + 1-nonene (`ing_1_nonene`)
-- + 1-octanol (`ing_1_octanol`)
-- + 1-octen-3-ol (`ing_1_octen_3_ol`)
-- + 1-octen-3-one (`ing_1_octen_3_one`)
-- + 1-octen-3-yl acetate (`ing_1_octen_3_yl_acetate`)
-- + 1-octen-3-yl butyrate (`ing_1_octen_3_yl_butyrate`)
-- + 1-octene (`ing_1_octene`)
-- + 1-octenyl succinic anhydride (`ing_1_octenyl_succinic_anhydride`)
-- + 1-P-menthen-9-yl acetate (`ing_1_p_menthen_9_yl_acetate`)
-- + 1-P-menthene-8-thiol (`ing_1_p_menthene_8_thiol`)
-- + 1-(P-methoxyphenyl)-1-penten-3-one (`ing_1_p_methoxyphenyl_1_penten_3_one`)
-- + 1-(P-methoxyphenyl)-2-propanone (`ing_1_p_methoxyphenyl_2_propanone`)
-- + 1-pentanethiol (`ing_1_pentanethiol`)
-- + 1-penten-3-ol (`ing_1_penten_3_ol`)
-- + 1-penten-3-one (`ing_1_penten_3_one`)
-- + 1-phenyl-1,2-propanedione (`ing_1_phenyl_1_2_propanedione`)
-- + 1-phenyl-1-propanol (`ing_1_phenyl_1_propanol`)
-- + 1-phenyl-3-methyl-3-pentanol (`ing_1_phenyl_3_methyl_3_pentanol`)
-- + 1-phenyl-3 or 5-propylpyrazole (`ing_1_phenyl_3_or_5_propylpyrazole`)
-- + (+/-)-1-phenylethylmercaptan (`ing_1_phenylethylmercaptan`)
-- + 1-pyrroline (`ing_1_pyrroline`)
-- + 10-hydroxymethylene-2-pinene (`ing_10_hydroxymethylene_2_pinene`)
-- + 10-undecen-1-yl acetate (`ing_10_undecen_1_yl_acetate`)
-- + 10-undecen-2-one (`ing_10_undecen_2_one`)
-- + 10-undecenal (`ing_10_undecenal`)
-- + 10-undecenoic acid (`ing_10_undecenoic_acid`)
-- + 11-dodecenoic acid (`ing_11_dodecenoic_acid`)
-- + 12-methyltridecanal (`ing_12_methyltridecanal`)
-- + (1R,2S,5r)-N-(4-methoxyphenyl)-5-methyl-2-(1-methylethyl)cyclohexanecarboxamide (`ing_1r_2s_5r_n_4_methoxyphenyl_5_methyl_2_1_methylethyl_cyclohex`)
-- + 2-(1-methylpropyl)thiazole (`ing_2_1_methylpropyl_thiazole`)
-- + 2,2,3-trimethylcyclopent-3-en-1-yl acetaldehyde (`ing_2_2_3_trimethylcyclopent_3_en_1_yl_acetaldehyde`)
-- + 2,2,4-trimethyl-1,3-oxacyclopentane (`ing_2_2_4_trimethyl_1_3_oxacyclopentane`)
-- + 2,2,6,7-tetramethylbicyclo[4.3.0]nona-4,9(1)-dien-8-ol (`ing_2_2_6_7_tetramethylbicyclo_4_3_0_nona_4_9_1_dien_8_ol`)
-- + 2,2,6,7-tetramethylbicyclo[4.3.0]nona-4,9(1)-dien-8-one (`ing_2_2_6_7_tetramethylbicyclo_4_3_0_nona_4_9_1_dien_8_one`)
-- + 2,2,6-trimethyl-6-vinyltetrahydropyran (`ing_2_2_6_trimethyl_6_vinyltetrahydropyran`)
-- + 2,2,6-trimethylcyclohexanone (`ing_2_2_6_trimethylcyclohexanone`)
-- + 2-(2-butyl)-4,5-dimethyl-3-thiazoline (`ing_2_2_butyl_4_5_dimethyl_3_thiazoline`)
-- + 2,2-dibromo-3-nitrilopropionamide (`ing_2_2_dibromo_3_nitrilopropionamide`)
-- + 2,2-dimethyl-5-(1-methylpropen-1-yl) tetrahydrofuran (`ing_2_2_dimethyl_5_1_methylpropen_1_yl_tetrahydrofuran`)
-- + 2,2'-(dithiodimethylene) difuran (`ing_2_2_dithiodimethylene_difuran`)
-- + 2-(2-hydroxy-4-methyl-3-cyclohexenyl)propionic acid gamma-lactone (`ing_2_2_hydroxy_4_methyl_3_cyclohexenyl_propionic_acid_gamma_lac`)
-- + 2-(2-hydroxyphenyl) cyclopropanecarboxylic acid delta lactone (`ing_2_2_hydroxyphenyl_cyclopropanecarboxylic_acid_delta_lactone`)
-- + 2-(2-methylpropyl)pyridine (`ing_2_2_methylpropyl_pyridine`)
-- + 2-[2-(P-menthyloxy)ethoxy]ethanol (`ing_2_2_p_menthyloxy_ethoxy_ethanol`)
-- + 2,2'-(thiodimethylene)-difuran (`ing_2_2_thiodimethylene_difuran`)
-- + 2,3,3-trimethylindanone (`ing_2_3_3_trimethylindanone`)
-- + 2,3,4-trimethyl-3-pentanol (`ing_2_3_4_trimethyl_3_pentanol`)
-- + 2,3,5,6-tetramethylpyrazine (`ing_2_3_5_6_tetramethylpyrazine`)
-- + 2(3),5-dimethyl-6,7-dihydro-5h-cyclopentapyrazine (`ing_2_3_5_dimethyl_6_7_dihydro_5h_cyclopentapyrazine`)
-- + 2,3,5-trimethylpyrazine (`ing_2_3_5_trimethylpyrazine`)
-- + 2,3,6-trimethylphenol (`ing_2_3_6_trimethylphenol`)
-- + 2,3-butanedithiol (`ing_2_3_butanedithiol`)
-- + 2,3-diethyl-5-methylpyrazine (`ing_2_3_diethyl_5_methylpyrazine`)
-- + 2,3-diethylpyrazine (`ing_2_3_diethylpyrazine`)
-- + 2,3-dimethylbenzofuran (`ing_2_3_dimethylbenzofuran`)
-- + 2,3-dimethylpyrazine (`ing_2_3_dimethylpyrazine`)
-- + 2,3-epoxydecanal (`ing_2_3_epoxydecanal`)
-- + 2,3-epoxyheptanal (`ing_2_3_epoxyheptanal`)
-- + 2,3-epoxyoctanal (`ing_2_3_epoxyoctanal`)
-- + 2,3-heptanedione (`ing_2_3_heptanedione`)
-- + 2,3-hexanedione (`ing_2_3_hexanedione`)
-- + 2,3-octanedione (`ing_2_3_octanedione`)
-- + 2,3 or 10-mercaptopinane (`ing_2_3_or_10_mercaptopinane`)
-- + 2,3-pentanedione (`ing_2_3_pentanedione`)
-- + 2-(3-phenylpropyl)pyridine (`ing_2_3_phenylpropyl_pyridine`)
-- + 2-(3-phenylpropyl)tetrahydrofuran (`ing_2_3_phenylpropyl_tetrahydrofuran`)
-- + 2,3-undecadione (`ing_2_3_undecadione`)
-- + 2,4,5-trihydroxybutyrophenone (`ing_2_4_5_trihydroxybutyrophenone`)
-- + 2,4,5-trimethyl-delta-3-oxazoline (`ing_2_4_5_trimethyl_delta_3_oxazoline`)
-- + 2,4,5-trimethylthiazole (`ing_2_4_5_trimethylthiazole`)
-- + 2,4,6-trimethylphenol (`ing_2_4_6_trimethylphenol`)
-- + 2,4,6-trithiaheptane (`ing_2_4_6_trithiaheptane`)
-- + (+/-)-2,4,8-trimethyl-7-nonen-2-ol (`ing_2_4_8_trimethyl_7_nonen_2_ol`)
-- + (2,4)- and (3,5)- and (3,6)-dimethyl-3-cyclohexenylcarbaldehyde (`ing_2_4_and_3_5_and_3_6_dimethyl_3_cyclohexenylcarbaldehyde`)
-- + 2,4-difurfurylfuran (`ing_2_4_difurfurylfuran`)
-- + 2,4-dihydroxybenzoic acid (`ing_2_4_dihydroxybenzoic_acid`)
-- + 2,4-dimethyl-1,3-dioxolane (`ing_2_4_dimethyl_1_3_dioxolane`)
-- + 2,4-dimethyl-2-pentenoic acid (`ing_2_4_dimethyl_2_pentenoic_acid`)
-- + 2,4-dimethyl-3-oxazoline (`ing_2_4_dimethyl_3_oxazoline`)
-- + 2,4-dimethyl-4-nonanol (`ing_2_4_dimethyl_4_nonanol`)
-- + 2,4-dimethyl-5-acetylthiazole (`ing_2_4_dimethyl_5_acetylthiazole`)
-- + 2,4-dimethyl-5-vinylthiazole (`ing_2_4_dimethyl_5_vinylthiazole`)
-- + 2,4-dimethylacetophenone (`ing_2_4_dimethylacetophenone`)
-- + 2,4-dimethylanisole (`ing_2_4_dimethylanisole`)
-- + 2,4-dimethylbenzaldehyde (`ing_2_4_dimethylbenzaldehyde`)
-- + 2,4-dimethylpyridine (`ing_2_4_dimethylpyridine`)
-- + 2(4)-ethyl-4(2),6-dimethyldihydro-1,3,5-dithiazine (mixture of isomers) (`ing_2_4_ethyl_4_2_6_dimethyldihydro_1_3_5_dithiazine_mixture_of_`)
-- + 2,4-heptadienal (`ing_2_4_heptadienal`)
-- + 2,4-hexadien-1-ol (`ing_2_4_hexadien_1_ol`)
-- + 2,4-hexadienyl acetate (`ing_2_4_hexadienyl_acetate`)
-- + 2,4-hexadienyl butyrate (`ing_2_4_hexadienyl_butyrate`)
-- + 2,4-hexadienyl isobutyrate (`ing_2_4_hexadienyl_isobutyrate`)
-- + 2,4-hexadienyl propionate (`ing_2_4_hexadienyl_propionate`)
-- + 2(4)-isobutyl-4(2),6-dimethyldihydro-4h-1,3,5-dithiazine (`ing_2_4_isobutyl_4_2_6_dimethyldihydro_4h_1_3_5_dithiazine`)
-- + 2(4)-isopropyl-4(2),6-dimethyldihydro-4h-1,3,5-dithiazine (`ing_2_4_isopropyl_4_2_6_dimethyldihydro_4h_1_3_5_dithiazine`)
-- + 2-(4-methyl-2-hydroxyphenyl)propionic acid-gamma-lactone (`ing_2_4_methyl_2_hydroxyphenyl_propionic_acid_gamma_lactone`)
-- + 2-(4-methyl-5-thiazolyl)ethyl butanoate (`ing_2_4_methyl_5_thiazolyl_ethyl_butanoate`)
-- + 2-(4-methyl-5-thiazolyl)ethyl decanoate (`ing_2_4_methyl_5_thiazolyl_ethyl_decanoate`)
-- + 2-(4-methyl-5-thiazolyl)ethyl formate (`ing_2_4_methyl_5_thiazolyl_ethyl_formate`)
-- + 2-(4-methyl-5-thiazolyl)ethyl hexanoate (`ing_2_4_methyl_5_thiazolyl_ethyl_hexanoate`)
-- + 2-(4-methyl-5-thiazolyl)ethyl isobutyrate (`ing_2_4_methyl_5_thiazolyl_ethyl_isobutyrate`)
-- + 2-(4-methyl-5-thiazolyl)ethyl octanoate (`ing_2_4_methyl_5_thiazolyl_ethyl_octanoate`)
-- + 2-(4-methyl-5-thiazolyl)ethyl propionate (`ing_2_4_methyl_5_thiazolyl_ethyl_propionate`)
-- + 2,4-nonadien-1-ol (`ing_2_4_nonadien_1_ol`)
-- + 2,4-nonadienal (`ing_2_4_nonadienal`)
-- + 2,4-pentadienal (`ing_2_4_pentadienal`)
-- + 2,4-undecadienal (`ing_2_4_undecadienal`)
-- + 2,5-diethyl-3-methylpyrazine (`ing_2_5_diethyl_3_methylpyrazine`)
-- + 2,5-diethyltetrahydrofuran (`ing_2_5_diethyltetrahydrofuran`)
-- + 2,5-dihydroxy-1,4-dithiane (`ing_2_5_dihydroxy_1_4_dithiane`)
-- + 2,5-dimethyl-2,5-dihydroxy-1,4-dithiane (`ing_2_5_dimethyl_2_5_dihydroxy_1_4_dithiane`)
-- + 2,5-dimethyl-3(2h)-furanone (`ing_2_5_dimethyl_3_2h_furanone`)
-- + 2,5-dimethyl-3-furanthiol (`ing_2_5_dimethyl_3_furanthiol`)
-- + 2,5-dimethyl-3-furanthiol acetate (`ing_2_5_dimethyl_3_furanthiol_acetate`)
-- + 2,5-dimethyl-3-mercaptotetrahydrofuran (`ing_2_5_dimethyl_3_mercaptotetrahydrofuran`)
-- + 2,5-dimethyl-3-thioisovalerylfuran (`ing_2_5_dimethyl_3_thioisovalerylfuran`)
-- + 2,5-dimethyl-4-ethoxy-3(2h)-furanone (`ing_2_5_dimethyl_4_ethoxy_3_2h_furanone`)
-- + 2,5-dimethyl-4-ethyloxazole (`ing_2_5_dimethyl_4_ethyloxazole`)
-- + 2,5-dimethyl-4-methoxy-3(2h)-furanone (`ing_2_5_dimethyl_4_methoxy_3_2h_furanone`)
-- + 2,5-dimethylfuran (`ing_2_5_dimethylfuran`)
-- + 2,5-dimethylpyrazine (`ing_2_5_dimethylpyrazine`)
-- + 2,5-dimethylpyrrole (`ing_2_5_dimethylpyrrole`)
-- + 2,5-dimethylthiazole (`ing_2_5_dimethylthiazole`)
-- + 2,5-dithiahexane (`ing_2_5_dithiahexane`)
-- + (+/-)-2-(5-methyl-5-vinyltetrahydrofuran-2-yl)propionaldehyde (`ing_2_5_methyl_5_vinyltetrahydrofuran_2_yl_propionaldehyde`)
-- + 2,5-undecadienal (`ing_2_5_undecadienal`)
-- + 2,5-xylenol (`ing_2_5_xylenol`)
-- + (+/-)-2,6,10,10-tetramethyl-1-oxaspiro[4,5]deca-2,6-dien-8-one (`ing_2_6_10_10_tetramethyl_1_oxaspiro_4_5_deca_2_6_dien_8_one`)
-- … 4519 more
+## Rows added (163) / removed (0)
+- + Alitame (`ing_alitame`)
+- + Alkaline-treated starch (`ing_alkaline_treated_starch`)
+- + Alkanet (`ing_alkanet`)
+- + alpha-Amylase from Aspergillus oryzae var. (`ing_alpha_amylase_from_aspergillus_oryzae_var`)
+- + alpha-Amylase from Bacillus megaterium expressed in Bacillus subtilis (`ing_alpha_amylase_from_bacillus_megaterium_expressed_in_bacillus`)
+- + alpha-Amylase from Bacillus stearothermophilus (`ing_alpha_amylase_from_bacillus_stearothermophilus`)
+- + alpha-Amylase from Bacillus stearothermophilus expressed in Bacillus subtilis (`ing_alpha_amylase_from_bacillus_stearothermophilus_expressed_in_`)
+- + alpha-Amylase from Bacillus subtilis (`ing_alpha_amylase_from_bacillus_subtilis`)
+- + Ammonium adipates (`ing_ammonium_adipates`)
+- + Ammonium fumarate (`ing_ammonium_fumarate`)
+- + Ammonium lactate (`ing_ammonium_lactate`)
+- + Ammonium malate (`ing_ammonium_malate`)
+- + Ammonium polyphosphate (`ing_ammonium_polyphosphate`)
+- + Benzoin gum (`ing_benzoin_gum`)
+- + β -carotene-rich extract from Dunaliella salina (`ing_beta_carotene_rich_extract_from_dunaliella_salina`)
+- + Black carrot extract (`ing_black_carrot_extract`)
+- + Blackcurrant extract (`ing_blackcurrant_extract`)
+- + Bone phosphate (`ing_bone_phosphate`)
+- + Brominated vegetable oils (`ing_brominated_vegetable_oils`)
+- + Brown FK (`ing_brown_fk`)
+- + Calcium dihydrogen diphosphate (`ing_calcium_dihydrogen_diphosphate`)
+- + Calcium formate (`ing_calcium_formate`)
+- + Calcium hydrogen carbonate (`ing_calcium_hydrogen_carbonate`)
+- + Calcium hydrogen malate (`ing_calcium_hydrogen_malate`)
+- + Calcium isoascorbate (`ing_calcium_isoascorbate`)
+- + Calcium lignosulphonate, 40-65 (`ing_calcium_lignosulphonate_40_65`)
+- + Calcium malate, D,L- (`ing_calcium_malate_d_l`)
+- + Calcium oleyl lactylate (`ing_calcium_oleyl_lactylate`)
+- + Calcium polyphosphate (`ing_calcium_polyphosphate`)
+- + Calcium stearoyl fumarate (`ing_calcium_stearoyl_fumarate`)
+- + Carbon black (`ing_carbon_black`)
+- + Carotenes, beta -, Blakeslea trispora (`ing_carotenes_beta_blakeslea_trispora`)
+- + Carotenes, beta -, synthetic (`ing_carotenes_beta_synthetic`)
+- + Carotenes, beta -, vegetable (`ing_carotenes_beta_vegetable`)
+- + Carotenoic acid, ethyl ester, beta -apo-8'- (`ing_carotenoic_acid_ethyl_ester_beta_apo_8`)
+- + Carthamus yellow (`ing_carthamus_yellow`)
+- + Chlorophyllins, copper complexes, potassium and sodium salts (`ing_chlorophyllins_copper_complexes_potassium_and_sodium_salts`)
+- + Chlorophylls, copper complexes (`ing_chlorophylls_copper_complexes`)
+- + Choline acetate (`ing_choline_acetate`)
+- + Choline carbonate (`ing_choline_carbonate`)
+- + Choline citrate (`ing_choline_citrate`)
+- + Choline lactate (`ing_choline_lactate`)
+- + Cyclamic acid (`ing_cyclamic_acid`)
+- + Cyclodextrin, alpha - (`ing_cyclodextrin_alpha`)
+- + Cyclodextrin, gamma - (`ing_cyclodextrin_gamma`)
+- + Cyclotetraglucose (`ing_cyclotetraglucose`)
+- + Cyclotetraglucose syrup (`ing_cyclotetraglucose_syrup`)
+- + Cystine, L-and its hydrochlorides sodium and potassium salts (`ing_cystine_l_and_its_hydrochlorides_sodium_and_potassium_salts`)
+- + Dextrins, roasted starch (`ing_dextrins_roasted_starch`)
+- + Dicalcium citrate (`ing_dicalcium_citrate`)
+- + Dichlorodifluormethane (`ing_dichlorodifluormethane`)
+- + Dimagnesium diphosphate (`ing_dimagnesium_diphosphate`)
+- + Dipotassium tartrate (`ing_dipotassium_tartrate`)
+- + Disodium monohydrogen citrate (`ing_disodium_monohydrogen_citrate`)
+- + Distearyl thiodipropionate (`ing_distearyl_thiodipropionate`)
+- + Elderberry colour (`ing_elderberry_colour`)
+- + Ethoxylated mono- and di-glycerides (`ing_ethoxylated_mono_and_di_glycerides`)
+- + Ethyl gallate (`ing_ethyl_gallate`)
+- + Ethyl hydroxyethyl cellulose (`ing_ethyl_hydroxyethyl_cellulose`)
+- + Ferrous hexacyanomanganate (`ing_ferrous_hexacyanomanganate`)
+- + Flavoxanthin (`ing_flavoxanthin`)
+- + Gardenia yellow (`ing_gardenia_yellow`)
+- + Glycerol, methyl, or pentaerithrytol esters of colophane (`ing_glycerol_methyl_or_pentaerithrytol_esters_of_colophane`)
+- + Glycyrrhizin (`ing_glycyrrhizin`)
+- + Heptonolactone, 1,4- (`ing_heptonolactone_1_4`)
+- + Heptyl para-hydroxybenzoate (`ing_heptyl_para_hydroxybenzoate`)
+- + Hibiscus colour (`ing_hibiscus_colour`)
+- + Iron oxide, black (`ing_iron_oxide_black`)
+- + Iron oxide, yellow (`ing_iron_oxide_yellow`)
+- + Kryptoxanthin (`ing_kryptoxanthin`)
+- + Lecithin citrate (`ing_lecithin_citrate`)
+- + Lecithin, partially hydrolysed (`ing_lecithin_partially_hydrolysed`)
+- + Low-acyl clarified gellan gum (`ing_low_acyl_clarified_gellan_gum`)
+- + Lutein esters from Tagetes erecta (`ing_lutein_esters_from_tagetes_erecta`)
+- + Lutein from Tagetes erecta (`ing_lutein_from_tagetes_erecta`)
+- + Lycopene, Blakeslea trispora (`ing_lycopene_blakeslea_trispora`)
+- + Lycopene, synthetic (`ing_lycopene_synthetic`)
+- + Lycopene, tomato (`ing_lycopene_tomato`)
+- + Lysin hydrochloride (`ing_lysin_hydrochloride`)
+- + Magnesium citrate (`ing_magnesium_citrate`)
+- + Magnesium dihydrogen diphosphate (`ing_magnesium_dihydrogen_diphosphate`)
+- + Magnesium dihydrogen phosphate (`ing_magnesium_dihydrogen_phosphate`)
+- + Magnesium hydrogen phosphate (`ing_magnesium_hydrogen_phosphate`)
+- + Magnesium hydroxide carbonate (`ing_magnesium_hydroxide_carbonate`)
+- + Magnesium lactate, DL- (`ing_magnesium_lactate_dl`)
+- + Magnesium silicate, synthetic (`ing_magnesium_silicate_synthetic`)
+- + Magnesium trisilicate (`ing_magnesium_trisilicate`)
+- + Manascorubin (`ing_manascorubin`)
+- + Methylphenylpolysiloxane (`ing_methylphenylpolysiloxane`)
+- + Mineral oil, food grade (`ing_mineral_oil_food_grade`)
+- + Mineral oil, high viscosity (`ing_mineral_oil_high_viscosity`)
+- + Mineral oil, medium and low viscosity, class II (`ing_mineral_oil_medium_and_low_viscosity_class_ii`)
+- + Mineral oil, medium and low viscosity, class III (`ing_mineral_oil_medium_and_low_viscosity_class_iii`)
+- + Mineral oil, medium viscosity (`ing_mineral_oil_medium_viscosity`)
+- + Monocalcium citrate (`ing_monocalcium_citrate`)
+- + Monosodium succinate (`ing_monosodium_succinate`)
+- + Monosodium tartrate (`ing_monosodium_tartrate`)
+- + Nisin A (`ing_nisin_a`)
+- + Octafluorcyclobutane (`ing_octafluorcyclobutane`)
+- + Orchil (`ing_orchil`)
+- + Pentapotassium triphosphate (`ing_pentapotassium_triphosphate`)
+- + Pentasodium triphosphate (`ing_pentasodium_triphosphate`)
+- + Potassium aluminium silicate-based pearlescent pigments coated with titanium dioxide, Type I (`ing_potassium_aluminium_silicate_based_pearlescent_pigments_coat`)
+- + Potassium aluminium silicate-based pearlescent pigments coated with iron oxide, Type II (`ing_potassium_aluminium_silicate_based_pearlescent_pigments_coat_ins_176_ii`)
+- + Potassium aluminium silicate-based pearlescent pigments coated with titanium dioxide and iron oxide, Type III (`ing_potassium_aluminium_silicate_based_pearlescent_pigments_coat_ins_176_iii`)
+- + Potassium ascorbate (`ing_potassium_ascorbate`)
+- + Potassium diacetate (`ing_potassium_diacetate`)
+- + Potassium dihydrogen citrate (`ing_potassium_dihydrogen_citrate`)
+- + Potassium hydrogen malate (`ing_potassium_hydrogen_malate`)
+- + Potassium hydrogen sulphate (`ing_potassium_hydrogen_sulphate`)
+- + Potassium isoascorbate (`ing_potassium_isoascorbate`)
+- + Potassium polyphosphate (`ing_potassium_polyphosphate`)
+- + Potassium saccharin (`ing_potassium_saccharin`)
+- + Potassium silicate (`ing_potassium_silicate`)
+- + Potassium sulphite (`ing_potassium_sulphite`)
+- + Propyl para-hydroxybenzoate (`ing_propyl_para_hydroxybenzoate`)
+- + Protease from Streptomyces fradiae (`ing_protease_from_streptomyces_fradiae`)
+- + Proteasefrom Aspergillus oryzae. Var. (`ing_proteasefrom_aspergillus_oryzae_var`)
+- + Proteases from Bacillus subtilis (`ing_proteases_from_bacillus_subtilis`)
+- + Purple corn colour (`ing_purple_corn_colour`)
+- + Purple sweet potato colour (`ing_purple_sweet_potato_colour`)
+- + Red cabbage colour (`ing_red_cabbage_colour`)
+- + Red radish colour (`ing_red_radish_colour`)
+- + Rhodoxanthin (`ing_rhodoxanthin`)
+- + Riboflavin from Ashbya gossypii (`ing_riboflavin_from_ashbya_gossypii`)
+- + Riboflavin from Bacillus subtilis (`ing_riboflavin_from_bacillus_subtilis`)
+- + Riboflavin, synthetic (`ing_riboflavin_synthetic`)
+- + Rubixanthin (`ing_rubixanthin`)
+- + Salts of myristic, palmitic and stearic acids with ammonia, calcium, potassium and sodium (`ing_salts_of_myristic_palmitic_and_stearic_acids_with_ammonia_ca`)
+- + Salts of oleic acid with calcium, potassium and sodium (`ing_salts_of_oleic_acid_with_calcium_potassium_and_sodium`)
+- + Sandalwood (`ing_sandalwood`)
+- + Sodium aluminium phosphate, basic (`ing_sodium_aluminium_phosphate_basic`)
+- + Sodium calcium polyphosphate (`ing_sodium_calcium_polyphosphate`)
+- + Sodium dihydrogen citrate (`ing_sodium_dihydrogen_citrate`)
+- + Sodium DL-malate (`ing_sodium_dl_malate`)
+- + Sodium hydrogen DL-malate (`ing_sodium_hydrogen_dl_malate`)
+- + Sodium hydrogen sulphate (`ing_sodium_hydrogen_sulphate`)
+- + Sodium L-aspartate (`ing_sodium_l_aspartate`)
+- + Sodium laurylsulphate (`ing_sodium_laurylsulphate`)
+- + Sodium oleyl lactylate (`ing_sodium_oleyl_lactylate`)
+- + Sodium potassium triphosphate (`ing_sodium_potassium_triphosphate`)
+- + Sodium propyl para-hydroxybenzoate (`ing_sodium_propyl_para_hydroxybenzoate`)
+- + Sodium stearoyl fumarate (`ing_sodium_stearoyl_fumarate`)
+- + Sorbitan trioleate (`ing_sorbitan_trioleate`)
+- + Sorbitol syrup (`ing_sorbitol_syrup`)
+- + Spermaceti wax (`ing_spermaceti_wax`)
+- + Starches, enzyme treated (`ing_starches_enzyme_treated`)
+- + Stearyl tartrate (`ing_stearyl_tartrate`)
+- + Sucrose oligoesters, type I and type II (`ing_sucrose_oligoesters_type_i_and_type_ii`)
+- + Tagatose, D- (`ing_tagatose_d`)
+- + Thermally oxidized soya bean oil interacted with mono- and di-glycerides of fatty acids (`ing_thermally_oxidized_soya_bean_oil_interacted_with_mono_and_di`)
+- + Thiabendazole (`ing_thiabendazole`)
+- + Tocopherol concentrate, mixed (`ing_tocopherol_concentrate_mixed`)
+- + Tocopherol, d- alpha - (`ing_tocopherol_d_alpha`)
+- + Tocopherol, dl- alpha - (`ing_tocopherol_dl_alpha`)
+- + Tripotassium citrate (`ing_tripotassium_citrate`)
+- + Violoxanthin (`ing_violoxanthin`)
+- + Wax esters (`ing_wax_esters`)
+- + Yeast mannoproteins (`ing_yeast_mannoproteins`)
+- + Yellow 2G (`ing_yellow_2g`)
+- + Zeaxanthin-rich extract from Tagetes erecta (`ing_zeaxanthin_rich_extract_from_tagetes_erecta`)
+- + Zeaxanthin, synthetic (`ing_zeaxanthin_synthetic`)
+- + Zinc silicate (`ing_zinc_silicate`)
 
-## Regulatory status changes — verify each by hand (0)
+## Regulatory status changes — verify each by hand (458)
 
 §12.D: the manual pass is limited to exactly this list. Check the citation, then
 set `last_full_review_at` only if the whole row was reviewed.
 
+- **4-Hexylresorcinol** (`ing_4_hexylresorcinol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 586 (antioxidant, colour-retention agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 586]
+- **Acesulfame potassium** (`ing_acesulfame_k`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 950 (flavour enhancer, sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 950]
+- **Acetic acid** (`ing_acetic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 260 (acidity regulator, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 260]
+- **Acetic acid esters of mono- and diglycerides of fatty acids** (`ing_acetic_acid_esters_of_mono_and_diglycerides_of_fatty_acids`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 472a (emulsifier, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 472a]
+- **Acetone peroxides** (`ing_acetone_peroxides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 929 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 929]
+- **Acetylated oxidised starch** (`ing_acetylated_oxidised_starch`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1451 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1451]
+- **Adipic acid** (`ing_adipic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 355 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 355]
+- **Advantame** (`ing_advantame`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 969 (sweetener, flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 969]
+- **Agar** (`ing_agar`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 406 (bulking agent, carrier, emulsifier, glazing agent, gelling agent, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 406]
+- **Alginic acid** (`ing_alginic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 400 (bulking agent, carrier, emulsifier, foaming agent, gelling agent, glazing agent, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 400]
+- **Aluminium** (`ing_aluminium`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 173 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 173]
+- **Aluminium silicate (Kaolin)** (`ing_aluminium_silicate_kaolin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 559 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 559]
+- **Aluminum ammonium sulfate** (`ing_aluminum_ammonium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 523 (acidity regulator, colour-retention agent, firming agent, raising agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 523]
+- **Aluminum calcium silicate** (`ing_aluminum_calcium_silicate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 556 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 556]
+- **Aluminum potassium sulfate** (`ing_aluminum_potassium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 522 (acidity regulator, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 522]
+- **Aluminum sodium sulfate** (`ing_aluminum_sodium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 521 (acidity regulator, firming agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 521]
+- **Aluminum sulfate** (`ing_aluminum_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 520 (firming agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 520]
+- **Ammonia caramel** (`ing_ammonia_caramel`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 150c (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 150c]
+- **Ammonium acetate** (`ing_ammonium_acetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 264 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 264]
+- **Ammonium alginate** (`ing_ammonium_alginate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 403 (bulking agent, carrier, emulsifier, foaming agent, gelling agent, glazing agent, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 403]
+- **Ammonium bicarbonate** (`ing_ammonium_bicarbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 503 (acidity regulator, raising agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 503]
+- **Ammonium carbonate** (`ing_ammonium_carbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 503(i) (acidity regulator, raising agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 503(i)]
+- **Ammonium chloride** (`ing_ammonium_chloride`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 510 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 510]
+- **Ammonium hydroxide** (`ing_ammonium_hydroxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 527 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 527]
+- **Ammonium persulfate** (`ing_ammonium_persulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 923 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 923]
+- **Ammonium phosphatide** (`ing_ammonium_phosphatide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 442 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 442]
+- **Ammonium sulfate** (`ing_ammonium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 517 (flour treatment agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 517]
+- **Anionic methacrylate copolymer** (`ing_anionic_methacrylate_copolymer`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1207 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1207]
+- **Annatto extract** (`ing_annatto`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 160b (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 160b]
+- **Annatto bixin** (`ing_annatto_bixin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 160b(i) (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 160b(i)]
+- **Annatto norbixin** (`ing_annatto_norbixin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 160b(ii) (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 160b(ii)]
+- **Anoxomer** (`ing_anoxomer`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 323 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 323]
+- **Anthocyanins** (`ing_anthocyanins`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 163 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 163]
+- **Arabinogalactan** (`ing_arabinogalactan`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 409 (gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 409]
+- **Argon** (`ing_argon`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 938 (packaging gas). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 938]
+- **Ascorbic acid** (`ing_ascorbic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 300 (acidity regulator, antioxidant, flour treatment agent, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 300]
+- **Ascorbyl palmitate** (`ing_ascorbyl_palmitate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 304 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 304]
+- **Ascorbyl stearate** (`ing_ascorbyl_stearate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 305 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 305]
+- **Aspartame** (`ing_aspartame`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 951 (flavour enhancer, sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 951]
+- **Azodicarbonamide** (`ing_azodicarbonamide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 927a (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 927a]
+- **Azorubine** (`ing_azorubine`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 122 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 122]
+- **Baker's yeast glycan** (`ing_baker_s_yeast_glycan`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 408 (gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 408]
+- **Basic methacrylate copolymer** (`ing_basic_methacrylate_copolymer`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1205 (glazing agent, carrier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1205]
+- **Beeswax, white and yellow** (`ing_beeswax_white_and_yellow`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 901 (carrier, emulsifier, glazing agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 901]
+- **Beet juice concentrate** (`ing_beet_juice`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 162 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 162]
+- **Bentonite** (`ing_bentonite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 558 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 558]
+- **Benzoic acid** (`ing_benzoic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 210 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 210]
+- **Benzoyl peroxide** (`ing_benzoyl_peroxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 928 (bleaching agent, flour treatment agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 928]
+- **Benzyl alcohol** (`ing_benzyl_alcohol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1519 (carrier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1519]
+- **Beta-apo-8'-carotenal** (`ing_beta_apo_8_carotenal`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 160e (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 160e]
+- **Beta-carotene** (`ing_beta_carotene`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 160a (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 160a]
+- **Beta-cyclodextrin** (`ing_beta_cyclodextrin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 459 (carrier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 459]
+- **BHA** (`ing_bha`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 320 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 320]
+- **BHT** (`ing_bht`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 321 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 321]
+- **Biphenyl** (`ing_biphenyl`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 230 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 230]
+- **Bleached starch** (`ing_bleached_starch`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1403 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1403]
+- **FD&C Blue No. 1** (`ing_blue_1`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 133 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 133]
+- **FD&C Blue No. 2** (`ing_blue_2`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 132 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 132]
+- **Brilliant Black PN** (`ing_brilliant_black_pn`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 151 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 151]
+- **Brown HT** (`ing_brown_ht`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 155 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 155]
+- **Buffered vinegar** (`ing_buffered_vinegar`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 267 (acidity regulator, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 267]
+- **Butterfly pea flower extract** (`ing_butterfly_pea_flower_extract`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 163(xi) (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 163(xi)]
+- **Calcium 5′-ribonucleotides** (`ing_calcium_5_ribonucleotides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 634 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 634]
+- **Calcium acetate** (`ing_calcium_acetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 263 (acidity regulator, preservative, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 263]
+- **Calcium alginate** (`ing_calcium_alginate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 404 (antifoaming agent, bulking agent, carrier, foaming agent, gelling agent, glazing agent, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 404]
+- **Calcium ascorbate** (`ing_calcium_ascorbate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 302 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 302]
+- **Calcium benzoate** (`ing_calcium_benzoate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 213 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 213]
+- **Calcium carbonate** (`ing_calcium_carbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 170 (acidity regulator, anticaking agent, colour, firming agent, flour treatment agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 170]
+- **Calcium chloride** (`ing_calcium_chloride`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 509 (firming agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 509]
+- **Calcium citrate** (`ing_calcium_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 333 (acidity regulator, firming agent, emulsifying salt, sequestrant, stabilizer, antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 333]
+- **Calcium cyclamate--prohibited** (`ing_calcium_cyclamate_prohibited`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 952(ii) (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 952(ii)]
+- **Calcium diglutamate** (`ing_calcium_diglutamate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 623 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 623]
+- **Calcium ferrocyanide** (`ing_calcium_ferrocyanide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 538 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 538]
+- **Calcium fumarate** (`ing_calcium_fumarate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 367 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 367]
+- **Calcium gluconate** (`ing_calcium_gluconate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 578 (acidity regulator, firming agent, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 578]
+- **Calcium glycerophosphate** (`ing_calcium_glycerophosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 383 (gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 383]
+- **Calcium guanylate** (`ing_calcium_guanylate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 629 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 629]
+- **Calcium hydrogen sulphite** (`ing_calcium_hydrogen_sulphite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 227 (antioxidant, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 227]
+- **Calcium hydroxide** (`ing_calcium_hydroxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 526 (acidity regulator, firming agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 526]
+- **Calcium inosinate** (`ing_calcium_inosinate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 633 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 633]
+- **Calcium iodate** (`ing_calcium_iodate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 916 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 916]
+- **Calcium lactate** (`ing_calcium_lactate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 327 (acidity regulator, emulsifying salt, firming agent, flour treatment agent, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 327]
+- **Calcium lactobionate** (`ing_calcium_lactobionate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 399 (stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 399]
+- **Calcium malates** (`ing_calcium_malates`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 352 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 352]
+- **Calcium oxide** (`ing_calcium_oxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 529 (acidity regulator, flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 529]
+- **Calcium peroxide** (`ing_calcium_peroxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 930 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 930]
+- **Calcium propionate** (`ing_calcium_propionate`) CODEX
+  - was: Listed in the General Standard for Food Additives [INS 282]
+  - now: Has Codex INS number 282 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 282]
+- **Calcium pyrophosphate** (`ing_calcium_pyrophosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 450(vi) (acidity regulator, emulsifier, emulsifying salt, firming agent, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 450(vi)]
+- **Calcium silicate** (`ing_calcium_silicate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 552 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 552]
+- **Calcium sorbate** (`ing_calcium_sorbate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 203 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 203]
+- **Calcium sulfate** (`ing_calcium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 516 (acidity regulator, colour, firming agent, flour treatment agent, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 516]
+- **Calcium sulphite** (`ing_calcium_sulphite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 226 (antioxidant, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 226]
+- **Calcium tartrate** (`ing_calcium_tartrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 354 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 354]
+- **Candelilla wax (wax from stems and branches of euphorbia cerifera)** (`ing_candelilla_wax_wax_from_stems_and_branches_of_euphorbia_ceri`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 902 (carrier, emulsifier, glazing agent, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 902]
+- **Canthaxanthin** (`ing_canthaxanthin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 161g (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 161g]
+- **Caramel color** (`ing_caramel_color`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 150a (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 150a]
+- **Carbohydrase from bacillus licheniformis** (`ing_carbohydrase_from_bacillus_licheniformis`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1100(vi) (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1100(vi)]
+- **Carbomer** (`ing_carbomer`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1210 (stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1210]
+- **Carbon dioxide** (`ing_carbon_dioxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 290 (carbonating agent, foaming agent, packaging gas, preservative, propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 290]
+- **Carmine** (`ing_carmine`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 120 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 120]
+- **Carnauba wax** (`ing_carnauba_wax`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 903 (acidity regulator, anticaking agent, bulking agent, carrier, glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 903]
+- **Carrageenan** (`ing_carrageenan`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 407 (bulking agent, carrier, emulsifier, gelling agent, glazing agent, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 407]
+- **Cassia gum** (`ing_cassia_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 427 (emulsifier, gelling agent, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 427]
+- **Castor oil** (`ing_castor_oil`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1503 (anticaking agent, carrier, emulsifier, glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1503]
+- **Caustic sulphite caramel** (`ing_caustic_sulphite_caramel`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 150b (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 150b]
+- **Powdered cellulose** (`ing_cellulose_powder`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 460(ii) (anticaking agent, bulking agent, glazing agent, emulsifier, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 460(ii)]
+- **Chlorine** (`ing_chlorine`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 925 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 925]
+- **Chlorine dioxide** (`ing_chlorine_dioxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 926 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 926]
+- **Chloropentafluoroethane** (`ing_chloropentafluoroethane`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 945 (propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 945]
+- **Chlorophyllin, Potasium Sodium Copper (Chlorophyllin copper complex)** (`ing_chlorophyllin_potasium_sodium_copper_chlorophyllin_copper_co`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 141 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 141]
+- **Chlorophylls and chlorophyllins** (`ing_chlorophylls_and_chlorophyllins`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 140 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 140]
+- **Cholic acid** (`ing_cholic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1000 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1000]
+- **Choline bitartrate** (`ing_choline_bitartrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1001(v) (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1001(v)]
+- **Choline chloride** (`ing_choline_chloride`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1001(iii) (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1001(iii)]
+- **Citric acid** (`ing_citric_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 330 (acidity regulator, antioxidant, colour-retention agent, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 330]
+- **Citric acid esters of mono- and diglycerides** (`ing_citric_acid_esters`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 472c (antioxidant, emulsifier, flour treatment agent, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 472c]
+- **Citrus red no. 2** (`ing_citrus_red_no_2`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 121 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 121]
+- **Cellulose gum** (`ing_cmc`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 466 (bulking agent, emulsifier, firming agent, gelling agent, glazing agent, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 466]
+- **Copper sulfate** (`ing_copper_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 519 (colour-retention agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 519]
+- **Cream of tartar** (`ing_cream_of_tartar`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 336 (acidity regulator, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 336]
+- **Cross-linked sodium carboxy methyl cellulose, cross linked cellulose gum** (`ing_cross_linked_sodium_carboxy_methyl_cellulose_cross_linked_ce`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 468 (stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 468]
+- **Calcium stearoyl lactylate** (`ing_csl`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 482 (emulsifier, flour treatment agent, foaming agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 482]
+- **Curdlan** (`ing_curdlan`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 424 (firming agent, gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 424]
+- **Cyclamate--prohibited** (`ing_cyclamate_prohibited`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 952 (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 952]
+- **DATEM** (`ing_datem`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 472e (emulsifier, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 472e]
+- **Dehydroacetic acid** (`ing_dehydroacetic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 265 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 265]
+- **Delta-tocopherol** (`ing_delta_tocopherol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 309 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 309]
+- **Dibasic ammonium phosphate** (`ing_dibasic_ammonium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 342(ii) (acidity regulator, flour treatment agent, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 342(ii)]
+- **Dibasic calcium phosphate** (`ing_dibasic_calcium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 341(ii) (acidity regulator, anticaking agent, emulsifying salt, firming agent, flour treatment agent, humectant, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 341(ii)]
+- **Dilauryl thiodipropionate** (`ing_dilauryl_thiodipropionate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 389 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 389]
+- **Dimethyl dicarbonate** (`ing_dimethyl_dicarbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 242 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 242]
+- **Dioctyl sodium sulfosuccinate** (`ing_dioctyl_sodium_sulfosuccinate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 480 (emulsifier, humectant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 480]
+- **Dipotassium guanylate** (`ing_dipotassium_guanylate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 628 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 628]
+- **Dipotassium inosinate** (`ing_dipotassium_inosinate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 632 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 632]
+- **Dipotassium phosphate** (`ing_dipotassium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 340(ii) (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 340(ii)]
+- **Disodium 5′-ribonucleotides** (`ing_disodium_5_ribonucleotides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 635 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 635]
+- **Disodium guanylate** (`ing_disodium_guanylate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 627 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 627]
+- **Disodium inosinate** (`ing_disodium_inosinate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 631 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 631]
+- **Disodium succinate** (`ing_disodium_succinate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 364(ii) (acidity regulator, flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 364(ii)]
+- **Distarch phosphate** (`ing_distarch_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1412 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1412]
+- **DL-alanine** (`ing_dl_alanine`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 639 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 639]
+- **Dodecyl gallate** (`ing_dodecyl_gallate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 312 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 312]
+- **Calcium disodium EDTA** (`ing_edta`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 385 (antioxidant, colour-retention agent, preservative, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 385]
+- **Egg white lysozyme** (`ing_egg_white_lysozyme`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1105 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1105]
+- **Enzymatically hydrolysed carboxy methyl cellulose** (`ing_enzymatically_hydrolysed_carboxy_methyl_cellulose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 469 (stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 469]
+- **Enzymatically produced steviol glycosides** (`ing_enzymatically_produced_steviol_glycosides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 960c (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 960c]
+- **Erythorbic acid** (`ing_erythorbic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 315 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 315]
+- **Erythritol** (`ing_erythritol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 968 (flavour enhancer, humectant, sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 968]
+- **Ethoxyquin** (`ing_ethoxyquin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 324 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 324]
+- **Ethyl cellulose** (`ing_ethyl_cellulose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 462 (bulking agent, carrier, glazing agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 462]
+- **Ethyl lauroyl arginate** (`ing_ethyl_lauroyl_arginate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 243 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 243]
+- **Ethyl maltol** (`ing_ethyl_maltol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 637 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 637]
+- **Ethyl-p-hydroxybenzoate** (`ing_ethyl_p_hydroxybenzoate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 214 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 214]
+- **Extracts of rosemary** (`ing_extracts_of_rosemary`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 392 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 392]
+- **FD&C Red No. 2--delisted** (`ing_fd_c_red_no_2_delisted`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 123 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 123]
+- **FD&C Red No. 4--delisted** (`ing_fd_c_red_no_4_delisted`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 125 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 125]
+- **Ferric oxide** (`ing_ferric_oxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 172(ii) (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 172(ii)]
+- **Ferric phosphate** (`ing_ferric_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 453 (colour, carrier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 453]
+- **Ferric pyrophosphate** (`ing_ferric_pyrophosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 454 (carrier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 454]
+- **Ferrous carbonate** (`ing_ferrous_carbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 505 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 505]
+- **Ferrous gluconate** (`ing_ferrous_gluconate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 579 (colour-retention agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 579]
+- **Ferrous lactate** (`ing_ferrous_lactate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 585 (colour-retention agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 585]
+- **Ficin** (`ing_ficin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1101(iv) (flour treatment agent, flavour enhancer, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1101(iv)]
+- **Formaldehyde** (`ing_formaldehyde`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 240 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 240]
+- **Formic acid** (`ing_formic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 236 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 236]
+- **Fumaric acid** (`ing_fumaric_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 297 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 297]
+- **Gamma-tocopherol** (`ing_gamma_tocopherol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 308 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 308]
+- **Gardenia (Genipin) Blue** (`ing_gardenia_genipin_blue`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 165 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 165]
+- **Gelatin** (`ing_gelatin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 428 (carrier, emulsifier, gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 428]
+- **Gellan gum** (`ing_gellan_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 418 (gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 418]
+- **Gluconic acid** (`ing_gluconic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 574 (acidity regulator, raising agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 574]
+- **Glucono-delta lactone** (`ing_glucono_delta_lactone`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 575 (acidity regulator, raising agent, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 575]
+- **Glucose oxidase** (`ing_glucose_oxidase`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1102 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1102]
+- **Glucosylated steviol glycosides** (`ing_glucosylated_steviol_glycosides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 960d (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 960d]
+- **Glycerin** (`ing_glycerin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 422 (humectant, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 422]
+- **Glycerol esters of wood rosins** (`ing_glycerol_esters_of_wood_rosins`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 445 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 445]
+- **Glyceryl diacetate (diacetin)** (`ing_glyceryl_diacetate_diacetin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1517 (carrier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1517]
+- **Glycine and its sodium salt** (`ing_glycine_and_its_sodium_salt`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 640 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 640]
+- **Glycolipids** (`ing_glycolipids`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 246 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 246]
+- **Gold** (`ing_gold`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 175 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 175]
+- **FD&C Green No. 3** (`ing_green_3`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 143 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 143]
+- **Green S** (`ing_green_s`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 142 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 142]
+- **Guaiac gum** (`ing_guaiac_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 241 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 241]
+- **Guanylic acid** (`ing_guanylic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 626 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 626]
+- **Guar gum** (`ing_guar_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 412 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 412]
+- **Gum arabic** (`ing_gum_arabic`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 414 (bulking agent, carrier, emulsifier, glazing agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 414]
+- **Gum ghatti** (`ing_gum_ghatti`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 419 (carrier, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 419]
+- **Gum karaya** (`ing_gum_karaya`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 416 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 416]
+- **Gum tragacanth** (`ing_gum_tragacanth`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 413 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 413]
+- **Helium** (`ing_helium`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 939 (packaging gas). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 939]
+- **Hexamethylene tetramine** (`ing_hexamethylene_tetramine`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 239 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 239]
+- **Hydrochloric acid** (`ing_hydrochloric_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 507 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 507]
+- **Hydrogen** (`ing_hydrogen`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 949 (packaging gas). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 949]
+- **Hydrogenated poly-1-decene** (`ing_hydrogenated_poly_1_decene`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 907 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 907]
+- **Hydroxy propyl distarch phosphate** (`ing_hydroxy_propyl_distarch_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1442 (anticaking agent, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1442]
+- **Hydroxy propyl starch** (`ing_hydroxy_propyl_starch`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1440 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1440]
+- **Hydroxylated lecithin** (`ing_hydroxylated_lecithin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 322(iii) (antioxidant, emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 322(iii)]
+- **Hydroxypropyl cellulose** (`ing_hydroxypropyl_cellulose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 463 (emulsifier, foaming agent, glazing agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 463]
+- **Hydroxypropyl methylcellulose** (`ing_hydroxypropyl_methylcellulose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 464 (bulking agent, glazing agent, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 464]
+- **Inosinic acid** (`ing_inosinic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 630 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 630]
+- **Invertase** (`ing_invertase`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1103 (stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1103]
+- **Iron ammonium citrate** (`ing_iron_ammonium_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 381 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 381]
+- **Iron oxide** (`ing_iron_oxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 172 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 172]
+- **Iron tartrate** (`ing_iron_tartrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 534 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 534]
+- **Isobutane** (`ing_isobutane`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 943b (propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 943b]
+- **Isomalt** (`ing_isomalt`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 953 (anticaking agent, bulking agent, flavour enhancer, glazing agent, stabilizer, sweetener, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 953]
+- **Isopropyl citrate** (`ing_isopropyl_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 384 (antioxidant, preservative, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 384]
+- **Isopropyl citrate** (`ing_isopropyl_citrate`) HK_CFS
+  - was: (none)
+  - now: Permitted preservative or antioxidant; maximum levels set by food category [Cap. 132BD, Schedule 1]
+- **Jagua (genipin-glycine) blue** (`ing_jagua_genipin_glycine_blue`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 183 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 183]
+- **Konjac gum** (`ing_konjac`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 425 (carrier, emulsifier, gelling agent, glazing agent, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 425]
+- **L-cysteine** (`ing_l_cysteine`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 920 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 920]
+- **L-glutamic acid** (`ing_l_glutamic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 620 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 620]
+- **L-leucine** (`ing_l_leucine`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 641 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 641]
+- **Lactic acid** (`ing_lactic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 270 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 270]
+- **Lactic acid esters of mono- and diglycerides of fatty acids** (`ing_lactic_acid_esters_of_mono_and_diglycerides_of_fatty_acids`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 472b (emulsifier, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 472b]
+- **Lactitol** (`ing_lactitol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 966 (emulsifier, sweetener, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 966]
+- **Lactylated fatty acid esters of glycerol and propylene glycol** (`ing_lactylated_fatty_acid_esters_of_glycerol_and_propylene_glyco`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 478 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 478]
+- **Lanolin** (`ing_lanolin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 913 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 913]
+- **Lecithin** (`ing_lecithin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 322 (antioxidant, emulsifier, flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 322]
+- **Lipase** (`ing_lipase`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1104 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1104]
+- **Litholrubine BK** (`ing_litholrubine_bk`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 180 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 180]
+- **Locust bean gum** (`ing_locust_bean_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 410 (emulsifier, gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 410]
+- **Lycopene** (`ing_lycopene`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 160d (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 160d]
+- **Magnesium carbonate** (`ing_magnesium_carbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 504 (acidity regulator, anticaking agent, colour-retention agent, flour treatment agent, carrier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 504]
+- **Magnesium chloride** (`ing_magnesium_chloride`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 511 (colour-retention agent, firming agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 511]
+- **Magnesium diglutamate** (`ing_magnesium_diglutamate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 625 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 625]
+- **Magnesium gluconate** (`ing_magnesium_gluconate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 580 (acidity regulator, firming agent, flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 580]
+- **Magnesium hydroxide** (`ing_magnesium_hydroxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 528 (acidity regulator, colour-retention agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 528]
+- **Magnesium oxide** (`ing_magnesium_oxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 530 (acidity regulator, anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 530]
+- **Magnesium sulfate** (`ing_magnesium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 518 (firming agent, flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 518]
+- **Malic acid** (`ing_malic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 296 (acidity regulator, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 296]
+- **Maltitol** (`ing_maltitol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 965 (bulking agent, emulsifier, humectant, sweetener, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 965]
+- **Maltol** (`ing_maltol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 636 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 636]
+- **Mannitol** (`ing_mannitol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 421 (anticaking agent, bulking agent, carrier, humectant, stabilizer, sweetener, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 421]
+- **Microcrystalline cellulose** (`ing_mcc`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 460 (anticaking agent, bulking agent, carrier, glazing agent, emulsifier, foaming agent, stabilizer, thickener, humectant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 460]
+- **Metatartaric acid** (`ing_metatartaric_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 353 (acidity regulator, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 353]
+- **Methyl esters of fatty acids (edible)** (`ing_methyl_esters_of_fatty_acids_edible`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 911 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 911]
+- **Methyl ethyl cellulose** (`ing_methyl_ethyl_cellulose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 465 (emulsifier, foaming agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 465]
+- **Methyl glucoside-coconut oil ester** (`ing_methyl_glucoside_coconut_oil_ester`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 489 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 489]
+- **Methyl P-hydroxybenzoate** (`ing_methyl_p_hydroxybenzoate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 218 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 218]
+- **Methylcellulose** (`ing_methylcellulose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 461 (bulking agent, glazing agent, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 461]
+- **Monk fruit extract** (`ing_monk_fruit`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 970 (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 970]
+- **Mono- and diglycerides** (`ing_mono_diglycerides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 471 (antifoaming agent, emulsifier, glazing agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 471]
+- **Monoammonium glutamate** (`ing_monoammonium_glutamate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 624 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 624]
+- **Monobasic ammonium phosphate** (`ing_monobasic_ammonium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 342(i) (acidity regulator, flour treatment agent, raising agent, thickener, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 342(i)]
+- **Monobasic potassium phosphate** (`ing_monobasic_potassium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 340(i) (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 340(i)]
+- **Monobasic sodium phosphate** (`ing_monobasic_sodium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 339(i) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 339(i)]
+- **Monocalcium phosphate** (`ing_monocalcium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 341(i) (acidity regulator, anticaking agent, emulsifying salt, firming agent, flour treatment agent, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 341(i)]
+- **Monopotassium glutamate** (`ing_monopotassium_glutamate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 622 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 622]
+- **Monostarch phosphate** (`ing_monostarch_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1410 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1410]
+- **Monosodium glutamate** (`ing_msg`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 621 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 621]
+- **N-butane** (`ing_n_butane`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 943a (propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 943a]
+- **Vitamin B3** (`ing_name_vitamin_b3`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 375 (colour-retention agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 375]
+- **Natamycin** (`ing_natamycin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 235 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 235]
+- **Neohesperidine DC** (`ing_neohesperidine_dc`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 959 (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 959]
+- **Neotame** (`ing_neotame`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 961 (flavour enhancer, sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 961]
+- **Neutral methacrylate copolymer** (`ing_neutral_methacrylate_copolymer`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1206 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1206]
+- **Nisin** (`ing_nisin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 234 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 234]
+- **Nitrogen** (`ing_nitrogen`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 941 (foaming agent, packaging gas, propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 941]
+- **Nitrogen oxides** (`ing_nitrogen_oxides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 918 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 918]
+- **Nitrosyl chloride** (`ing_nitrosyl_chloride`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 919 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 919]
+- **Nitrous oxide** (`ing_nitrous_oxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 942 (antioxidant, foaming agent, packaging gas, propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 942]
+- **Oat gum** (`ing_oat_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 411 (stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 411]
+- **Oat lecithin** (`ing_oat_lecithin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 322a (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 322a]
+- **Octenyl succinic acid modified gum arabic** (`ing_octenyl_succinic_acid_modified_gum_arabic`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 423 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 423]
+- **Octyl gallate** (`ing_octyl_gallate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 311 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 311]
+- **Oxidised polyethylene wax** (`ing_oxidised_polyethylene_wax`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 914 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 914]
+- **Oxidised starch** (`ing_oxidised_starch`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1404 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1404]
+- **Oxygen** (`ing_oxygen`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 948 (packaging gas, propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 948]
+- **Oxystearin** (`ing_oxystearin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 387 (antioxidant, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 387]
+- **Paraffin wax** (`ing_paraffin_wax`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 905c(ii) (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 905c(ii)]
+- **Patent Blue V** (`ing_patent_blue_v`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 131 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 131]
+- **Pectin** (`ing_pectin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 440 (emulsifier, gelling agent, glazing agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 440]
+- **Peptones** (`ing_peptones`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 429 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 429]
+- **Petrolatum** (`ing_petrolatum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 905b (antifoaming agent, glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 905b]
+- **Petroleum wax** (`ing_petroleum_wax`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 905c (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 905c]
+- **Polyglycerol polyricinoleate** (`ing_pgpr`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 476 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 476]
+- **Phosphoric acid** (`ing_phosphoric_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 338 (acidity regulator, antioxidant, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 338]
+- **Phytic acid** (`ing_phytic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 391 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 391]
+- **Polydextrose** (`ing_polydextrose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1200 (bulking agent, glazing agent, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1200]
+- **Polyethylene glycol (m w 200-9,500)** (`ing_polyethylene_glycol_m_w_200_9_500`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1521 (antifoaming agent, carrier, emulsifier, glazing agent, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1521]
+- **Polyglycerol esters of fatty acids** (`ing_polyglycerol_esters`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 475 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 475]
+- **Polyglycitol syrup** (`ing_polyglycitol_syrup`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 964 (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 964]
+- **Polyoxyethylene 40 monostearate** (`ing_polyoxyethylene_40_monostearate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 431 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 431]
+- **Polyoxyethylene sorbitan monopalmitate (polysorbate 40)** (`ing_polyoxyethylene_sorbitan_monopalmitate_polysorbate_40`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 434 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 434]
+- **Polyphosphates** (`ing_polyphosphates`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 452 (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 452]
+- **Polysorbate 20** (`ing_polysorbate_20`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 432 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 432]
+- **Polysorbate 60** (`ing_polysorbate_60`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 435 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 435]
+- **Polysorbate 65** (`ing_polysorbate_65`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 436 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 436]
+- **Polysorbate 80** (`ing_polysorbate_80`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 433 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 433]
+- **Polyvinyl alcohol** (`ing_polyvinyl_alcohol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1203 (glazing agent, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1203]
+- **Polyvinyl alcohol-polyethylene glycol- graft -co-polymer** (`ing_polyvinyl_alcohol_polyethylene_glycol_graft_co_polymer`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1209 (glazing agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1209]
+- **Polyvinyl polypyrrolidone** (`ing_polyvinyl_polypyrrolidone`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1202 (colour-retention agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1202]
+- **Polyvinylpyrrolidone** (`ing_polyvinylpyrrolidone`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1201 (emulsifier, glazing agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1201]
+- **Polyvinylpyrrolidone-vinyl acetate copolymer** (`ing_polyvinylpyrrolidone_vinyl_acetate_copolymer`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1208 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1208]
+- **Ponceau 4R** (`ing_ponceau_4r`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 124 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 124]
+- **Potassium acetate** (`ing_potassium_acetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 261 (acidity regulator, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 261]
+- **Potassium acid pyrophosphate** (`ing_potassium_acid_pyrophosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 450(iv) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 450(iv)]
+- **Potassium adipate** (`ing_potassium_adipate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 357 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 357]
+- **Potassium alginate** (`ing_potassium_alginate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 402 (bulking agent, carrier, emulsifier, foaming agent, gelling agent, glazing agent, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 402]
+- **Potassium aluminium silicate** (`ing_potassium_aluminium_silicate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 555 (anticaking agent, carrier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 555]
+- **Potassium benzoate** (`ing_potassium_benzoate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 212 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 212]
+- **Potassium bicarbonate** (`ing_potassium_bicarbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 501(ii) (acidity regulator, raising agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 501(ii)]
+- **Potassium bisulfite** (`ing_potassium_bisulfite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 228 (antioxidant, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 228]
+- **Potassium carbonate** (`ing_potassium_carbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 501 (acidity regulator, stabilizer, raising agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 501]
+- **Potassium chloride** (`ing_potassium_chloride`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 508 (firming agent, flavour enhancer, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 508]
+- **Potassium citrate** (`ing_potassium_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 332 (acidity regulator, emulsifying salt, sequestrant, stabilizer, antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 332]
+- **Potassium ferrocyanide** (`ing_potassium_ferrocyanide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 536 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 536]
+- **Potassium fumarate** (`ing_potassium_fumarate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 366 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 366]
+- **Potassium gluconate** (`ing_potassium_gluconate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 577 (acidity regulator, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 577]
+- **Potassium hydroxide** (`ing_potassium_hydroxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 525 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 525]
+- **Potassium iodate** (`ing_potassium_iodate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 917 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 917]
+- **Potassium lactate** (`ing_potassium_lactate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 326 (acidity regulator, antioxidant, emulsifier, humectant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 326]
+- **Potassium malate** (`ing_potassium_malate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 351 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 351]
+- **Potassium metabisulfite** (`ing_potassium_metabisulfite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 224 (antioxidant, bleaching agent, flour treatment agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 224]
+- **Potassium nitrate** (`ing_potassium_nitrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 252 (colour-retention agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 252]
+- **Potassium nitrite** (`ing_potassium_nitrite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 249 (colour-retention agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 249]
+- **Potassium persulfate** (`ing_potassium_persulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 922 (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 922]
+- **Tripotassium phosphate** (`ing_potassium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 340 (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 340]
+- **Potassium polyaspartate** (`ing_potassium_polyaspartate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 456 (stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 456]
+- **Potassium propionate** (`ing_potassium_propionate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 283 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 283]
+- **Potassium pyrophosphate** (`ing_potassium_pyrophosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 450(v) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 450(v)]
+- **Potassium sorbate** (`ing_potassium_sorbate`) CODEX
+  - was: Listed in the General Standard for Food Additives [INS 202]
+  - now: Has Codex INS number 202 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 202]
+- **Potassium sulfate** (`ing_potassium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 515 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 515]
+- **Processed euchema seaweed** (`ing_processed_euchema_seaweed`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 407a (bulking agent, carrier, emulsifier, gelling agent, glazing agent, humectant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 407a]
+- **Propane** (`ing_propane`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 944 (propellant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 944]
+- **Propane-1,2-diol esters of fatty acids** (`ing_propane_1_2_diol_esters_of_fatty_acids`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 477 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 477]
+- **Propionic acid** (`ing_propionic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 280 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 280]
+- **Propyl gallate** (`ing_propyl_gallate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 310 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 310]
+- **Propylene glycol** (`ing_propylene_glycol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1520 (emulsifier, carrier, glazing agent, humectant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1520]
+- **Propylene glycol alginate** (`ing_propylene_glycol_alginate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 405 (bulking agent, carrier, emulsifier, foaming agent, gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 405]
+- **Protease** (`ing_protease`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1101(ii) (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1101(ii)]
+- **Pullulan** (`ing_pullulan`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1204 (glazing agent, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1204]
+- **Quillaia extract (quillaja saponaria molina)** (`ing_quillaia_extract_quillaja_saponaria_molina`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 999 (emulsifier, foaming agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 999]
+- **Quillaia extract type 1** (`ing_quillaia_extract_type_1`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 999(i) (emulsifier, foaming agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 999(i)]
+- **Quillaia extract type 2** (`ing_quillaia_extract_type_2`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 999(ii) (emulsifier, foaming agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 999(ii)]
+- **Quinoline Yellow** (`ing_quinoline_yellow`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 104 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 104]
+- **Rapeseed oil, hydrogenated, superglycerinated** (`ing_rapeseed_oil_hydrogenated_superglycerinated`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 441 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 441]
+- **FD&C Red No. 3** (`ing_red_3`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 127 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 127]
+- **FD&C Red No. 40** (`ing_red_40`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 129 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 129]
+- **Riboflavin** (`ing_riboflavin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 101 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 101]
+- **Rice bran wax** (`ing_rice_bran_wax`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 908 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 908]
+- **Rosin, gum, glycerol ester** (`ing_rosin_gum_glycerol_ester`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 445(i) (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 445(i)]
+- **Rosin, tall oil, glycerol ester** (`ing_rosin_tall_oil_glycerol_ester`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 445(ii) (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 445(ii)]
+- **Rosin, wood, glycerol ester** (`ing_rosin_wood_glycerol_ester`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 445(iii) (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 445(iii)]
+- **Saccharin** (`ing_saccharin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 954 (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 954]
+- **Saccharin, calcium salt** (`ing_saccharin_calcium_salt`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 954(ii) (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 954(ii)]
+- **Salt of aspartame-acesulfame** (`ing_salt_of_aspartame_acesulfame`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 962 (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 962]
+- **Sodium acid pyrophosphate** (`ing_sapp`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 450 (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener, firming agent, flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 450]
+- **Shellac** (`ing_shellac`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 904 (glazing agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 904]
+- **Silicon dioxide** (`ing_silicon_dioxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 551 (anticaking agent, carrier, antifoaming agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 551]
+- **Silver** (`ing_silver`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 174 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 174]
+- **Sodium acetate** (`ing_sodium_acetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 262 (acidity regulator, preservative, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 262]
+- **Sodium adipate** (`ing_sodium_adipate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 356 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 356]
+- **Sodium alginate** (`ing_sodium_alginate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 401 (bulking agent, carrier, emulsifier, foaming agent, gelling agent, glazing agent, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 401]
+- **Sodium aluminosilicate** (`ing_sodium_aluminosilicate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 554 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 554]
+- **Sodium aluminum phosphate** (`ing_sodium_aluminum_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 541 (acidity regulator, emulsifier, emulsifying salt, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 541]
+- **Sodium ascorbate** (`ing_sodium_ascorbate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 301 (antioxidant, flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 301]
+- **Sodium benzoate** (`ing_sodium_benzoate`) CODEX
+  - was: Listed in the General Standard for Food Additives [INS 211]
+  - now: Has Codex INS number 211 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 211]
+- **Sodium bicarbonate** (`ing_sodium_bicarbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 500 (acidity regulator, anticaking agent, emulsifying salt, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 500]
+- **Sodium bisulfite** (`ing_sodium_bisulfite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 222 (antioxidant, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 222]
+- **Sodium carbonate** (`ing_sodium_carbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 500(i) (acidity regulator, anticaking agent, emulsifying salt, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 500(i)]
+- **Sodium citrate** (`ing_sodium_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 331 (acidity regulator, emulsifier, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 331]
+- **Sodium cyclamate--prohibited** (`ing_sodium_cyclamate_prohibited`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 952(iv) (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 952(iv)]
+- **Sodium dehydroacetate** (`ing_sodium_dehydroacetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 266 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 266]
+- **Sodium diacetate** (`ing_sodium_diacetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 262(ii) (acidity regulator, preservative, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 262(ii)]
+- **Sodium erythorbate** (`ing_sodium_erythorbate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 316 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 316]
+- **Sodium ethyl p-hydroxybenzoate** (`ing_sodium_ethyl_p_hydroxybenzoate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 215 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 215]
+- **Sodium ferrocyanide** (`ing_sodium_ferrocyanide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 535 (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 535]
+- **Sodium formate** (`ing_sodium_formate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 237 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 237]
+- **Sodium fumarate** (`ing_sodium_fumarate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 365 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 365]
+- **Sodium gluconate** (`ing_sodium_gluconate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 576 (sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 576]
+- **Sodium hydrosulfite** (`ing_sodium_hydrosulfite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 229 (antioxidant, bleaching agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 229]
+- **Sodium hydroxide** (`ing_sodium_hydroxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 524 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 524]
+- **Sodium lactate** (`ing_sodium_lactate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 325 (acidity regulator, antioxidant, bulking agent, emulsifier, emulsifying salt, humectant, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 325]
+- **Sodium malates** (`ing_sodium_malates`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 350 (acidity regulator, humectant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 350]
+- **Sodium metabisulfite** (`ing_sodium_metabisulfite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 223 (antioxidant, bleaching agent, flour treatment agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 223]
+- **Sodium metaphosphate** (`ing_sodium_metaphosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 452(i) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 452(i)]
+- **Sodium metasilicate** (`ing_sodium_metasilicate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 550(ii) (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 550(ii)]
+- **Sodium methyl p-hydroxybenzoate** (`ing_sodium_methyl_p_hydroxybenzoate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 219 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 219]
+- **Sodium nitrate** (`ing_sodium_nitrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 251 (colour-retention agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 251]
+- **Sodium nitrite** (`ing_sodium_nitrite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 250 (colour-retention agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 250]
+- **Sodium phosphate** (`ing_sodium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 339 (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 339]
+- **Sodium potassium hexametaphosphate** (`ing_sodium_potassium_hexametaphosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 452(vi) (acidity regulator, emulsifier, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 452(vi)]
+- **Sodium potassium tartrate** (`ing_sodium_potassium_tartrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 337 (acidity regulator, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 337]
+- **Sodium propionate** (`ing_sodium_propionate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 281 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 281]
+- **Sodium pyrophosphate** (`ing_sodium_pyrophosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 450(iii) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 450(iii)]
+- **Sodium riboflavin 5'-phosphate** (`ing_sodium_riboflavin_5_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 101(ii) (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 101(ii)]
+- **Sodium sesquicarbonate** (`ing_sodium_sesquicarbonate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 500(iii) (acidity regulator, anticaking agent, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 500(iii)]
+- **Sodium silicate** (`ing_sodium_silicate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 550(i) (anticaking agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 550(i)]
+- **Sodium sorbate** (`ing_sodium_sorbate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 201 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 201]
+- **Sodium sulfate** (`ing_sodium_sulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 514 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 514]
+- **Sodium sulfite** (`ing_sodium_sulfite`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 221 (antioxidant, bleaching agent, flour treatment agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 221]
+- **Sodium tartrate** (`ing_sodium_tartrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 335 (acidity regulator, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 335]
+- **Sodium thiosulfate** (`ing_sodium_thiosulfate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 539 (antioxidant, preservative, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 539]
+- **Sorbic acid** (`ing_sorbic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 200 (preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 200]
+- **Sorbitan monolaurate** (`ing_sorbitan_monolaurate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 493 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 493]
+- **Sorbitan monooleate** (`ing_sorbitan_monooleate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 494 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 494]
+- **Sorbitan monopalmitate** (`ing_sorbitan_monopalmitate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 495 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 495]
+- **Sorbitan monostearate** (`ing_sorbitan_monostearate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 491 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 491]
+- **Sorbitan tristearate** (`ing_sorbitan_tristearate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 492 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 492]
+- **Sorbitol** (`ing_sorbitol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 420 (bulking agent, humectant, sequestrant, stabilizer, sweetener, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 420]
+- **Soy lecithin** (`ing_soy_lecithin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 322 (antioxidant, emulsifier, flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 322]
+- **Soybean hemicellulose** (`ing_soybean_hemicellulose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 426 (anticaking agent, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 426]
+- **Spirulina extract** (`ing_spirulina_extract`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 134 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 134]
+- **Sodium stearoyl lactylate** (`ing_ssl`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 481 (flour treatment agent, emulsifier, foaming agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 481]
+- **Stannous chloride** (`ing_stannous_chloride`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 512 (antioxidant, colour-retention agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 512]
+- **Starch, acid modified** (`ing_starch_acid_modified`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1401 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1401]
+- **Starch aluminium octenyl succinate** (`ing_starch_aluminium_octenyl_succinate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1452 (anticaking agent, carrier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1452]
+- **Starch, food, modified:  acetylated distarch adipate** (`ing_starch_food_modified_acetylated_distarch_adipate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1422 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1422]
+- **Starch, food, modified:  acetylated distarch phosphate** (`ing_starch_food_modified_acetylated_distarch_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1414 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1414]
+- **Starch, food, modified:  phosphated distarch phosphate** (`ing_starch_food_modified_phosphated_distarch_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1413 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1413]
+- **Starch, food, modified:  starch acetate** (`ing_starch_food_modified_starch_acetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1420 (emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1420]
+- **Starch sodium octenyl succinate** (`ing_starch_sodium_octenyl_succinate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1450 (carrier, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1450]
+- **Stearic acid** (`ing_stearic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 570 (antifoaming agent, glazing agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 570]
+- **Stearyl citrate** (`ing_stearyl_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 484 (antioxidant, emulsifier, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 484]
+- **Steviol glycosides** (`ing_steviol_glycosides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 960. An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 960]
+- **Steviol glycosides from fermentation** (`ing_steviol_glycosides_from_fermentation`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 960b (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 960b]
+- **Steviol glycosides from Stevia** (`ing_steviol_glycosides_from_stevia`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 960a (sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 960a]
+- **Stigmasterol-rich plant sterols** (`ing_stigmasterol_rich_plant_sterols`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 499 (stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 499]
+- **Succinic acid** (`ing_succinic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 363 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 363]
+- **Succinylated monoglycerides** (`ing_succinylated_monoglycerides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 472g (emulsifier, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 472g]
+- **Succistearin** (`ing_succistearin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 446 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 446]
+- **Sucralose** (`ing_sucralose`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 955 (flavour enhancer, sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 955]
+- **Sucroglycerides** (`ing_sucroglycerides`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 474 (emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 474]
+- **Sucrose acetate isobutyrate** (`ing_sucrose_acetate_isobutyrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 444 (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 444]
+- **Sucrose esters of fatty acids** (`ing_sucrose_esters`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 473 (emulsifier, foaming agent, glazing agent, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 473]
+- **Sulfur dioxide** (`ing_sulfur_dioxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 220 (antioxidant, bleaching agent, flour treatment agent, preservative). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 220]
+- **Sulfuric acid** (`ing_sulfuric_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 513 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 513]
+- **Sulphite ammonia caramel** (`ing_sulphite_ammonia_caramel`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 150d (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 150d]
+- **Sunflower lecithin** (`ing_sunflower_lecithin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 322 (antioxidant, emulsifier, flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 322]
+- **Tagetes (Aztec Marigold) Extract** (`ing_tagetes_aztec_marigold_extract`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 161b(ii) (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 161b(ii)]
+- **Tamarind seed polysaccharide** (`ing_tamarind_seed_polysaccharide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 437 (emulsifier, gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 437]
+- **Tannic acid** (`ing_tannic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 181 (colour, emulsifier, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 181]
+- **Tara gum** (`ing_tara_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 417 (gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 417]
+- **Tartaric acid** (`ing_tartaric_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 334 (acidity regulator, antioxidant, flavour enhancer, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 334]
+- **Tartaric acid esters of mono- and diglycerides of fatty acids** (`ing_tartaric_acid_esters_of_mono_and_diglycerides_of_fatty_acids`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 472d (emulsifier, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 472d]
+- **TBHQ** (`ing_tbhq`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 319 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 319]
+- **Thaumatin** (`ing_thaumatin`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 957 (flavour enhancer, sweetener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 957]
+- **Thiodipropionic acid** (`ing_thiodipropionic_acid`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 388 (antioxidant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 388]
+- **Titanium dioxide** (`ing_titanium_dioxide`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 171 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 171]
+- **Mixed tocopherols** (`ing_tocopherols`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 307. An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 307]
+- **Triacetin (glycerol triacetate)** (`ing_triacetin_glycerol_triacetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1518 (carrier, emulsifier, humectant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1518]
+- **Triammonium citrate** (`ing_triammonium_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 380 (acidity regulator). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 380]
+- **Tribasic magnesium phosphate** (`ing_tribasic_magnesium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 343 (acidity regulator, anticaking agent, emulsifying salt, stabilizer, thickener, raising agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 343]
+- **Tricalcium phosphate** (`ing_tricalcium_phosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 341 (acidity regulator, anticaking agent, emulsifying salt, firming agent, flour treatment agent, humectant, raising agent, sequestrant, stabilizer, thickener, emulsifier). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 341]
+- **Triethyl citrate** (`ing_triethyl_citrate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 1505 (carrier, emulsifier, stabilizer, sequestrant). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 1505]
+- **Triphosphates** (`ing_triphosphates`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 451 (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener, raising agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 451]
+- **Trisodium diphosphate** (`ing_trisodium_diphosphate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 450(ii) (acidity regulator, emulsifier, emulsifying salt, raising agent, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 450(ii)]
+- **Turmeric** (`ing_turmeric`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 100 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 100]
+- **Urea** (`ing_urea`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 927b (flour treatment agent). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 927b]
+- **Vegetable carbon** (`ing_vegetable_carbon`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 153 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 153]
+- **Xanthan gum** (`ing_xanthan_gum`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 415 (emulsifier, foaming agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 415]
+- **Xanthophyll** (`ing_xanthophyll`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 161b (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 161b]
+- **Xylitol** (`ing_xylitol`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 967 (emulsifier, humectant, stabilizer, sweetener, thickener). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 967]
+- **FD&C Yellow No. 5** (`ing_yellow_5`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 102 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 102]
+- **FD&C Yellow No. 6** (`ing_yellow_6`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 110 (colour). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 110]
+- **Zinc acetate** (`ing_zinc_acetate`) CODEX
+  - was: (none)
+  - now: Has Codex INS number 650 (flavour enhancer). An INS number identifies an additive; it is not a Codex approval. [CXG 36-1989 — INS 650]
 
-## Other field changes (0)
+## Other field changes (127)
+- Acetone peroxides: e_number_ins_code
+- Ammonium acetate: e_number_ins_code
+- Ammonium carbonate: e_number_ins_code
+- Ammonium chloride: e_number_ins_code
+- Ammonium persulfate: e_number_ins_code
+- Anoxomer: e_number_ins_code
+- Arabinogalactan: e_number_ins_code
+- Ascorbyl stearate: e_number_ins_code
+- Azodicarbonamide: e_number_ins_code
+- Baker's yeast glycan: e_number_ins_code
+- Benzoyl peroxide: e_number_ins_code
+- Biphenyl: e_number_ins_code
+- Bleached starch: e_number_ins_code
+- Butterfly pea flower extract: e_number_ins_code
+- Calcium cyclamate--prohibited: e_number_ins_code
+- Calcium fumarate: e_number_ins_code
+- Calcium glycerophosphate: e_number_ins_code
+- Calcium iodate: e_number_ins_code
+- Calcium lactobionate: e_number_ins_code
+- Calcium peroxide: e_number_ins_code
+- Calcium pyrophosphate: e_number_ins_code
+- Carbohydrase from bacillus licheniformis: e_number_ins_code
+- Castor oil: e_number_ins_code
+- Powdered cellulose: e_number_ins_code
+- Chlorine: e_number_ins_code
+- Chlorine dioxide: e_number_ins_code
+- Chloropentafluoroethane: e_number_ins_code
+- Cholic acid: e_number_ins_code
+- Choline bitartrate: e_number_ins_code
+- Choline chloride: e_number_ins_code
+- Citrus red no. 2: e_number_ins_code
+- Copper sulfate: e_number_ins_code
+- Curdlan: e_number_ins_code
+- Dehydroacetic acid: e_number_ins_code
+- Dibasic ammonium phosphate: e_number_ins_code
+- Dibasic calcium phosphate: e_number_ins_code
+- Dilauryl thiodipropionate: e_number_ins_code
+- Dioctyl sodium sulfosuccinate: e_number_ins_code
+- Dipotassium phosphate: e_number_ins_code
+- Disodium succinate: e_number_ins_code
+- DL-alanine: e_number_ins_code
+- Dodecyl gallate: e_number_ins_code
+- Ethoxyquin: e_number_ins_code
+- Ethyl maltol: e_number_ins_code
+- FD&C Red No. 4--delisted: e_number_ins_code
+- Ferric oxide: e_number_ins_code
+- Ferric phosphate: e_number_ins_code
+- Ferric pyrophosphate: e_number_ins_code
+- Ferrous carbonate: e_number_ins_code
+- Ficin: e_number_ins_code
+- Formaldehyde: e_number_ins_code
+- Formic acid: e_number_ins_code
+- Gardenia (Genipin) Blue: e_number_ins_code
+- Gelatin: e_number_ins_code
+- Glucose oxidase: e_number_ins_code
+- FD&C Green No. 3: e_number_ins_code
+- Guaiac gum: e_number_ins_code
+- Gum ghatti: e_number_ins_code
+- Hydroxylated lecithin: e_number_ins_code
+- Iron ammonium citrate: e_number_ins_code
+- Isopropyl citrate: e_number_ins_code
+- Jagua (genipin-glycine) blue: e_number_ins_code
+- Lactylated fatty acid esters of glycerol and propylene glycol: e_number_ins_code
+- Lanolin: e_number_ins_code
+- Lipase: e_number_ins_code
+- Magnesium gluconate: e_number_ins_code
+- Magnesium sulfate: e_number_ins_code
+- Maltol: e_number_ins_code
+- Methyl esters of fatty acids (edible): e_number_ins_code
+- Methyl glucoside-coconut oil ester: e_number_ins_code
+- Monk fruit extract: e_number_ins_code
+- Monobasic ammonium phosphate: e_number_ins_code
+- Monobasic potassium phosphate: e_number_ins_code
+- Monobasic sodium phosphate: e_number_ins_code
+- Monocalcium phosphate: e_number_ins_code
+- Vitamin B3: e_number_ins_code
+- Nitrogen oxides: e_number_ins_code
+- Nitrosyl chloride: e_number_ins_code
+- Oat gum: e_number_ins_code
+- Octyl gallate: e_number_ins_code
+- Oxystearin: e_number_ins_code
+- Paraffin wax: e_number_ins_code
+- Peptones: e_number_ins_code
+- Petrolatum: e_number_ins_code
+- Petroleum wax: e_number_ins_code
+- Phytic acid: e_number_ins_code
+- Potassium acid pyrophosphate: e_number_ins_code
+- Potassium bicarbonate: e_number_ins_code
+- Potassium fumarate: e_number_ins_code
+- Potassium iodate: e_number_ins_code
+- Potassium persulfate: e_number_ins_code
+- Potassium pyrophosphate: e_number_ins_code
+- Protease: e_number_ins_code
+- Quillaia extract type 1: e_number_ins_code
+- Quillaia extract type 2: e_number_ins_code
+- Rapeseed oil, hydrogenated, superglycerinated: e_number_ins_code
+- Rice bran wax: e_number_ins_code
+- Rosin, gum, glycerol ester: e_number_ins_code
+- Rosin, tall oil, glycerol ester: e_number_ins_code
+- Rosin, wood, glycerol ester: e_number_ins_code
+- Saccharin, calcium salt: e_number_ins_code
+- Sodium carbonate: e_number_ins_code
+- Sodium cyclamate--prohibited: e_number_ins_code
+- Sodium dehydroacetate: e_number_ins_code
+- Sodium diacetate: e_number_ins_code
+- Sodium formate: e_number_ins_code
+- Sodium fumarate: e_number_ins_code
+- Sodium hydrosulfite: e_number_ins_code
+- Sodium metaphosphate: e_number_ins_code
+- Sodium metasilicate: e_number_ins_code
+- Sodium potassium hexametaphosphate: e_number_ins_code
+- Sodium pyrophosphate: e_number_ins_code
+- Sodium riboflavin 5'-phosphate: e_number_ins_code
+- Sodium sesquicarbonate: e_number_ins_code
+- Sodium silicate: e_number_ins_code
+- Sodium sorbate: e_number_ins_code
+- Sodium thiosulfate: e_number_ins_code
+- Spirulina extract: e_number_ins_code
+- Starch, acid modified: e_number_ins_code
+- Stearyl citrate: e_number_ins_code
+- Succinylated monoglycerides: e_number_ins_code
+- Succistearin: e_number_ins_code
+- Tagetes (Aztec Marigold) Extract: e_number_ins_code
+- Tamarind seed polysaccharide: e_number_ins_code
+- Tannic acid: e_number_ins_code
+- Thiodipropionic acid: e_number_ins_code
+- Trisodium diphosphate: e_number_ins_code
 
 ## Annual full-review sweep
 
-4719 of 4719 rows have not had a full review in the last year.
-This month's slice (394, dosage and allergen claims first):
+4882 of 4882 rows have not had a full review in the last year.
+This month's slice (407, dosage and allergen claims first):
 
 - [ ] 2-ethyl-1-hexanol (`ing_2_ethyl_1_hexanol`) — dosage
 - [ ] Acesulfame potassium (`ing_acesulfame_k`) — dosage
@@ -416,6 +1869,7 @@ This month's slice (394, dosage and allergen claims first):
 - [ ] Potassium bisulfite (`ing_potassium_bisulfite`) — allergen
 - [ ] Potassium caseinate (`ing_potassium_caseinate`) — allergen
 - [ ] Potassium sulfite (`ing_potassium_sulfite`) — allergen
+- [ ] Potassium sulphite (`ing_potassium_sulphite`) — allergen
 - [ ] Protein, milk, hydrolyzed (`ing_protein_milk_hydrolyzed`) — allergen
 - [ ] Reduced minerals goat whey (`ing_reduced_minerals_goat_whey`) — allergen
 - [ ] Salmon oil (`ing_salmon_oil`) — allergen
@@ -434,6 +1888,7 @@ This month's slice (394, dosage and allergen claims first):
 - [ ] Sulfiting agents (`ing_sulfiting_agents`) — allergen
 - [ ] Sulfurous acid (`ing_sulfurous_acid`) — allergen
 - [ ] Thermally oxidised soya bean oil interacted with mono- and diglycerides of fatty acids (`ing_thermally_oxidised_soya_bean_oil_interacted_with_mono_and_di`) — allergen
+- [ ] Thermally oxidized soya bean oil interacted with mono- and di-glycerides of fatty acids (`ing_thermally_oxidized_soya_bean_oil_interacted_with_mono_and_di`) — allergen
 - [ ] Tuna oil (`ing_tuna_oil`) — allergen
 - [ ] Walnut hull, extract (`ing_walnut_hull_extract`) — allergen
 - [ ] Walnut leaves, extract (`ing_walnut_leaves_extract`) — allergen
@@ -625,3 +2080,14 @@ This month's slice (394, dosage and allergen claims first):
 - [ ] 2-(4-methyl-5-thiazolyl)ethyl isobutyrate (`ing_2_4_methyl_5_thiazolyl_ethyl_isobutyrate`)
 - [ ] 2-(4-methyl-5-thiazolyl)ethyl octanoate (`ing_2_4_methyl_5_thiazolyl_ethyl_octanoate`)
 - [ ] 2-(4-methyl-5-thiazolyl)ethyl propionate (`ing_2_4_methyl_5_thiazolyl_ethyl_propionate`)
+- [ ] 2,4-nonadien-1-ol (`ing_2_4_nonadien_1_ol`)
+- [ ] 2,4-nonadienal (`ing_2_4_nonadienal`)
+- [ ] 2,4-pentadienal (`ing_2_4_pentadienal`)
+- [ ] 2,4-undecadienal (`ing_2_4_undecadienal`)
+- [ ] 2,5-diethyl-3-methylpyrazine (`ing_2_5_diethyl_3_methylpyrazine`)
+- [ ] 2,5-diethyltetrahydrofuran (`ing_2_5_diethyltetrahydrofuran`)
+- [ ] 2,5-dihydroxy-1,4-dithiane (`ing_2_5_dihydroxy_1_4_dithiane`)
+- [ ] 2,5-dimethyl-2,5-dihydroxy-1,4-dithiane (`ing_2_5_dimethyl_2_5_dihydroxy_1_4_dithiane`)
+- [ ] 2,5-dimethyl-3(2h)-furanone (`ing_2_5_dimethyl_3_2h_furanone`)
+- [ ] 2,5-dimethyl-3-furanthiol (`ing_2_5_dimethyl_3_furanthiol`)
+- [ ] 2,5-dimethyl-3-furanthiol acetate (`ing_2_5_dimethyl_3_furanthiol_acetate`)

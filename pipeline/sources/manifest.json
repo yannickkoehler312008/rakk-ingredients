@@ -104,10 +104,10 @@
     ]
   },
   "codex_ins": {
-    "title": "Codex CXG 36-1989 — Class Names and the International Numbering System for Food Additives",
-    "url": "https://www.fao.org/fao-who-codexalimentarius/sh-proxy/en/?lnk=1&url=https%253A%252F%252Fworkspace.fao.org%252Fsites%252Fcodex%252FStandards%252FCXG%2B36-1989%252FCXG_036e.pdf",
-    "manual": true,
-    "present": [],
-    "note": "Not present. FAO/WHO Codex Alimentarius Commission serves this behind a bot challenge, which this pipeline does not bypass. Download it in a browser and place it in sources/manual/codex/."
+    "title": "Codex CXG 36-1989 — Class names and the International Numbering System for food additives (2026 edition)",
+    "url": "https://openknowledge.fao.org/server/api/core/bitstreams/4b45b280-e32e-4a0d-ace4-c4c1b8770142/content",
+    "fetched_at": "2026-10-17T16:36:28.480Z",
+    "bytes": 1776386,
+    "sha256": "658caf6ad82412dfe8910e531c43e131894642bcfcdad49e763a56fe2cd417bb"
   }
 }

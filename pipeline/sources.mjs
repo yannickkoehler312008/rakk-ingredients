@@ -99,15 +99,17 @@ export const SOURCES = [
   },
   {
     id: 'codex_ins',
-    title: 'Codex CXG 36-1989 — Class Names and the International Numbering System for Food Additives',
-    url: 'https://www.fao.org/fao-who-codexalimentarius/sh-proxy/en/?lnk=1&url=https%253A%252F%252Fworkspace.fao.org%252Fsites%252Fcodex%252FStandards%252FCXG%2B36-1989%252FCXG_036e.pdf',
-    file: null,
-    manual: 'sources/manual/codex/',
-    publisher: 'FAO/WHO Codex Alimentarius Commission',
+    title: 'Codex CXG 36-1989 — Class names and the International Numbering System for food additives (2026 edition)',
+    // FAO's public repository (DSpace). The old fao.org link sits behind a bot
+    // challenge and its proxy now returns 502; this is the same guideline,
+    // served directly. Record: https://openknowledge.fao.org/handle/20.500.14283/cd8953en
+    url: 'https://openknowledge.fao.org/server/api/core/bitstreams/4b45b280-e32e-4a0d-ace4-c4c1b8770142/content',
+    file: 'codex_cxg36.pdf',
+    publisher: 'FAO and WHO, Codex Alimentarius Commission',
     terms: {
       summary:
-        'FAO/WHO copyright. FAO publications are commonly CC BY-NC-SA 3.0 IGO — the NC clause matters for a paid app. Must be confirmed before any Codex text ships.',
-      confirmed: false,
+        'CC BY 4.0, as stated on the repository record: commercial use allowed with attribution. Credit: "FAO and WHO. 2026. Class names and the international numbering system for food additives. Codex Alimentarius Guideline No. CXG 36-1989." The repository\'s published MD5 does not match the file it serves (sizes match, two downloads identical); the sha256 in the manifest is what builds check against.',
+      confirmed: true,
     },
   },
 ];

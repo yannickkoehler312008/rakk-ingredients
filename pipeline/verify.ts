@@ -23,6 +23,7 @@
  * Exit code 1 on any failure. Output: out/verify-report.json
  */
 import { readFileSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Ingredient } from '../rakk-app/src/types/ingredient';
@@ -107,6 +108,19 @@ const oftByCas = new Map<string, { dois: Set<string>; values: Set<string> }>();
     for (const v of [t[A + 'Adi.lowerValue'], t[A + 'Adi.upperValue']]) if (v) e.values.add(String(Number(Number(v).toPrecision(12))));
   }
 }
+
+// Codex CXG 36: the PDF's text, page by page, read here with pdf.js directly —
+// not through parse/codex-ins.mjs, so a parser bug cannot vouch for itself.
+const codexPages: string[] = [];
+{
+  const pdfjs = await import(createRequire(import.meta.url).resolve('pdfjs-dist/legacy/build/pdf.mjs'));
+  const doc = await pdfjs.getDocument({ data: new Uint8Array(readFileSync(join(RAW, 'codex_cxg36.pdf'))), verbosity: 0 }).promise;
+  for (let p = 1; p <= doc.numPages; p++) {
+    const tc = await (await doc.getPage(p)).getTextContent();
+    codexPages[p] = flat(tc.items.map((i: any) => i.str).join(' '));
+  }
+}
+const codexIntro = codexPages.slice(1, 5).join(' ');
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -235,6 +249,22 @@ for (const i of rows) {
         if (!cited || !euNumbers.has(`E${cited}`)) fail(i.id, 'EU E-number', `${j.citation} not in Annex II Part B`); else pass('EU E-number in Annex II Part B');
         if (/^Not authorised for use in food/.test(j.status) && !/is not authorised in the food categories listed in part d and e/.test(partBFlat.slice(Math.max(0, partBFlat.indexOf(`e ${cited}`) - 10)))) fail(i.id, 'EU note', 'food-use exclusion not backed by the annex note');
       }
+    }
+
+    if (j.jurisdiction === 'CODEX' && jp.source === 'codex_ins') {
+      // CXG 36's own introduction: "Inclusion in the INS does not imply
+      // approval by Codex". The status must say so, and must cite a number
+      // that is on the cited page next to this additive's name.
+      if (!/not a Codex approval/.test(j.status)) fail(i.id, 'Codex', 'status does not say an INS number is not an approval');
+      if (!/inclusion in the ins does not imply approval/.test(codexIntro)) fail(i.id, 'Codex', 'the guideline no longer says INS ≠ approval — recheck the wording');
+      const ins = j.citation?.match(/INS (\S+)$/)?.[1];
+      const page = Number(jp.locator.match(/p\. (\d+)/)?.[1]);
+      const name = (jp.excerpt.split(' | ')[1] ?? '').toLowerCase().replace(/\s*\(.*$/, '');
+      const words = name.split(/[^a-z0-9]+/).filter((w: string) => w.length > 2).slice(0, 2);
+      const text = codexPages[page] ?? '';
+      const insHere = ins && new RegExp(`(^|\\s)${ins.replace(/[()]/g, '\\$&')}(\\s|$)`).test(text);
+      if (!insHere || !words.every((w: string) => text.includes(w))) fail(i.id, 'Codex', `INS ${ins} / "${name}" not found on CXG 36 p. ${page}`);
+      else pass('Codex INS number and name on the cited page');
     }
 
     if (j.jurisdiction === 'HK_CFS') {

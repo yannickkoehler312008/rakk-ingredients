@@ -113,3 +113,26 @@ export const ALLERGEN_RULES = [
 
 /** Single words that are never, on their own, an ingredient identity. */
 export const GENERIC_NAMES = new Set(['oil', 'oils', 'extract', 'protein', 'powder', 'fiber', 'fibre', 'flour', 'enzyme', 'enzymes', 'preparation', 'mixture', 'blend', 'concentrate', 'isolate', 'hydrolysate', 'juice', 'water', 'salt', 'sugar', 'starch', 'gum', 'fat', 'fats', 'meal', 'seed', 'seeds', 'leaf', 'leaves', 'root', 'bark', 'color', 'colour', 'flavor', 'flavour', 'vitamin', 'mineral', 'minerals', 'natural', 'strain', 'culture', 'cultures', 'biomass', 'syrup']);
+
+/**
+ * Codex functional classes (CXG 36-1989 Section 2) → the app's category enum.
+ * The first class Codex lists for an additive decides; Codex's own definition
+ * of that class becomes the explanation of a Codex-only row.
+ */
+export const CODEX_CLASS_CATEGORY = {
+  'Acidity regulator': 'acidity_regulator',
+  'Antioxidant': 'antioxidant',
+  'Colour': 'colorant',
+  'Colour-retention agent': 'colorant',
+  'Emulsifier': 'emulsifier',
+  'Emulsifying salt': 'emulsifier',
+  'Flavour enhancer': 'flavor',
+  'Preservative': 'preservative',
+  'Raising agent': 'leavening_agent',
+  'Sweetener': 'sweetener',
+  'Thickener': 'thickener',
+  'Stabilizer': 'thickener',
+  'Gelling agent': 'thickener',
+  'Bulking agent': 'filler',
+  'Carrier': 'filler',
+};

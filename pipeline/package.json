@@ -7,5 +7,8 @@
     "fetch": "node fetch.mjs",
     "build": "cd ../rakk-app && npx tsx ../pipeline/build.ts",
     "verify": "node verify.mjs"
+  },
+  "dependencies": {
+    "pdfjs-dist": "4.10.38"
   }
 }
