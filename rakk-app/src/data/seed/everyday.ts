@@ -91,11 +91,9 @@ export const EVERYDAY: SeedIngredient[] = [
   everyday('ing_eggs', 'Eggs', 'Hen’s egg.', { aka: ['egg', 'whole eggs', 'egg whites', 'egg yolks', 'dried egg whites'], allergen_flags: ['egg'] }),
 
   // ─── Common oils and fats ───
+  // Seed oils are NOT here: by product decision they are flagged like any
+  // other ingredient worth reading about (see bulk.ts, "Seed oils").
   everyday('ing_olive_oil', 'Olive oil', 'Oil pressed from olives.', { aka: ['extra virgin olive oil', 'virgin olive oil'] }),
-  everyday('ing_sunflower_oil', 'Sunflower oil', 'Oil pressed from sunflower seeds.', {
-    aka: ['sunflower seed oil', 'high oleic sunflower oil'], cas_number: '8001-21-6',
-  }),
-  everyday('ing_vegetable_oil', 'Vegetable oil', 'A blend of refined plant oils.', { aka: ['vegetable oils'] }),
 
   // ─── Nuts, seeds, legumes ───
   everyday('ing_almonds', 'Almonds', 'Almonds.', {
@@ -171,9 +169,6 @@ export const EVERYDAY: SeedIngredient[] = [
   }),
   everyday('ing_coconut_oil', 'Coconut oil', 'Oil from coconut flesh.', {
     aka: ['fractionated coconut oil', 'copra oil'], cas_number: '8001-31-8',
-  }),
-  everyday('ing_canola_oil', 'Canola oil', 'Oil from a variety of rapeseed bred for low erucic acid.', {
-    aka: ['rapeseed oil', 'low erucic acid rapeseed oil'],
   }),
 
   // ─── Familiar nutrient names ───

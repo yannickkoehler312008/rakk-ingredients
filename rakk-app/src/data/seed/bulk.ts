@@ -116,6 +116,53 @@ export const BULK: SeedIngredient[] = [
     plain_explanation: 'The stretchy protein of wheat, isolated and dried. It strengthens dough and is the basis of seitan.',
   },
   // ─── Fats and oils ───
+  // ─── Seed oils ───
+  // Product decision (2026-10-17): every seed oil is flagged — underlined and
+  // explained — rather than left on the everyday allow-list. Flagging means
+  // "worth reading about", not a verdict: the cards state what the oil is
+  // and nothing about effects on health (§9). Olive, coconut and palm oil
+  // are fruit oils and are not part of this group.
+  {
+    id: 'ing_canola_oil', canonical_name: 'Canola oil', aka: ['rapeseed oil', 'low erucic acid rapeseed oil'],
+    category: 'other', origin: 'natural', typical_uses: ['food', 'cosmetics'],
+    plain_explanation: 'Oil from a variety of rapeseed bred for low erucic acid. It is one of the most widely used oils in processed food.',
+  },
+  {
+    id: 'ing_sunflower_oil', canonical_name: 'Sunflower oil', aka: ['sunflower seed oil', 'high oleic sunflower oil'],
+    cas_number: '8001-21-6', category: 'other', origin: 'natural', typical_uses: ['food', 'cosmetics'],
+    plain_explanation: 'Oil from sunflower seeds. "High oleic" versions come from varieties bred to contain more monounsaturated fat.',
+  },
+  {
+    id: 'ing_vegetable_oil', canonical_name: 'Vegetable oil', aka: ['vegetable oils'],
+    category: 'other', origin: 'natural',
+    plain_explanation: 'A label name for refined oil from one or more plants. The label does not have to say which plants; when it does, they are usually listed in brackets.',
+  },
+  {
+    id: 'ing_cottonseed_oil', canonical_name: 'Cottonseed oil', aka: ['cotton seed oil'],
+    cas_number: '8001-29-4', category: 'other', origin: 'natural',
+    plain_explanation: 'Oil from the seeds of the cotton plant, refined before use in food. It is common in frying oils and snack foods.',
+  },
+  {
+    id: 'ing_grapeseed_oil', canonical_name: 'Grapeseed oil', aka: ['grape seed oil'],
+    cas_number: '8024-22-4', category: 'other', origin: 'natural', typical_uses: ['food', 'cosmetics'],
+    plain_explanation: 'Oil from grape seeds, mostly a by-product of winemaking.',
+  },
+  {
+    id: 'ing_rice_bran_oil', canonical_name: 'Rice bran oil', aka: ['rice oil'],
+    category: 'other', origin: 'natural',
+    plain_explanation: 'Oil from the bran layer of rice grains, common in frying and in Asian cooking.',
+  },
+  {
+    id: 'ing_safflower_oil', canonical_name: 'Safflower oil', aka: ['high oleic safflower oil'],
+    cas_number: '8001-23-8', category: 'other', origin: 'natural', typical_uses: ['food', 'cosmetics'],
+    plain_explanation: 'Oil from the seeds of the safflower plant.',
+  },
+  {
+    id: 'ing_sesame_oil', canonical_name: 'Sesame oil', aka: ['toasted sesame oil', 'sesame seed oil'],
+    cas_number: '8008-74-0', category: 'other', origin: 'natural', typical_uses: ['food', 'cosmetics'],
+    allergen_flags: ['sesame'],
+    plain_explanation: 'Oil from sesame seeds. Toasted sesame oil is pressed from roasted seeds and used mainly for flavour.',
+  },
   {
     id: 'ing_palm_oil', canonical_name: 'Palm oil', aka: ['palm fruit oil', 'palm olein', 'palm kernel oil'],
     cas_number: '8002-75-3', category: 'other', origin: 'natural', typical_uses: ['food', 'cosmetics'],
