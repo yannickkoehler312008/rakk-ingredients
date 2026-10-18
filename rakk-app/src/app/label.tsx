@@ -138,7 +138,8 @@ export default function Label() {
 
         {scan.product.barcode ? (
           <Text style={[mono.citation, { marginTop: space.base, color: color.textMuted }]}>
-            {scan.product.barcode} · Open Food Facts
+            {scan.product.barcode} ·{' '}
+            {scan.product.source === 'usda_fooddata_central' ? 'USDA FoodData Central' : 'Open Food Facts'}
           </Text>
         ) : null}
       </ScrollView>

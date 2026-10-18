@@ -22,6 +22,11 @@ export interface Product {
   image_url: string | null;
   /** The ingredient list exactly as printed on the package. */
   raw_ingredient_text: string;
+  /**
+   * Where the product record came from, for the credit under the label.
+   * Absent on scans cached before Phase 2, which all came from Open Food Facts.
+   */
+  source?: 'open_food_facts' | 'usda_fooddata_central' | 'photo';
 }
 
 /**

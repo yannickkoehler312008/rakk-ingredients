@@ -105,6 +105,7 @@ function toProduct(p: OffProduct, barcode: string, rawIngredientText: string): P
     brand: pickBrand(p),
     image_url: clean(p.image_url) || null,
     raw_ingredient_text: rawIngredientText,
+    source: 'open_food_facts',
   };
 }
 

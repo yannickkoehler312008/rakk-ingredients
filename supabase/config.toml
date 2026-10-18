@@ -428,3 +428,8 @@ verify_jwt = true
 # ─── Photographed ingredient panel (§6) ───────────────────────────────────
 [functions.read-label]
 verify_jwt = true
+
+# ─── Second product source: USDA FoodData Central (Phase 2 §12.A) ────────
+# Keeps the FDC API key server-side; signed-in (anonymous) sessions only.
+[functions.product-lookup]
+verify_jwt = true

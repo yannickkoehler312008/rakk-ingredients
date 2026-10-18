@@ -10,7 +10,7 @@ import { color, gutter, radius, scrim, space } from '../theme/tokens';
 import { mono, sans, serif } from '../theme/type';
 import { PrimaryButton, SecondaryButton } from '../components/primitives';
 import { ScanProgress, ScanStep } from '../components/states';
-import { lookupBarcode } from '../services/openFoodFacts';
+import { lookupProduct } from '../services/productLookup';
 import { readLabelPhoto } from '../services/ocr';
 import { ConfirmLabelText } from '../components/ConfirmLabelText';
 import { resolveWithDatabase } from '../services/catalog';
@@ -130,6 +130,7 @@ export default function Scan() {
         brand: '',
         image_url: null,
         raw_ingredient_text: text,
+        source: 'photo',
       },
       'photo_ocr',
     );
@@ -162,7 +163,7 @@ export default function Scan() {
     }
 
     setPhase({ kind: 'working', step: 'lookup', barcode });
-    const result2 = await lookupBarcode(barcode);
+    const result2 = await lookupProduct(barcode);
 
     switch (result2.kind) {
       case 'found': {
