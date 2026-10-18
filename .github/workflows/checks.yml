@@ -1,0 +1,62 @@
+# Every check that needs no network and no secrets, on every push and PR.
+# Fails before a broken change can reach the live database: pushing to main is
+# what deploys migrations and Edge Functions (Supabase GitHub integration).
+name: Checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  app:
+    name: App and database checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # The test scripts run TypeScript through `npx tsx`; don't prompt for it.
+      npm_config_yes: 'true'
+    defaults:
+      run:
+        working-directory: rakk-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: rakk-app/package-lock.json
+
+      - run: npm ci
+
+      - name: Types
+        run: npx tsc --noEmit
+
+      - name: Positioning guard (no verdicts, no judgment words, no stray colours)
+        run: bash scripts/check-copy.sh
+
+      - name: Seed integrity
+        run: node scripts/check-seed.mjs
+
+      - name: Matcher invariants
+        run: node scripts/test-matcher.mjs
+
+      - name: Server lookup matches the full database
+        run: node scripts/test-catalog-lookup.mjs
+
+      - name: Chat guardrails
+        run: node scripts/test-guardrails.mjs
+
+      - name: Photo transcription safeguards
+        run: node scripts/test-transcription.mjs
+
+      - name: Release files agree (migration, offline bundle, build, verification)
+        run: node ../pipeline/check-release.mjs
