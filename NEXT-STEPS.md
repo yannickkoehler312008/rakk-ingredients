@@ -1,164 +1,85 @@
-# What needs doing after Phase 2 — and how
+# Next steps
 
-Ordered by what unblocks what. Supabase project: `xqsjnopgekmanshqsyxj`
-(dashboard: https://supabase.com/dashboard/project/xqsjnopgekmanshqsyxj).
-Background for every item is in `PHASE-2-REPORT.md`.
+Supabase project: `xqsjnopgekmanshqsyxj` (dashboard:
+https://supabase.com/dashboard/project/xqsjnopgekmanshqsyxj). Background for
+everything here is in `PHASE-2-REPORT.md`.
 
----
+## Now
 
-## 1. Confirm the database deployed (10 min)
+### 1. Try the app on your phone
 
-Pushing to `main` hands migrations `0003`–`0005` to Supabase's GitHub
-integration.
-
-> **Status 2026-09-29: deployed and checked from outside.** The production
-> API serves release `2026-09-29.21b67c74` with 4,719 ingredients and 28,883
-> names, and `lookup_ingredients` answers. The public key cannot read
-> `app_events`, and an invalid event is rejected. What's left is the phone
-> test (3), and the dashboard check (1) if you want to see it yourself.
-
-1. **Check that it ran.** In the dashboard, open **Integrations → GitHub**. The
-   latest deployment should be the Phase 2 commit, marked successful. If it
-   failed, open its log and send it to me.
-2. **Check the data.** In **SQL Editor**, run:
-   ```sql
-   select version, row_count from ingredient_dataset_releases;       -- 2026-09-29.21b67c74, 4719
-   select count(*) from ingredients;                                   -- 4719
-   select count(*) from ingredient_names;                              -- 28883
-   select id from lookup_ingredients(array['sodium benzoate','e 211']); -- ing_sodium_benzoate
-   ```
-3. **Check the app.** Run `cd rakk-app && npx expo start`, open it on your
-   phone with Expo Go, and scan a packet. The "Matching ingredients" step
-   should appear, and the label should resolve.
-4. **If the integration is not set to deploy `main` to production**, use the
-   CLI instead:
-   ```bash
-   brew install supabase/tap/supabase
-   supabase login
-   cd "Rakk Ingredients" && supabase link --project-ref xqsjnopgekmanshqsyxj
-   supabase db push            # applies any migration the project hasn't run
-   ```
-
-## 2. Put the data checks into CI (30 min, or ask me)
-
-Every check in `PHASE-2-REPORT.md` §6 runs locally only. Add a GitHub Actions
-workflow (`.github/workflows/checks.yml`) that runs them on every push:
-typecheck, `check-copy.sh`, `check-seed.mjs`, `test-matcher.mjs`,
-`test-catalog-lookup.mjs`, `test-guardrails.mjs`, `test-transcription.mjs`.
-Leave out `verify-citations.mjs`: it hits eCFR over the network.
-`check-copy.sh`'s own header says "wire it into CI before the first build that
-leaves this machine". I can write this workflow.
-
-## 3. Licences — read before anything ships (1–2 h, you)
-
-§13 says to confirm these rather than assume them. For each one, decide yes or
-no and note it in `pipeline/sources.mjs` (set `confirmed: true`).
-
-| Source | Read | The question |
-|---|---|---|
-| EU Reg. 1333/2008 | https://eur-lex.europa.eu/content/legal-notice/legal-notice.html | Reuse needs "the source is acknowledged". Plan an **attribution line in the app** (settings/about): "Contains EU legal text © European Union, https://eur-lex.europa.eu" |
-| EFSA OpenFoodTox | https://zenodo.org/records/19388272 (CC BY-ND 4.0) | We show EFSA's ADI numbers with a DOI citation to the opinion. Is quoting a figure from an ND-licensed database a "derivative"? If unsure, ask the lawyer in step 6 |
-| Hong Kong | https://data.gov.hk/en/terms-and-conditions | Commercial reuse with attribution: add HK to the same attribution line |
-| Codex | https://openknowledge.fao.org/handle/20.500.14283/cd8953en | **Settled:** the repository lists CC BY 4.0, commercial use allowed with attribution. Add to the credits line: "FAO and WHO. 2026. Class names and the international numbering system for food additives. Codex Alimentarius Guideline No. CXG 36-1989." |
-| FDA / eCFR | — | US government works, public domain. Nothing to do |
-
-## 4. Codex INS list — done (2026-10-17)
-
-FAO's public repository has the 2026 edition under CC BY 4.0, so the pipeline
-now downloads it like any other source (`pipeline/sources.mjs` → `codex_ins`).
-620 ingredients carry a Codex entry, including 163 additives only Codex lists.
-Ships with release `0006_ingredient_release_2026-10-17_f9bf311a.sql`.
-
-## 5. Anthropic credit — unblocks three things
-
-1. Add credit at https://console.anthropic.com → **Plans & Billing**.
-2. Make sure the Edge Functions have the key. It was set in Phase 1, so check
-   in **Dashboard → Edge Functions → Secrets** that `ANTHROPIC_API_KEY` is
-   there. If not:
-   ```bash
-   supabase secrets set ANTHROPIC_API_KEY=sk-ant-...
-   ```
-3. This unblocks:
-   - **Phase 1's two unverified claims:** `node scripts/live-guardrail-check.mjs`
-     (~$0.10) checks the chat model obeys its rules. Then photograph a few real
-     labels to check OCR transcribes faithfully.
-   - **The grounded extraction pass (§13)**, which I'd build next. It extracts
-     numeric use limits from the CFR text ("not to exceed 0.1 percent") and
-     writes better explanations for the ~4,400 bulk rows. Each value must quote
-     its source paragraph verbatim, and `verify.ts` rejects any that don't. To
-     run it locally the pipeline needs the key in your shell only
-     (`export ANTHROPIC_API_KEY=…`), never in a file.
-
-## 6. Human review before launch (§15)
-
-**Food scientist or regulatory-affairs consultant.** Budget a few hours of their
-time.
-
-1. Send them `pipeline/out/review-sample.csv`: 821 claims about 355 ingredients.
-   Each line has the claim as the app shows it, next to the source text it came
-   from.
-2. They fill in the `reviewer_check` column (ok / wrong / unclear) and
-   `reviewer_notes`.
-3. Also send `pipeline/out/build-report.json` → `seed_dosage_check`: 13 seed
-   dosage figures that differ from EFSA's. Some differ legitimately (JECFA and
-   FDA set their own), and the reviewer should confirm which.
-4. Send the completed sheet back to me. I'll apply the corrections to the seed
-   and pipeline, rebuild, and record the reviewed rows. (`last_full_review_at`
-   is currently null everywhere. Nothing has had a full human review yet, and
-   the data says so.)
-
-**Lawyer (§15, a scoped few-hour engagement).** Ask specifically about:
-- the **88 allergen flags derived from names** ("whey protein" → milk). They're
-  listed in the review sheet, stratum B. Should name-derived flags ship?
-- the "informational, not health advice" framing
-- the new data collection in step 7
-- the licence questions from step 3 you couldn't settle yourself
-
-## 7. Privacy policy (you, with the lawyer)
-
-Phase 2 added two kinds of collection. Neither stores a user or install id, but
-both must be disclosed:
-- **Unmatched ingredients:** the printed name of any ingredient the database
-  doesn't recognise, plus the product barcode (`unmatched_ingredient_log`).
-- **Usage events:** scan outcomes, which ingredient cards are opened, that a
-  chat question was asked (never its text), and onboarding timing
-  (`app_events`).
-
-## 8. Use what the app now collects (monthly, 15 min)
-
-After real scans come in, run these in **SQL Editor**:
-```sql
-select * from unmatched_ingredient_backlog limit 50;  -- what the database still misses, most-seen first
-select * from dosage_research_queue limit 50;          -- most-opened ingredients; those without dosage data first
-select * from scan_funnel;                             -- where scans fail, by week
-```
-The first query is the curation backlog (§12.B). The second is where dosage
-research should go next (§12.B2): look up the EFSA/JECFA assessment for the top
-rows with `has_dosage_context = false`, and add them to
-`rakk-app/src/data/seed/dosage.ts`.
-
-## 9. Monthly data refresh (§12.D, 20 min, or schedule it)
+You need the free **Expo Go** app (App Store / Google Play). No account is
+needed. Your Mac and phone must be on the same Wi-Fi.
 
 ```bash
-cd pipeline && node fetch.mjs
-cd ../rakk-app && npx tsx ../pipeline/build.ts && npx tsx ../pipeline/verify.ts && npx tsx ../pipeline/emit.ts
-node scripts/test-catalog-lookup.mjs
-cd ../pipeline && node diff.mjs && node review-sample.mjs
+cd "Rakk Ingredients/rakk-app"
+npm install          # only if node_modules is missing
+npx expo start
 ```
-Then read `pipeline/out/change-review.md`. It lists every row whose regulatory
-status changed, which is your manual check, plus this month's slice of the
-annual review. Commit and push, and the new release deploys. The app refreshes
-its cached rows on next launch. I can set this up as a scheduled monthly task.
 
-## 10. Smaller things
+A QR code appears in the terminal. **iPhone:** point the Camera app at it and
+tap the banner. **Android:** open Expo Go and scan it. The app loads over
+Wi-Fi; editing code reloads it live. If the phone can't connect (office or
+hotel Wi-Fi often blocks this), use `npx expo start --tunnel` instead.
 
-- **Expo patch updates:** `cd rakk-app && npx expo install --check`, accept,
-  then rerun the checks. Four patch releases have shipped since Phase 1.
-- **Abuse limits:** the unmatched log and event recording accept anonymous
-  writes (validated, capped per call, unreadable from the app). Watch the
-  table sizes in **Database → Tables**, and add rate limiting if they jump.
-- **Twelve flaggable ingredients have no regulatory entry** (palm oil, soybean
-  oil, syrups, some protein isolates). They are foods rather than regulated
-  additives. Decide whether they belong on the everyday allow-list or need a
-  different kind of entry (handoff §3.4). The list is in
-  `pipeline/out/build-report.json` → `no_jurisdiction`.
+**What to try:**
+- Scan a few packets, including one that lists E-numbers or INS numbers.
+- Tap underlined ingredients and read the cards.
+- Scan something with canola or sunflower oil: it should now be underlined.
+- Type a barcode by hand ("Enter the barcode instead").
+- Turn on airplane mode and reopen a product you already scanned; it should
+  still work.
+
+Expo Go is for development. The real app is built later with EAS (Phase 3).
+
+### 2. Get a free USDA FoodData Central key (2 min)
+
+The second barcode source is live but uses a shared demo key, which allows
+only a few dozen lookups an hour.
+1. Sign up at https://fdc.nal.usda.gov/api-key-signup (name and email; the
+   key arrives by email).
+2. In the Supabase dashboard: **Edge Functions → Secrets → Add new secret**,
+   name `FDC_API_KEY`, value: the key.
+
+### 3. One GitHub setting, so the monthly refresh can open its pull request
+
+GitHub → the repository → **Settings → Actions → General → Workflow
+permissions** → tick **"Allow GitHub Actions to create and approve pull
+requests"** → Save.
+
+### 4. Anthropic credit
+
+https://console.anthropic.com → **Plans & Billing**. This unblocks:
+- the extraction step: numeric use limits from the regulations, and proper
+  explanations for ~4,500 ingredients that now have generic ones;
+- Phase 1's two unverified checks (chat model behaviour, photo reading).
+
+## Automatic from now on
+
+- **Checks on every push** (GitHub → Actions → "Checks"). A red run means
+  something broke; fix it before relying on that change.
+- **Monthly refresh** on the 1st (GitHub → Actions → "Monthly data refresh").
+  If anything changed, it opens a pull request whose description lists every
+  ingredient whose regulatory status changed. Read it and merge; merging
+  deploys. It can also be run by hand with "Run workflow".
+
+## At the very end
+
+- **Lawyer and food-scientist review:** send them `REVIEW-BRIEF.md`. It lists
+  everything each of them needs to check, including the data licences
+  (nothing to import; it's a terms check plus a credits screen in the app).
+- **Hong Kong shop test:** about 50 barcodes from HK/Asian grocery products, to
+  measure Open Food Facts coverage there.
+- **Credits screen** in the app, with the text drafted in `REVIEW-BRIEF.md` A4.
+- **Privacy policy:** what to disclose is listed in `REVIEW-BRIEF.md` A5.
+
+## Reference
+
+- **Database counts and findings:** `PHASE-2-REPORT.md`
+- **How the pipeline works and how to run it:** `pipeline/README.md`
+- **Supabase SQL Editor queries, once real users exist:**
+  ```sql
+  select * from unmatched_ingredient_backlog limit 50;  -- what the database still misses
+  select * from dosage_research_queue limit 50;          -- most-opened ingredients, missing dosage data first
+  select * from scan_funnel;                             -- where scans fail, by week
+  ```

@@ -23,7 +23,12 @@ node scripts/test-catalog-lookup.mjs    # subset + server lookup ≡ full databa
 cd ../pipeline
 node diff.mjs                           # §12.D change review vs the last committed build → out/change-review.md
 node review-sample.mjs                  # §15 reviewer sheet → out/review-sample.csv
+node check-release.mjs                  # the committed migration, offline bundle and build agree
 ```
+
+**This runs by itself.** `.github/workflows/data-refresh.yml` does all of
+the above on the 1st of each month and opens a pull request if the data
+changed. `.github/workflows/checks.yml` runs the checks on every push.
 
 Deploying is committing the new release migration: Supabase's GitHub
 integration applies it. A release migration that is not yet committed is
@@ -73,6 +78,11 @@ rather than guess.
   such, and a curated food never inherits such a citation.
 - **The seed wins on curated fields** (explanation, allow-list, dosage); bulk
   data fills what it left empty and corrects what verification disproves.
+- **A shared number is not enough.** The EU and Codex mostly number additives
+  alike, but not always (E1210 is carbomer; INS 1210 is sodium polyacrylate).
+  A number joins two sources only if the names also agree, and a row answers
+  to "INS n" only if Codex itself gives it n. Bracketed numbers count:
+  "Polyoxyethylene (8) stearate" and "(40) stearate" are different.
 - **One name, one ingredient**, checked on the matcher's own needles
   (`needlesFor`), plurals included. Ambiguous aliases are dropped from every
   row that claims them.
@@ -96,6 +106,8 @@ sources.mjs         source registry (URLs, terms)
 fetch.mjs           downloader; writes sources/manifest.json (committed)
 parse/              one parser per source; ecfr.mjs also holds listsSubstance(),
                     codex-ins.mjs reads the CXG 36 PDF
+curation/links.mjs  the few joins a person made, each with its reason
+check-release.mjs   migration ↔ bundle ↔ build ↔ verification agree (CI)
 lib/text.mjs        entities, CSV, CAS check digit, name keys
 lib/vocab.mjs       the fixed vocabularies (effects, US status wording, allergen rules)
 lib/xlsx2csv.py     stdlib .xlsx reader (OpenFoodTox)

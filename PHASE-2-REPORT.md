@@ -2,6 +2,12 @@
 
 Picks up from `PHASE-2-HANDOFF.md`. Spec: `MD Files/rakk-phase2-database-population.md`.
 
+> **Update 2026-10-18.** All seed oils are now flagged (product decision); EU
+> and Codex numbering differences are checked by name (E1210 is carbomer, INS
+> 1210 is sodium polyacrylate); Hong Kong entries all resolve; USDA
+> FoodData Central is the second barcode source; checks run on every push and
+> the data refreshes monthly (`.github/workflows/`). Release `2ffa7ef7`.
+>
 > **Update 2026-10-17 — Codex added.** CXG 36-1989 (2026 edition) is now an
 > automatic source from FAO's public repository (CC BY 4.0), parsed from its
 > ruled table and checked by an independent pass. Release `f9bf311a`
@@ -18,15 +24,15 @@ subset, and it was checked working in that state.
 
 | | |
 |---|---|
-| **Ingredients** | **4,882** rows satisfying `rakk-app/src/types/ingredient.ts` (Phase 1: 270) |
+| **Ingredients** | **4,885** rows satisfying `rakk-app/src/types/ingredient.ts` (Phase 1: 270) |
 | from | FDA Substances Added to Food 3,773 · GRAS notices 549 · Codex-only 163 · EU-only 112 · FDA colour list 13 · curated seed 272 |
 | US FDA status | 4,527 rows; **1,910 with a 21 CFR citation verified to list the substance** |
-| EU status | 346 rows, from Reg. (EC) 1333/2008 Annex II (consolidated 2026-08-18) |
-| HK status | 120 rows, from Cap. 132BD / 132H / 132U |
-| Codex | 620 rows, from CXG 36-1989 (2026 edition) — an INS number and functional class, stated as **not** an approval |
+| EU status | 410 rows, from Reg. (EC) 1333/2008 Annex II (consolidated 2026-08-18) |
+| HK status | 152 rows, from Cap. 132BD / 132H / 132U — every entry resolved |
+| Codex | 621 rows, from CXG 36-1989 (2026 edition) — an INS number and functional class, stated as **not** an approval |
 | Dosage context | 108 rows (76 seed + 32 new from EFSA opinions, each with a DOI) |
 | Identifiers | CAS 3,286 · E-number / INS code 634 · formula 1,664 |
-| Flaggable with no regulatory entry | 11 (was 31) |
+| Flaggable with no regulatory entry | 18 — mostly seed oils and other foods, flagged by product decision; no additive regulation lists them |
 | Verification | 0 failures across ~19,400 independent checks |
 
 Every field of every row has provenance in `pipeline/out/provenance.json`,
