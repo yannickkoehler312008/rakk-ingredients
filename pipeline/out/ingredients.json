@@ -1114,6 +1114,37 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_1_4_heptonolactone",
+  "canonical_name": "1,4-heptonolactone",
+  "aka": [
+   "INS 370"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": "INS 370",
+  "chemical_formula": null,
+  "category": "acidity_regulator",
+  "origin": "unknown",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
+  "jurisdictions": [
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 370 (acidity regulator, sequestrant). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 370",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   }
+  ],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "codex_alimentarius",
+  "source_updated_at": "2026-10-18",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_1_4_hydroxy_3_methoxyphenyl_decan_3_one",
   "canonical_name": "1-(4-hydroxy-3-methoxyphenyl)decan-3-one",
   "aka": [
@@ -29431,7 +29462,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -29462,7 +29493,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -29493,7 +29524,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -31269,7 +31300,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -31300,7 +31331,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -31331,7 +31362,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -31362,7 +31393,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -31393,7 +31424,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -31752,9 +31783,11 @@
  {
   "id": "ing_alpha_cyclodextrin",
   "canonical_name": "Alpha -Cyclodextrin",
-  "aka": [],
+  "aka": [
+   "INS 457"
+  ],
   "cas_number": null,
-  "e_number_ins_code": null,
+  "e_number_ins_code": "INS 457",
   "chemical_formula": null,
   "category": "other",
   "origin": "unknown",
@@ -31769,6 +31802,12 @@
     "status": "Notified to FDA as GRAS for its intended use; FDA had no questions",
     "citation": "GRN 155",
     "citation_url": "https://hfpappexternal.fda.gov/scripts/fdcc/index.cfm?set=GRASNotices&id=155"
+   },
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 457 (stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 457",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
    }
   ],
   "risk_assessment_refs": null,
@@ -34428,7 +34467,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -34662,7 +34701,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -34804,7 +34843,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -34835,7 +34874,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -34972,16 +35011,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 452",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 452(v) (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 452(v)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -40424,7 +40475,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -41591,6 +41642,43 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_beta_apo_8_carotenoic_acid_ethyl_ester",
+  "canonical_name": "beta-apo-8'-carotenoic acid ethyl ester",
+  "aka": [
+   "INS 160f"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": "INS 160f",
+  "chemical_formula": null,
+  "category": "colorant",
+  "origin": "unknown",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
+  "jurisdictions": [
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 160f (colour). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 160f",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
+   }
+  ],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "codex_alimentarius",
+  "source_updated_at": "2026-10-18",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_beta_bourbonene",
   "canonical_name": "Beta-bourbonene",
   "aka": [],
@@ -41682,8 +41770,9 @@
  },
  {
   "id": "ing_beta_carotene_rich_extract_from_dunaliella_salina",
-  "canonical_name": "β -carotene-rich extract from Dunaliella salina",
+  "canonical_name": "β-carotene-rich extract from Dunaliella salina",
   "aka": [
+   "beta-carotene-rich extract from Dunaliella salina",
    "INS 160a(iv)",
    "beta -carotene-rich extract from Dunaliella salina"
   ],
@@ -41699,6 +41788,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 160a",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 160a(iv) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 160a(iv)",
@@ -41708,7 +41803,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -43798,6 +43893,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(vi) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(vi)",
@@ -43807,7 +43908,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -43952,6 +44053,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(iii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(iii)",
@@ -43961,7 +44068,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -44347,7 +44454,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -44361,8 +44468,7 @@
    "Orthoboric acid",
    "Trihydroxyborane",
    "Boric acid (h3bo3)",
-   "Boron trihydroxide",
-   "INS 284"
+   "Boron trihydroxide"
   ],
   "cas_number": "10043-35-3",
   "e_number_ins_code": "E284",
@@ -44899,6 +45005,12 @@
     "status": "Has Codex INS number 151 (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 151",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -44935,7 +45047,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -45004,7 +45116,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -45038,6 +45150,12 @@
     "status": "Has Codex INS number 155 (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 155",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -47654,16 +47772,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 450",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 450(vii) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 450(vii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -47733,7 +47863,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -47945,6 +48075,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 170",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 170(ii) (acidity regulator, anticaking agent, colour, firming agent, flour treatment agent, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 170(ii)",
@@ -47954,7 +48090,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -47976,6 +48112,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 352",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 352(i) (acidity regulator). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 352(i)",
@@ -47985,7 +48127,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -48226,7 +48368,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -48437,38 +48579,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
-  "id": "ing_calcium_malate_d_l",
-  "canonical_name": "Calcium malate, D,L-",
-  "aka": [
-   "INS 352(ii)"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 352(ii)",
-  "chemical_formula": null,
-  "category": "acidity_regulator",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 352(ii) (acidity regulator). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 352(ii)",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -48589,6 +48700,12 @@
   "plain_explanation": "Codex classes it as an emulsifier: “A food additive, which forms or maintains a uniform emulsion of two or more phases in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 482",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 482(ii) (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 482(ii)",
@@ -48598,7 +48715,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -48801,16 +48918,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 452",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 452(iv) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 452(iv)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -48906,6 +49035,12 @@
     "status": "Has Codex INS number 450(vi) (acidity regulator, emulsifier, emulsifying salt, firming agent, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 450(vi)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -49211,7 +49346,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -49811,10 +49946,11 @@
   "category": "other",
   "origin": "natural",
   "typical_uses": [
-   "food"
+   "food",
+   "cosmetics"
   ],
   "allergen_flags": [],
-  "plain_explanation": "Oil from a variety of rapeseed bred for low erucic acid.",
+  "plain_explanation": "Oil from a variety of rapeseed bred for low erucic acid. It is one of the most widely used oils in processed food.",
   "jurisdictions": [
    {
     "jurisdiction": "US_FDA",
@@ -49828,7 +49964,7 @@
   "source": "fda_substances_added_to_food",
   "source_updated_at": "2026-07-28",
   "last_full_review_at": null,
-  "everyday_allowlist": true
+  "everyday_allowlist": false
  },
  {
   "id": "ing_canola_protein_isolate",
@@ -50489,7 +50625,7 @@
   "aka": [
    "E1210",
    "E 1210",
-   "INS 1210"
+   "INS 1211"
   ],
   "cas_number": null,
   "e_number_ins_code": "E1210",
@@ -50510,8 +50646,8 @@
    },
    {
     "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 1210 (stabilizer). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 1210",
+    "status": "Has Codex INS number 1211 (bulking agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 1211",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
    }
   ],
@@ -50551,7 +50687,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -50870,6 +51006,12 @@
     "status": "Has Codex INS number 120 (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 120",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
    }
   ],
   "risk_assessment_refs": [
@@ -51055,7 +51197,7 @@
  },
  {
   "id": "ing_carotenes_beta_blakeslea_trispora",
-  "canonical_name": "Carotenes, beta -, Blakeslea trispora",
+  "canonical_name": "Carotenes, beta-, Blakeslea trispora",
   "aka": [
    "INS 160a(iii)"
   ],
@@ -51071,6 +51213,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 160a",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 160a(iii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 160a(iii)",
@@ -51080,13 +51228,13 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
  {
   "id": "ing_carotenes_beta_synthetic",
-  "canonical_name": "Carotenes, beta -, synthetic",
+  "canonical_name": "Carotenes, beta-, synthetic",
   "aka": [
    "INS 160a(i)"
   ],
@@ -51102,6 +51250,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 160a",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 160a(i) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 160a(i)",
@@ -51111,13 +51265,13 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
  {
   "id": "ing_carotenes_beta_vegetable",
-  "canonical_name": "Carotenes, beta -, vegetable",
+  "canonical_name": "Carotenes, beta-, vegetable",
   "aka": [
    "INS 160a(ii)"
   ],
@@ -51133,6 +51287,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 160a",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 160a(ii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 160a(ii)",
@@ -51142,38 +51302,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
-  "id": "ing_carotenoic_acid_ethyl_ester_beta_apo_8",
-  "canonical_name": "Carotenoic acid, ethyl ester, beta -apo-8'-",
-  "aka": [
-   "INS 160f"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 160f",
-  "chemical_formula": null,
-  "category": "colorant",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 160f (colour). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 160f",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -51528,7 +51657,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -52851,7 +52980,8 @@
   "aka": [
    "cellulose",
    "wood pulp cellulose",
-   "E460ii"
+   "E460ii",
+   "INS 460(ii)"
   ],
   "cas_number": null,
   "e_number_ins_code": "INS 460(ii)",
@@ -54305,6 +54435,12 @@
     "status": "Has Codex INS number 141 (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 141",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -54332,6 +54468,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 141",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 141(ii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 141(ii)",
@@ -54341,7 +54483,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -54375,6 +54517,12 @@
     "status": "Has Codex INS number 140 (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 140",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -54402,6 +54550,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 141",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 141(i) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 141(i)",
@@ -54411,7 +54565,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -54514,7 +54668,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -54522,7 +54676,8 @@
   "id": "ing_choline_bitartrate",
   "canonical_name": "Choline bitartrate",
   "aka": [
-   "choline"
+   "choline",
+   "INS 1001(v)"
   ],
   "cas_number": "87-67-2",
   "e_number_ins_code": "INS 1001(v)",
@@ -54582,7 +54737,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -54679,7 +54834,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -54710,7 +54865,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -60437,6 +60592,30 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_cottonseed_oil",
+  "canonical_name": "Cottonseed oil",
+  "aka": [
+   "cotton seed oil"
+  ],
+  "cas_number": "8001-29-4",
+  "e_number_ins_code": null,
+  "chemical_formula": null,
+  "category": "other",
+  "origin": "natural",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Oil from the seeds of the cotton plant, refined before use in food. It is common in frying oils and snack foods.",
+  "jurisdictions": [],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "manual_curation",
+  "source_updated_at": "2026-09-27",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_coumarin_prohibited",
   "canonical_name": "Coumarin--prohibited",
   "aka": [
@@ -61337,6 +61516,12 @@
   "plain_explanation": "Codex classes it as a sweetener: “A food additive (other than a mono- or disaccharide sugar), which imparts a sweet taste to a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 952",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 952(i) (sweetener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 952(i)",
@@ -61352,7 +61537,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -61382,68 +61567,6 @@
   "usage_context": null,
   "source": "fda_gras_notice",
   "source_updated_at": "2026-09-24",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
-  "id": "ing_cyclodextrin_alpha",
-  "canonical_name": "Cyclodextrin, alpha -",
-  "aka": [
-   "INS 457"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 457",
-  "chemical_formula": null,
-  "category": "thickener",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as a stabilizer: “A food additive, which makes it possible to maintain a uniform dispersion of two or more components.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 457 (stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 457",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
-  "id": "ing_cyclodextrin_gamma",
-  "canonical_name": "Cyclodextrin, gamma -",
-  "aka": [
-   "INS 458"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 458",
-  "chemical_formula": null,
-  "category": "thickener",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as a stabilizer: “A food additive, which makes it possible to maintain a uniform dispersion of two or more components.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 458 (stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 458",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -62177,7 +62300,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -62208,7 +62331,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -62239,7 +62362,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -62489,6 +62612,43 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_d_l_calcium_malate",
+  "canonical_name": "D,L-calcium malate",
+  "aka": [
+   "INS 352(ii)"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": "INS 352(ii)",
+  "chemical_formula": null,
+  "category": "acidity_regulator",
+  "origin": "unknown",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
+  "jurisdictions": [
+   {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 352",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 352(ii) (acidity regulator). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 352(ii)",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   }
+  ],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "codex_alimentarius",
+  "source_updated_at": "2026-10-18",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_d_limonen_10_ol",
   "canonical_name": "D-limonen-10-ol",
   "aka": [],
@@ -62734,9 +62894,11 @@
  {
   "id": "ing_d_tagatose",
   "canonical_name": "D-Tagatose",
-  "aka": [],
+  "aka": [
+   "INS 963"
+  ],
   "cas_number": null,
-  "e_number_ins_code": null,
+  "e_number_ins_code": "INS 963",
   "chemical_formula": null,
   "category": "other",
   "origin": "unknown",
@@ -62751,6 +62913,12 @@
     "status": "Notified to FDA as GRAS for its intended use; FDA had no questions (2 notices)",
     "citation": "GRN 352",
     "citation_url": "https://hfpappexternal.fda.gov/scripts/fdcc/index.cfm?set=GRASNotices&id=352"
+   },
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 963 (sweetener). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 963",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
    }
   ],
   "risk_assessment_refs": null,
@@ -64135,7 +64303,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -64716,6 +64884,12 @@
     "status": "Has Codex INS number 341(ii) (acidity regulator, anticaking agent, emulsifying salt, firming agent, flour treatment agent, humectant, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 341(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -64842,6 +65016,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 333",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 333(ii) (acidity regulator, firming agent, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 333(ii)",
@@ -64851,7 +65031,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -64882,7 +65062,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -66521,6 +66701,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 450",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 450(viii) (acidity regulator, flour treatment agent, emulsifier, firming agent, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 450(viii)",
@@ -66530,7 +66716,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -67022,8 +67208,7 @@
    "Poly(methylsiloxane)",
    "Dimethyl polysiloxane",
    "Poly(oxy(dimethylsilylene))",
-   "Dimethyl siloxanes and silicones",
-   "INS 900"
+   "Dimethyl siloxanes and silicones"
   ],
   "cas_number": "9016-00-6",
   "e_number_ins_code": "E900",
@@ -67282,6 +67467,12 @@
     "status": "Has Codex INS number 340(ii) (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 340(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -67309,6 +67500,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 336",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 336(ii) (acidity regulator, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 336(ii)",
@@ -67318,7 +67515,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -67683,6 +67880,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 331",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 331(ii) (acidity regulator, emulsifier, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 331(ii)",
@@ -67692,7 +67895,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -67807,7 +68010,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -68039,6 +68242,43 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_dl_alpha_tocopherol",
+  "canonical_name": "dl-alpha-tocopherol",
+  "aka": [
+   "INS 307c"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": "INS 307c",
+  "chemical_formula": null,
+  "category": "antioxidant",
+  "origin": "unknown",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Codex classes it as an antioxidant: “A food additive, which prolongs the shelf-life of foods by protecting against deterioration caused by oxidation.”",
+  "jurisdictions": [
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 307c (antioxidant). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 307c",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
+   }
+  ],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "codex_alimentarius",
+  "source_updated_at": "2026-10-18",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_dl_camphor",
   "canonical_name": "DL-camphor",
   "aka": [],
@@ -68221,6 +68461,37 @@
   "usage_context": null,
   "source": "fda_substances_added_to_food",
   "source_updated_at": "2026-07-28",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
+  "id": "ing_dl_magnesium_lactate",
+  "canonical_name": "DL-magnesium lactate",
+  "aka": [
+   "INS 329"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": "INS 329",
+  "chemical_formula": null,
+  "category": "acidity_regulator",
+  "origin": "unknown",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
+  "jurisdictions": [
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 329 (acidity regulator, flour treatment agent). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 329",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   }
+  ],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "codex_alimentarius",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -70204,6 +70475,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(ix) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(ix)",
@@ -70213,7 +70490,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -71299,7 +71576,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -74134,7 +74411,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -74232,7 +74509,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -78675,7 +78952,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -79102,7 +79379,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -80592,9 +80869,11 @@
  {
   "id": "ing_gamma_cyclodextrin",
   "canonical_name": "Gamma cyclodextrin",
-  "aka": [],
+  "aka": [
+   "INS 458"
+  ],
   "cas_number": null,
-  "e_number_ins_code": null,
+  "e_number_ins_code": "INS 458",
   "chemical_formula": null,
   "category": "other",
   "origin": "unknown",
@@ -80609,6 +80888,12 @@
     "status": "Notified to FDA as GRAS for its intended use; FDA had no questions",
     "citation": "GRN 46",
     "citation_url": "https://hfpappexternal.fda.gov/scripts/fdcc/index.cfm?set=GRASNotices&id=46"
+   },
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 458 (stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 458",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
    }
   ],
   "risk_assessment_refs": null,
@@ -81292,7 +81577,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -81398,7 +81683,8 @@
   "aka": [
    "gelatine",
    "bovine gelatin",
-   "porcine gelatin"
+   "porcine gelatin",
+   "INS 428"
   ],
   "cas_number": "9000-70-8",
   "e_number_ins_code": "INS 428",
@@ -83527,7 +83813,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -84169,7 +84455,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -84530,11 +84816,37 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_grapeseed_oil",
+  "canonical_name": "Grapeseed oil",
+  "aka": [
+   "grape seed oil"
+  ],
+  "cas_number": "8024-22-4",
+  "e_number_ins_code": null,
+  "chemical_formula": null,
+  "category": "other",
+  "origin": "natural",
+  "typical_uses": [
+   "food",
+   "cosmetics"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Oil from grape seeds, mostly a by-product of winemaking.",
+  "jurisdictions": [],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "manual_curation",
+  "source_updated_at": "2026-09-27",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_green_3",
   "canonical_name": "FD&C Green No. 3",
   "aka": [
    "green 3",
-   "fast green FCF"
+   "fast green FCF",
+   "INS 143"
   ],
   "cas_number": "2353-45-9",
   "e_number_ins_code": "INS 143",
@@ -86193,37 +86505,6 @@
   "everyday_allowlist": false
  },
  {
-  "id": "ing_heptonolactone_1_4",
-  "canonical_name": "Heptonolactone, 1,4-",
-  "aka": [
-   "INS 370"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 370",
-  "chemical_formula": null,
-  "category": "acidity_regulator",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 370 (acidity regulator, sequestrant). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 370",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
   "id": "ing_heptyl_acetate",
   "canonical_name": "Heptyl acetate",
   "aka": [
@@ -86508,7 +86789,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -87650,6 +87931,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(x) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(x)",
@@ -87659,7 +87946,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -91054,6 +91341,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 172",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 172(i) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 172(i)",
@@ -91063,7 +91356,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -91085,6 +91378,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 172",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 172(iii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 172(iii)",
@@ -91094,7 +91393,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -95431,7 +95730,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -99638,7 +99937,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -99718,6 +100017,12 @@
   "plain_explanation": "Codex classes it as an antioxidant: “A food additive, which prolongs the shelf-life of foods by protecting against deterioration caused by oxidation.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 322",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 322(ii) (antioxidant, emulsifier). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 322(ii)",
@@ -99727,7 +100032,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -101600,6 +101905,12 @@
     "status": "Has Codex INS number 180 (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 180",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -101838,6 +102149,12 @@
   "plain_explanation": "Codex classes it as a gelling agent: “A food additive, which gives a food texture through formation of a gel.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 418",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 418(ii) (gelling agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 418(ii)",
@@ -101847,7 +102164,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -101885,8 +102202,7 @@
   "canonical_name": "Low-substituted hydroxypropyl cellulose (L-HPC)",
   "aka": [
    "E463a",
-   "E 463a",
-   "INS 463a"
+   "E 463a"
   ],
   "cas_number": null,
   "e_number_ins_code": "E463a",
@@ -102088,6 +102404,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 161b",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 161b(iii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 161b(iii)",
@@ -102097,7 +102419,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102119,6 +102441,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 161b",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 161b(i) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 161b(i)",
@@ -102128,7 +102456,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102190,6 +102518,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 160d",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 160d(iii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 160d(iii)",
@@ -102199,7 +102533,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102250,6 +102584,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 160d",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 160d(i) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 160d(i)",
@@ -102259,7 +102599,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102281,6 +102621,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 160d",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 160d(ii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 160d(ii)",
@@ -102290,7 +102636,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102321,7 +102667,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102731,7 +103077,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102827,16 +103173,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 450",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 450(ix) (acidity regulator, raising agent, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 450(ix)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -102858,16 +103216,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 343",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 343(i) (acidity regulator, anticaking agent, emulsifying salt, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 343(i)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -103017,16 +103387,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 343",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 343(ii) (acidity regulator, anticaking agent, emulsifying salt, raising agent, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 343(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -103094,6 +103476,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 504",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 504(ii) (acidity regulator, anticaking agent, carrier, colour-retention agent). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 504(ii)",
@@ -103103,7 +103491,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -103133,37 +103521,6 @@
   "usage_context": null,
   "source": "fda_gras_notice",
   "source_updated_at": "2026-09-24",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
-  "id": "ing_magnesium_lactate_dl",
-  "canonical_name": "Magnesium lactate, DL-",
-  "aka": [
-   "INS 329"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 329",
-  "chemical_formula": null,
-  "category": "acidity_regulator",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 329 (acidity regulator, flour treatment agent). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 329",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -103373,8 +103730,7 @@
   "canonical_name": "Magnesium silicate",
   "aka": [
    "E553a",
-   "E 553a",
-   "INS 553a"
+   "E 553a"
   ],
   "cas_number": "1343-88-0",
   "e_number_ins_code": "E553a",
@@ -103434,7 +103790,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -103443,8 +103799,7 @@
   "canonical_name": "Magnesium stearate",
   "aka": [
    "E470b",
-   "E 470b",
-   "INS 470b"
+   "E 470b"
   ],
   "cas_number": "557-04-0",
   "e_number_ins_code": "E470b",
@@ -103545,7 +103900,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -104087,7 +104442,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -109682,7 +110037,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -110027,8 +110382,7 @@
   "canonical_name": "Microcrystalline wax",
   "aka": [
    "E905",
-   "E 905",
-   "INS 905"
+   "E 905"
   ],
   "cas_number": null,
   "e_number_ins_code": "E905",
@@ -110518,7 +110872,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -110549,7 +110903,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -110580,7 +110934,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -110611,7 +110965,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -110642,7 +110996,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -110711,8 +111065,7 @@
   "canonical_name": "Mixed acetic and tartaric acid esters of mono- and diglycerides of fatty acids",
   "aka": [
    "E472f",
-   "E 472f",
-   "INS 472f"
+   "E 472f"
   ],
   "cas_number": null,
   "e_number_ins_code": "E472f",
@@ -111173,7 +111526,8 @@
   "aka": [
    "luo han guo",
    "mogroside V",
-   "siraitia grosvenorii extract"
+   "siraitia grosvenorii extract",
+   "INS 970"
   ],
   "cas_number": null,
   "e_number_ins_code": "INS 970",
@@ -111668,6 +112022,12 @@
     "status": "Has Codex INS number 340(i) (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 340(i)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -111713,6 +112073,12 @@
     "status": "Has Codex INS number 339(i) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 339(i)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -111740,6 +112106,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 333",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 333(i) (acidity regulator, firming agent, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 333(i)",
@@ -111749,7 +112121,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -111758,7 +112130,8 @@
   "canonical_name": "Monocalcium phosphate",
   "aka": [
    "calcium acid phosphate",
-   "E341i"
+   "E341i",
+   "INS 341(i)"
   ],
   "cas_number": "7758-23-8",
   "e_number_ins_code": "INS 341(i)",
@@ -111782,6 +112155,12 @@
     "status": "Has Codex INS number 341(i) (acidity regulator, anticaking agent, emulsifying salt, firming agent, flour treatment agent, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 341(i)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -112031,7 +112410,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -112053,6 +112432,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 335",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 335(i) (acidity regulator, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 335(i)",
@@ -112062,7 +112447,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -114527,7 +114912,8 @@
   "id": "ing_name_vitamin_b3",
   "canonical_name": "Vitamin B3",
   "aka": [
-   "niacin"
+   "niacin",
+   "INS 375"
   ],
   "cas_number": "59-67-6",
   "e_number_ins_code": "INS 375",
@@ -115885,6 +116271,12 @@
   "plain_explanation": "Codex classes it as a preservative: “A food additive, which prolongs the shelf-life of a food by protecting against deterioration caused by microorganisms.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 234",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 234(i) (preservative). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 234(i)",
@@ -115894,7 +116286,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -116946,7 +117338,8 @@
    "2-phenylphenol",
    "2-hydroxydiphenyl",
    "2-hydroxybiphenyl",
-   "2-hydroxy-1,1'-biphenyl"
+   "2-hydroxy-1,1'-biphenyl",
+   "ortho-phenylphenol"
   ],
   "cas_number": "90-43-7",
   "e_number_ins_code": null,
@@ -116964,6 +117357,12 @@
     "status": "No FDA regulation; used as a flavoring under the flavor industry's own GRAS determination (FEMA GRAS)",
     "citation": "FEMA No. 3959",
     "citation_url": null
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -117579,7 +117978,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -119487,7 +119886,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -121508,8 +121907,7 @@
    "paprika oleoresin",
    "E160c",
    "capsanthin",
-   "E 160c",
-   "INS 160c"
+   "E 160c"
   ],
   "cas_number": "502-65-8",
   "e_number_ins_code": "E160c",
@@ -122882,16 +123280,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 451",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 451(ii) (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 451(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -122913,16 +123323,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 451",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 451(i) (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 451(i)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -126989,9 +127411,12 @@
  {
   "id": "ing_polyacrylic_acid_sodium_salt",
   "canonical_name": "Polyacrylic acid, sodium salt",
-  "aka": [],
+  "aka": [
+   "INS 1210",
+   "Sodium polyacrylate"
+  ],
   "cas_number": "9003-04-7",
-  "e_number_ins_code": null,
+  "e_number_ins_code": "INS 1210",
   "chemical_formula": "C3H3NaO2",
   "category": "other",
   "origin": "unknown",
@@ -127006,6 +127431,12 @@
     "status": "Permitted as a secondary direct food additive, under the conditions in the regulation",
     "citation": "21 CFR 173.310",
     "citation_url": "https://www.ecfr.gov/current/title-21/section-173.310"
+   },
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 1210 (stabilizer). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 1210",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
    }
   ],
   "risk_assessment_refs": null,
@@ -127738,6 +128169,37 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_polyoxyethylene_8_stearate",
+  "canonical_name": "Polyoxyethylene (8) stearate",
+  "aka": [
+   "INS 430"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": "INS 430",
+  "chemical_formula": null,
+  "category": "emulsifier",
+  "origin": "unknown",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Codex classes it as an emulsifier: “A food additive, which forms or maintains a uniform emulsion of two or more phases in a food.”",
+  "jurisdictions": [
+   {
+    "jurisdiction": "CODEX",
+    "status": "Has Codex INS number 430 (emulsifier). An INS number identifies an additive; it is not a Codex approval.",
+    "citation": "CXG 36-1989 — INS 430",
+    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   }
+  ],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "codex_alimentarius",
+  "source_updated_at": "2026-10-18",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_polyoxyethylene_dioleate",
   "canonical_name": "Polyoxyethylene dioleate",
   "aka": [
@@ -127868,12 +128330,6 @@
     "status": "Has Codex INS number 452 (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 452",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   },
-   {
-    "jurisdiction": "HK_CFS",
-    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
-    "citation": "Cap. 132BD, Schedule 1",
-    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -128934,7 +129390,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -128965,7 +129421,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -128996,7 +129452,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -129027,7 +129483,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -129530,12 +129986,6 @@
     "status": "Has Codex INS number 332 (acidity regulator, emulsifying salt, sequestrant, stabilizer, antioxidant). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 332",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   },
-   {
-    "jurisdiction": "HK_CFS",
-    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
-    "citation": "Cap. 132BD, Schedule 1",
-    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -129599,6 +130049,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive (Annex II), with the note: “Period of application: From 6 February 2013.”",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 261",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 261(ii) (acidity regulator, preservative). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 261(ii)",
@@ -129608,7 +130064,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -129630,6 +130086,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 332",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 332(i) (acidity regulator, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 332(i)",
@@ -129639,7 +130101,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -129844,6 +130306,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 351",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 351(i) (acidity regulator). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 351(i)",
@@ -129853,7 +130321,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -129875,6 +130343,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 515",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 515(ii) (acidity regulator). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 515(ii)",
@@ -129884,7 +130358,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -130097,7 +130571,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -130770,16 +131244,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 452",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 452(ii) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 452(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -130853,6 +131339,12 @@
     "status": "Has Codex INS number 450(v) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 450(v)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -130909,6 +131401,12 @@
   "plain_explanation": "Codex classes it as a sweetener: “A food additive (other than a mono- or disaccharide sugar), which imparts a sweet taste to a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 954",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 954(iii) (sweetener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 954(iii)",
@@ -130918,7 +131416,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -131043,7 +131541,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -131242,12 +131740,18 @@
     "status": "Has Codex INS number 225 (antioxidant, preservative). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 225",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -132807,7 +133311,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -133601,7 +134105,8 @@
   "aka": [
    "proteolytic enzyme",
    "papain",
-   "bromelain"
+   "bromelain",
+   "INS 1101(ii)"
   ],
   "cas_number": "9001-92-7",
   "e_number_ins_code": "INS 1101(ii)",
@@ -133835,7 +134340,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -133867,7 +134372,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -133898,7 +134403,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -134391,6 +134896,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(iv) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(iv)",
@@ -134400,7 +134911,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -134422,6 +134933,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(vii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(vii)",
@@ -134431,7 +134948,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -136047,6 +136564,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(v) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(v)",
@@ -136056,7 +136579,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -136107,6 +136630,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 163",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 163(viii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 163(viii)",
@@ -136116,7 +136645,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -136767,7 +137296,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -136939,6 +137468,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 101",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 101(iv) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 101(iv)",
@@ -136948,7 +137483,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -136970,6 +137505,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 101",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 101(iii) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 101(iii)",
@@ -136979,7 +137520,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -137001,6 +137542,12 @@
   "plain_explanation": "Codex classes it as a colour: “A food additive, which adds or restores colour in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 101",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 101(i) (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 101(i)",
@@ -137010,7 +137557,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -137095,6 +137642,30 @@
   "usage_context": null,
   "source": "fda_gras_notice",
   "source_updated_at": "2026-09-24",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
+  "id": "ing_rice_bran_oil",
+  "canonical_name": "Rice bran oil",
+  "aka": [
+   "rice oil"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": null,
+  "chemical_formula": null,
+  "category": "other",
+  "origin": "natural",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Oil from the bran layer of rice grains, common in frying and in Asian cooking.",
+  "jurisdictions": [],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "manual_curation",
+  "source_updated_at": "2026-09-27",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -138269,7 +138840,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -139236,6 +139807,31 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_safflower_oil",
+  "canonical_name": "Safflower oil",
+  "aka": [
+   "high oleic safflower oil"
+  ],
+  "cas_number": "8001-23-8",
+  "e_number_ins_code": null,
+  "chemical_formula": null,
+  "category": "other",
+  "origin": "natural",
+  "typical_uses": [
+   "food",
+   "cosmetics"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "Oil from the seeds of the safflower plant.",
+  "jurisdictions": [],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "manual_curation",
+  "source_updated_at": "2026-09-27",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_saffron",
   "canonical_name": "Saffron",
   "aka": [
@@ -139789,6 +140385,12 @@
     "status": "Has Codex INS number 962 (sweetener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 962",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted sweetener",
+    "citation": "Cap. 132U, Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132U!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -139856,7 +140458,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -139887,7 +140489,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -139918,7 +140520,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -140890,6 +141492,34 @@
   "source_updated_at": "2026-07-28",
   "last_full_review_at": null,
   "everyday_allowlist": true
+ },
+ {
+  "id": "ing_sesame_oil",
+  "canonical_name": "Sesame oil",
+  "aka": [
+   "toasted sesame oil",
+   "sesame seed oil"
+  ],
+  "cas_number": "8008-74-0",
+  "e_number_ins_code": null,
+  "chemical_formula": null,
+  "category": "other",
+  "origin": "natural",
+  "typical_uses": [
+   "food",
+   "cosmetics"
+  ],
+  "allergen_flags": [
+   "sesame"
+  ],
+  "plain_explanation": "Oil from sesame seeds. Toasted sesame oil is pressed from roasted seeds and used mainly for flavour.",
+  "jurisdictions": [],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "manual_curation",
+  "source_updated_at": "2026-09-27",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
  },
  {
   "id": "ing_shea_stearin",
@@ -141991,6 +142621,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 541",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 541(ii) (acidity regulator, emulsifier, emulsifying salt, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 541(ii)",
@@ -142000,7 +142636,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -142429,16 +143065,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 452",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 452(iii) (acidity regulator, emulsifier, humectant, raising agent, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 452(iii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -142530,6 +143178,12 @@
     "status": "Affirmed by FDA as generally recognized as safe (GRAS), with no limit other than good manufacturing practice",
     "citation": "21 CFR 184.1742",
     "citation_url": "https://www.ecfr.gov/current/title-21/section-184.1742"
+   },
+   {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 500",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
    },
    {
     "jurisdiction": "CODEX",
@@ -142828,6 +143482,12 @@
     "status": "Has Codex INS number 262(ii) (acidity regulator, preservative, sequestrant). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 262(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -142855,6 +143515,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 331",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 331(i) (acidity regulator, emulsifier, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 331(i)",
@@ -142864,7 +143530,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -142920,6 +143586,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 350",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 350(ii) (acidity regulator, humectant). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 350(ii)",
@@ -142929,7 +143601,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -143453,6 +144125,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 350",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 350(i) (acidity regulator, humectant). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 350(i)",
@@ -143462,7 +144140,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -143484,6 +144162,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 514",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 514(ii) (acidity regulator). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 514(ii)",
@@ -143493,7 +144177,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -143705,7 +144389,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -143854,7 +144538,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -143988,6 +144672,12 @@
     "status": "Has Codex INS number 452(i) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 452(i)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -144324,6 +145014,39 @@
   "everyday_allowlist": false
  },
  {
+  "id": "ing_sodium_o_phenylphenol",
+  "canonical_name": "Sodium o-phenylphenol",
+  "aka": [
+   "sodium ortho-phenylphenol",
+   "sodium o-phenylphenate",
+   "sodium 2-biphenylolate"
+  ],
+  "cas_number": null,
+  "e_number_ins_code": null,
+  "chemical_formula": null,
+  "category": "preservative",
+  "origin": "synthetic",
+  "typical_uses": [
+   "food"
+  ],
+  "allergen_flags": [],
+  "plain_explanation": "The sodium salt of o-phenylphenol, applied to the skin of citrus fruit to slow mould during storage.",
+  "jurisdictions": [
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
+   }
+  ],
+  "risk_assessment_refs": null,
+  "usage_context": null,
+  "source": "manual_curation",
+  "source_updated_at": "2026-09-27",
+  "last_full_review_at": null,
+  "everyday_allowlist": false
+ },
+ {
   "id": "ing_sodium_oleate",
   "canonical_name": "Sodium oleate",
   "aka": [],
@@ -144370,6 +145093,12 @@
   "plain_explanation": "Codex classes it as an emulsifier: “A food additive, which forms or maintains a uniform emulsion of two or more phases in a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 481",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 481(ii) (emulsifier, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 481(ii)",
@@ -144379,7 +145108,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -144569,8 +145298,7 @@
   "canonical_name": "Sodium, potassium and calcium salts of fatty acids",
   "aka": [
    "E470a",
-   "E 470a",
-   "INS 470a"
+   "E 470a"
   ],
   "cas_number": null,
   "e_number_ins_code": "E470a",
@@ -144713,6 +145441,12 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 451",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 451(iii) (acidity regulator, emulsifier, humectant, raising agent, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 451(iii)",
@@ -144722,7 +145456,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -144810,7 +145544,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -144846,6 +145580,12 @@
     "status": "Has Codex INS number 450(iii) (acidity regulator, emulsifier, emulsifying salt, humectant, raising agent, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 450(iii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -145227,7 +145967,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -145503,8 +146243,7 @@
   "canonical_name": "Sodium tetraborate (borax)",
   "aka": [
    "E285",
-   "E 285",
-   "INS 285"
+   "E 285"
   ],
   "cas_number": null,
   "e_number_ins_code": "E285",
@@ -146079,7 +146818,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -146195,6 +146934,12 @@
   "plain_explanation": "Codex classes it as a bulking agent: “A food additive, which contributes to the bulk of a food without contributing significantly to its available energy value.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 420",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 420(ii) (bulking agent, humectant, sequestrant, stabilizer, sweetener, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 420(ii)",
@@ -146204,7 +146949,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -146677,7 +147422,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -146804,7 +147549,8 @@
   "canonical_name": "Spirulina extract",
   "aka": [
    "phycocyanin",
-   "blue spirulina"
+   "blue spirulina",
+   "INS 134"
   ],
   "cas_number": null,
   "e_number_ins_code": "INS 134",
@@ -148105,7 +148851,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -148356,7 +149102,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -149671,7 +150417,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -150269,17 +151015,18 @@
   "category": "other",
   "origin": "natural",
   "typical_uses": [
-   "food"
+   "food",
+   "cosmetics"
   ],
   "allergen_flags": [],
-  "plain_explanation": "Oil pressed from sunflower seeds.",
+  "plain_explanation": "Oil from sunflower seeds. \"High oleic\" versions come from varieties bred to contain more monounsaturated fat.",
   "jurisdictions": [],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "manual_curation",
   "source_updated_at": "2026-09-27",
   "last_full_review_at": null,
-  "everyday_allowlist": true
+  "everyday_allowlist": false
  },
  {
   "id": "ing_sunflower_seeds",
@@ -150763,37 +151510,6 @@
   "everyday_allowlist": false
  },
  {
-  "id": "ing_tagatose_d",
-  "canonical_name": "Tagatose, D-",
-  "aka": [
-   "INS 963"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 963",
-  "chemical_formula": null,
-  "category": "sweetener",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as a sweetener: “A food additive (other than a mono- or disaccharide sugar), which imparts a sweet taste to a food.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 963 (sweetener). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 963",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
   "id": "ing_tagetes_aztec_marigold_extract",
   "canonical_name": "Tagetes (Aztec Marigold) Extract",
   "aka": [
@@ -150962,8 +151678,7 @@
    "E 553b",
    "Talcum",
    "French chalk",
-   "Talc (mg3h2(sio3)4)",
-   "INS 553b"
+   "Talc (mg3h2(sio3)4)"
   ],
   "cas_number": "14807-96-6",
   "e_number_ins_code": "E553b",
@@ -152763,8 +153478,7 @@
   "canonical_name": "Thermally oxidised soya bean oil interacted with mono- and diglycerides of fatty acids",
   "aka": [
    "E479b",
-   "E 479b",
-   "INS 479b"
+   "E 479b"
   ],
   "cas_number": null,
   "e_number_ins_code": "E479b",
@@ -152822,7 +153536,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -152882,7 +153596,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -153544,69 +154258,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
-  "id": "ing_tocopherol_d_alpha",
-  "canonical_name": "Tocopherol, d- alpha -",
-  "aka": [
-   "INS 307a"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 307a",
-  "chemical_formula": null,
-  "category": "antioxidant",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as an antioxidant: “A food additive, which prolongs the shelf-life of foods by protecting against deterioration caused by oxidation.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 307a (antioxidant). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 307a",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
-  "last_full_review_at": null,
-  "everyday_allowlist": false
- },
- {
-  "id": "ing_tocopherol_dl_alpha",
-  "canonical_name": "Tocopherol, dl- alpha -",
-  "aka": [
-   "INS 307c"
-  ],
-  "cas_number": null,
-  "e_number_ins_code": "INS 307c",
-  "chemical_formula": null,
-  "category": "antioxidant",
-  "origin": "unknown",
-  "typical_uses": [
-   "food"
-  ],
-  "allergen_flags": [],
-  "plain_explanation": "Codex classes it as an antioxidant: “A food additive, which prolongs the shelf-life of foods by protecting against deterioration caused by oxidation.”",
-  "jurisdictions": [
-   {
-    "jurisdiction": "CODEX",
-    "status": "Has Codex INS number 307c (antioxidant). An INS number identifies an additive; it is not a Codex approval.",
-    "citation": "CXG 36-1989 — INS 307c",
-    "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   }
-  ],
-  "risk_assessment_refs": null,
-  "usage_context": null,
-  "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -153618,8 +154270,7 @@
    "alpha-tocopherol",
    "E306",
    "d-alpha tocopherol",
-   "E 306",
-   "INS 306"
+   "E 306"
   ],
   "cas_number": "1406-66-2",
   "e_number_ins_code": "E306",
@@ -155894,8 +156545,7 @@
   "canonical_name": "Trimagnesium dicitrate",
   "aka": [
    "E345(i)",
-   "E 345(i)",
-   "INS 345(i)"
+   "E 345(i)"
   ],
   "cas_number": null,
   "e_number_ins_code": "E345(i)",
@@ -156043,12 +156693,6 @@
     "status": "Has Codex INS number 451 (acidity regulator, emulsifier, emulsifying salt, humectant, sequestrant, stabilizer, thickener, raising agent). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 451",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
-   },
-   {
-    "jurisdiction": "HK_CFS",
-    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
-    "citation": "Cap. 132BD, Schedule 1",
-    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -156076,16 +156720,28 @@
   "plain_explanation": "Codex classes it as an acidity regulator: “A food additive, which controls the acidity or alkalinity of a food.”",
   "jurisdictions": [
    {
+    "jurisdiction": "EU_EFSA",
+    "status": "Authorised food additive; permitted foods and maximum levels set in Annex II",
+    "citation": "Reg. (EC) 1333/2008, Annex II — E 332",
+    "citation_url": "https://eur-lex.europa.eu/eli/reg/2008/1333/oj"
+   },
+   {
     "jurisdiction": "CODEX",
     "status": "Has Codex INS number 332(ii) (acidity regulator, antioxidant, emulsifying salt, sequestrant, stabilizer). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 332(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -156146,6 +156802,12 @@
     "status": "Has Codex INS number 450(ii) (acidity regulator, emulsifier, emulsifying salt, raising agent, humectant, sequestrant, stabilizer, thickener). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 450(ii)",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted preservative or antioxidant; maximum levels set by food category",
+    "citation": "Cap. 132BD, Schedule 1",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132BD!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -157718,6 +158380,12 @@
     "status": "Has Codex INS number 153 (colour). An INS number identifies an additive; it is not a Codex approval.",
     "citation": "CXG 36-1989 — INS 153",
     "citation_url": "https://openknowledge.fao.org/handle/20.500.14283/cd8953en"
+   },
+   {
+    "jurisdiction": "HK_CFS",
+    "status": "Permitted colouring matter",
+    "citation": "Cap. 132H, First Schedule",
+    "citation_url": "https://www.elegislation.gov.hk/hk/cap132H!en"
    }
   ],
   "risk_assessment_refs": null,
@@ -157802,14 +158470,14 @@
    "food"
   ],
   "allergen_flags": [],
-  "plain_explanation": "A blend of refined plant oils.",
+  "plain_explanation": "A label name for refined oil from one or more plants. The label does not have to say which plants; when it does, they are usually listed in brackets.",
   "jurisdictions": [],
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "manual_curation",
   "source_updated_at": "2026-09-27",
   "last_full_review_at": null,
-  "everyday_allowlist": true
+  "everyday_allowlist": false
  },
  {
   "id": "ing_vegetable_oil_phytosterol_esters",
@@ -158353,7 +159021,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -158752,7 +159420,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -160061,7 +160729,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -160092,7 +160760,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -160998,7 +161666,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -161029,7 +161697,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },
@@ -161396,7 +162064,7 @@
   "risk_assessment_refs": null,
   "usage_context": null,
   "source": "codex_alimentarius",
-  "source_updated_at": "2026-10-17",
+  "source_updated_at": "2026-10-18",
   "last_full_review_at": null,
   "everyday_allowlist": false
  },

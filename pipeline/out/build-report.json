@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-10-17T16:38:00.345Z",
+  "built_at": "2026-10-18T00:30:53.118Z",
   "sources": {
     "fda_saf": {
       "fetched_at": "2026-09-29T18:47:22.945Z",
@@ -60,29 +60,29 @@
     }
   },
   "counts": {
-    "ingredients": 4882,
+    "ingredients": 4885,
     "by_kind": {
-      "seed": 272,
+      "seed": 278,
       "fda_saf": 3773,
       "fda_color": 13,
       "eu": 112,
-      "codex": 163,
+      "codex": 160,
       "gras_notice": 549
     },
-    "everyday_allowlist": 133,
-    "with_cas": 3286,
-    "with_e_number": 634,
+    "everyday_allowlist": 130,
+    "with_cas": 3290,
+    "with_e_number": 635,
     "with_formula": 1664,
     "us_cfr_citation": 1910,
     "us_any": 4527,
-    "eu": 346,
-    "codex": 620,
-    "codex_only_rows": 163,
-    "hk": 120,
-    "no_jurisdiction_flaggable": 11,
+    "eu": 410,
+    "codex": 621,
+    "codex_only_rows": 160,
+    "hk": 152,
+    "no_jurisdiction_flaggable": 18,
     "usage_context": 108,
     "usage_context_efsa": 32,
-    "allergen_flagged": 119,
+    "allergen_flagged": 120,
     "citations_rejected": 1772,
     "needs_review": 101
   },
@@ -10740,13 +10740,14 @@
     }
   ],
   "names_dropped_ambiguous": [
+    "INS 322 (ing_soy_lecithin)",
+    "INS 322 (ing_sunflower_lecithin)",
     "Vitamin H (ing_p_aminobenzoic_acid)",
     "5-hydroxy-9-decenoic acid delta-lactone (ing_9_decen_5_olide)",
     "5-hydroxy-9-decenoic acid delta-lactone (ing_9_dodecen_5_olide)",
     "Invert syrup (ing_invert_sugar_syrup)",
     "Oregano (ing_european_oregano)",
     "Naphtha (ing_petroleum_naphtha)",
-    "Sodium polyacrylate (ing_polyacrylic_acid_sodium_salt)",
     "Oxidized polyethylene wax (ing_oxidized_polyethylene)",
     "Oxidized starch (ing_starch_food_modified_oxidized_starches)",
     "Vanilla extract (ing_vanilla_extract)",
@@ -10761,7 +10762,6 @@
     "Glycine (ing_glycine_and_its_sodium_salt)",
     "Beeswax (ing_beeswax_white_and_yellow)",
     "Oxidized polyethylene wax (ing_oxidised_polyethylene_wax)",
-    "Sodium polyacrylate (ing_carbomer)",
     "Oxidized starch (ing_oxidised_starch)",
     "Hydroxypropyl starch (ing_hydroxy_propyl_starch)",
     "E1442 (ing_hydroxy_propyl_distarch_phosphate)",
@@ -11322,6 +11322,7 @@
   "seed_unmatched_to_fda": [
     "Potassium propionate",
     "Citric acid esters of mono- and diglycerides",
+    "Sodium o-phenylphenol",
     "Tara gum",
     "Konjac gum",
     "Soy lecithin",
@@ -11344,6 +11345,13 @@
     "Powdered cellulose",
     "Milk protein concentrate",
     "Pea protein",
+    "Sunflower oil",
+    "Vegetable oil",
+    "Cottonseed oil",
+    "Grapeseed oil",
+    "Rice bran oil",
+    "Safflower oil",
+    "Sesame oil",
     "Palm oil",
     "Soybean oil",
     "Interesterified soybean oil",
@@ -11370,8 +11378,6 @@
     "Yogurt",
     "Eggs",
     "Olive oil",
-    "Sunflower oil",
-    "Vegetable oil",
     "Almonds",
     "Peanuts",
     "Cashews",
@@ -11411,20 +11417,7 @@
     "Selenium",
     "Iodine"
   ],
-  "hk_unmatched": [
-    "132BD: Potassium sulphite (INS 225)",
-    "132BD: Ortho-phenylphenol (INS 231)",
-    "132BD: Sodium ortho-phenylphenol (INS 232)",
-    "132BD: dl-alpha-Tocopherol (INS 307c)",
-    "132U: Aspartame-acesulfame Salt",
-    "132H: Black PN (Brilliant Black BN)",
-    "132H: Chocolate Brown HT",
-    "132H: Lithol Rubine BK",
-    "132H: Cochineal (Carminic acid)",
-    "132H: Vegetable Black",
-    "132H: β-Apo-8'-carotenoic acid ethyl ester",
-    "132H: Chlorophylls and Chlorophyllins including Copper complexes"
-  ],
+  "hk_unmatched": [],
   "eu_created": [
     "E104 Quinoline Yellow",
     "E122 Azorubine, Carmoisine",
@@ -11700,6 +11693,27 @@
     "ing_sodium_benzoate: \"Listed in the General Standard for Food Additives\" → CXG 36 INS 211",
     "ing_calcium_propionate: \"Listed in the General Standard for Food Additives\" → CXG 36 INS 282"
   ],
+  "codex_conflicts": [
+    {
+      "ins": "1210",
+      "name": "Sodium polyacrylate",
+      "row": "Carbomer",
+      "row_code": "E1210",
+      "why": "same number, different substance"
+    },
+    {
+      "ins": "307a",
+      "name": "Tocopherol, d- alpha -",
+      "row": "ing_tocopherols",
+      "row_code": "E306"
+    },
+    {
+      "ins": "314",
+      "name": "Guaiac resin",
+      "row": "Guaiac gum",
+      "row_code": "INS 241"
+    }
+  ],
   "codex_created": [
     "INS 101(i) Riboflavin, synthetic",
     "INS 101(iii) Riboflavin from Bacillus subtilis",
@@ -11756,7 +11770,6 @@
     "INS 261(ii) Potassium diacetate",
     "INS 262(i) Sodium acetate",
     "INS 303 Potassium ascorbate",
-    "INS 307a Tocopherol, d- alpha -",
     "INS 307b Tocopherol concentrate, mixed",
     "INS 307c Tocopherol, dl- alpha -",
     "INS 313 Ethyl gallate",
@@ -11794,6 +11807,7 @@
     "INS 390 Distearyl thiodipropionate",
     "INS 418(ii) Low-acyl clarified gellan gum",
     "INS 420(ii) Sorbitol syrup",
+    "INS 430 Polyoxyethylene (8) stearate",
     "INS 443 Brominated vegetable oils",
     "INS 450(vii) Calcium dihydrogen diphosphate",
     "INS 450(viii) Dimagnesium diphosphate",
@@ -11806,8 +11820,6 @@
     "INS 452(iv) Calcium polyphosphate",
     "INS 452(v) Ammonium polyphosphate",
     "INS 455 Yeast mannoproteins",
-    "INS 457 Cyclodextrin, alpha -",
-    "INS 458 Cyclodextrin, gamma -",
     "INS 467 Ethyl hydroxyethyl cellulose",
     "INS 470(i) Salts of myristic, palmitic and stearic acids with ammonia, calcium, potassium and sodium",
     "INS 470(ii) Salts of oleic acid with calcium, potassium and sodium",
@@ -11851,7 +11863,6 @@
     "INS 954(iii) Potassium saccharin",
     "INS 956 Alitame",
     "INS 958 Glycyrrhizin",
-    "INS 963 Tagatose, D-",
     "INS 1001(i) Choline acetate",
     "INS 1001(ii) Choline carbonate",
     "INS 1001(iii) Choline chloride",
@@ -11873,38 +11884,34 @@
     "INS 1402 Alkaline-treated starch",
     "INS 1405 Starches, enzyme treated"
   ],
-  "codex_conflicts": [
-    {
-      "ins": "314",
-      "name": "Guaiac resin",
-      "row": "Guaiac gum",
-      "row_code": "INS 241"
-    },
-    {
-      "ins": "430",
-      "name": "Polyoxyethylene (8) stearate",
-      "row": "Polyoxyethylene 40 monostearate",
-      "row_code": "E431"
-    },
-    {
-      "ins": "1211",
-      "name": "Carbomer",
-      "row": "Carbomer",
-      "row_code": "E1210"
-    }
+  "codex_numbering_differs": [
+    "Carbomer: E1210 (EU) / INS 1211 (Codex)"
+  ],
+  "hk_curated": [
+    "Ortho-phenylphenol → O-phenylphenol",
+    "Chocolate Brown HT → Brown HT",
+    "Vegetable Black → Vegetable carbon",
+    "Chlorophylls and Chlorophyllins including Copper complexes → Chlorophyllin, Potasium Sodium Copper (Chlorophyllin copper complex), Chlorophylls and chlorophyllins"
   ],
   "no_jurisdiction": [
     "Brown rice syrup",
+    "Cottonseed oil",
+    "Grapeseed oil",
     "Interesterified soybean oil",
     "Medium chain triglycerides",
     "Milk protein concentrate",
     "Palm oil",
+    "Rice bran oil",
+    "Safflower oil",
+    "Sesame oil",
     "Natural smoke flavor",
     "Sodium selenite",
     "Soluble corn fiber",
     "Soy protein isolate",
     "Soybean oil",
-    "Tapioca syrup"
+    "Sunflower oil",
+    "Tapioca syrup",
+    "Vegetable oil"
   ],
   "codex_status": "CXG 36-1989: 674 INS entries, 27 functional classes"
 }
