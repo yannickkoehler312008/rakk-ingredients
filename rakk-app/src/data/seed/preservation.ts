@@ -259,4 +259,11 @@ export const PRESERVATION: SeedIngredient[] = [
     plain_explanation: 'Fat molecules modified with citric acid, used to hold oil and water together and to protect frying fats.',
     eu: { status: 'Authorised food additive' },
   },
+  // Listed by HK Cap. 132BD (INS 232); no FDA, EU or Codex record names it,
+  // so it is curated here rather than built from bulk data.
+  {
+    id: 'ing_sodium_o_phenylphenol', canonical_name: 'Sodium o-phenylphenol', aka: ['sodium ortho-phenylphenol', 'sodium o-phenylphenate', 'sodium 2-biphenylolate'],
+    category: 'preservative', origin: 'synthetic',
+    plain_explanation: 'The sodium salt of o-phenylphenol, applied to the skin of citrus fruit to slow mould during storage.',
+  },
 ];

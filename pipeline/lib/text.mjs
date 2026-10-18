@@ -46,7 +46,10 @@ export function joinKey(s) {
     .replace(/flavour/g, 'flavor')
     .replace(/caesium/g, 'cesium')
     .replace(/oe/g, 'e')
-    .replace(/\s*\([^)]*\)\s*/g, ' ')
+    // Drop bracketed glosses ("Natamycin (pimaricin)"), but keep a bracketed
+    // number: "Polyoxyethylene (8) stearate" and "(40) stearate" are
+    // different substances.
+    .replace(/\s*\((?!\d+\))[^)]*\)\s*/g, ' ')
     .replace(/[^a-z0-9]+/g, ' ')
     .trim();
 }

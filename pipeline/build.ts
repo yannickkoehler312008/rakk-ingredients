@@ -38,6 +38,7 @@ import { parseEu1333, EU_REG_URL } from './parse/eu-1333.mjs';
 import { parseHk } from './parse/hk.mjs';
 import { parseOpenFoodTox, adiSentence, adiReference } from './parse/efsa-oft.mjs';
 import { parseCodexIns, CODEX_URL } from './parse/codex-ins.mjs';
+import { HK_LINKS, ALIASES, SAME_SUBSTANCE } from './curation/links.mjs';
 import { joinKey, nameKey, sentenceCase, decodeEntities, parseCsv } from './lib/text.mjs';
 import { EFFECT_BY_NAME, EFFECTS, US_PART_STATUS, US_PART_PRIORITY, ALLERGEN_RULES, GENERIC_NAMES, CODEX_CLASS_CATEGORY } from './lib/vocab.mjs';
 
@@ -373,6 +374,15 @@ const findByName = (names: string[]): Row | null => {
   return null;
 };
 
+// Curated: names the sources give one substance (pipeline/curation/links.mjs).
+for (const c of SAME_SUBSTANCE as any[]) {
+  const row = rows.find((r) => r.canonical_name === c.name);
+  if (!row) throw new Error(`curation/links.mjs SAME_SUBSTANCE: no row named "${c.name}"`);
+  for (const k of keysOf(c.also)) row._keys.add(k);
+  indexRow(row);
+  row._prov.push({ field: 'aka', source: 'seed', locator: 'pipeline/curation/links.mjs', excerpt: `${c.also.join(', ')} — ${c.why}`, method: 'seed' });
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // 2. FDA Color Additive Status List
 // ─────────────────────────────────────────────────────────────────────────────
@@ -650,6 +660,26 @@ for (const row of seedRows) {
 // and functional class and says plainly that it is not an approval — it must
 // never read like the EU's or HK's authorisations.
 
+/**
+ * Do two sets of names describe the same substance? Used where a NUMBER joins
+ * two sources: the EU and Codex mostly share numbers, but not always — E1210
+ * is carbomer in the EU, INS 1210 is sodium polyacrylate in Codex. A number
+ * links only when the names also share a distinctive word.
+ */
+const STOP = new Set(['acid', 'salt', 'salts', 'sodium', 'potassium', 'calcium', 'ester', 'esters', 'extract', 'food', 'with', 'from', 'and', 'oxide', 'oxides', 'synthetic', 'natural', 'colour', 'color']);
+const stem = (w: string) => w.replace(/s$/, '');
+const words = (names: string[]) => new Set(names.flatMap((n) => joinKey(deGreek(n)).split(' ')).map(stem).filter((w) => w.length >= 4 && !STOP.has(w)));
+/** The whole name with spaces and plural removed: "litholrubinebk". */
+const compact = (names: string[]) => new Set(names.map((n) => stem(joinKey(deGreek(n)).replace(/ /g, ''))).filter(Boolean));
+function namesAgree(a: string[], b: string[]): boolean {
+  const wa = words(a);
+  for (const w of words(b)) if (wa.has(w)) return true;
+  const ca = compact(a);
+  for (const c of compact(b)) if (ca.has(c)) return true;
+  return false;
+}
+const rowNames = (r: Row) => [r.canonical_name, ...r.aka, ...[...r._keys]];
+
 const insBy = new Map(codex.entries.map((e: any) => [e.ins, e]));
 const classDef = new Map(codex.classes.map((c: any) => [c.name, c.definition]));
 /** A group heading ("322 Lecithins") has no class of its own; its members do. */
@@ -671,23 +701,38 @@ function setCodex(row: Row, e: any) {
 
 const codexUsed = new Set<string>();
 report.codex_replaced_seed = [] as string[];
+report.codex_conflicts = [] as any[];
 // 1) Rows that already carry an E-number: the INS number is the same number.
 for (const row of rows) {
   const e = row.e_number_ins_code?.match(/^(?:E|INS )\s?(\d{3,4}[a-z]?(?:\([ivx]+\))?)$/)?.[1];
   if (!e) continue;
   const entry = insBy.get(e);
   if (!entry) continue;
+  const members = codex.entries.filter((m: any) => m.ins === entry.ins || m.ins.startsWith(`${entry.ins}(`)).map((m: any) => m.name);
+  if (!namesAgree(rowNames(row), members)) {
+    report.codex_conflicts.push({ ins: entry.ins, name: entry.name, row: row.id || row.canonical_name, row_code: row.e_number_ins_code, why: 'same number, different substance' });
+    continue;
+  }
   const seedCodex = row.jurisdictions.find((j) => j.jurisdiction === 'CODEX');
   if (seedCodex) report.codex_replaced_seed.push(`${row.id}: "${seedCodex.status}" → CXG 36 INS ${e}`);
   setCodex(row, entry);
+  for (const k of keysOf([entry.name, ...(entry.name.match(/\(([^)]+)\)/) ? [entry.name.match(/\(([^)]+)\)/)[1]] : [])])) row._keys.add(k);
+  indexRow(row);
   codexUsed.add(e);
 }
 // 2) Remaining INS entries: by exact name, else a row of their own.
 report.codex_created = [] as string[];
-report.codex_conflicts = [] as any[];
 for (const entry of codex.entries) {
   if (codexUsed.has(entry.ins)) continue;
-  const base = entry.name.replace(/\s*\([^)]*\)\s*$/, '').trim();
+  // Codex inverts some names: "Carotenoic acid, ethyl ester, beta -apo-8'-".
+  // A trailing locant (ending in "-") goes back to the front.
+  // "dl- alpha-" in the PDF is one locant: close the gap before a Greek word.
+  let display = entry.name.replace(/\s+-/g, '-').replace(/-\s+(alpha|beta|gamma|delta)\b/g, '-$1');
+  const parts = display.split(', ');
+  if (parts.length > 1 && /-$/.test(parts[parts.length - 1])) {
+    display = `${parts.pop()}${parts.join(' ').replace(/^./, (c: string) => c.toLowerCase())}`;
+  }
+  const base = display.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const synonym = entry.name.match(/\(([^)]+)\)\s*$/)?.[1];
   let row = findByName([entry.name, base, ...(synonym ? [synonym] : [])]);
   const insBase = (code: string) => code.replace(/^(E|INS )\s?/, '').replace(/[a-z]?(\([ivx]+\))?$/, '');
@@ -697,6 +742,18 @@ for (const entry of codex.entries) {
     continue;
   }
   if (row?.e_number_ins_code) {
+    // The row's OWN name, not an alias: "Mixed tocopherols" answers to
+    // "d-alpha-tocopherol" as an alias, but INS 307a is that one tocopherol.
+    const sameName = [...compact([entry.name, base])].some((c) => compact([row!.canonical_name]).has(c));
+    if (sameName && !row.jurisdictions.some((j) => j.jurisdiction === 'CODEX')) {
+      // Same name, numbered differently by the EU and Codex (carbomer: E1210
+      // in the EU, INS 1211 in Codex). The row keeps its EU number and gets
+      // its own Codex entry; the divergence is recorded.
+      report.codex_numbering_differs = [...(report.codex_numbering_differs ?? []), `${row.canonical_name}: ${row.e_number_ins_code} (EU) / INS ${entry.ins} (Codex)`];
+      setCodex(row, entry);
+      codexUsed.add(entry.ins);
+      continue;
+    }
     // The name belongs to a row with another number: two additives, one
     // name. Leave both alone and report it.
     report.codex_conflicts.push({ ins: entry.ins, name: entry.name, row: row.id || row.canonical_name, row_code: row.e_number_ins_code });
@@ -733,6 +790,20 @@ for (const entry of codex.entries) {
   setCodex(row, entry);
   codexUsed.add(entry.ins);
 }
+// A Codex sub-entry row ("INS 451(i) Pentasodium triphosphate") belongs to a
+// family the EU authorises as a group ("E 451 Triphosphates"). Unless the EU
+// lists the sub-number itself, the family's EU entry applies to it.
+for (const row of rows) {
+  if (row._kind !== 'codex') continue;
+  const sub = row.e_number_ins_code?.match(/^INS (\d{3,4}[a-z]?)\([ivx]+\)$/);
+  if (!sub || euByE.has(`E${row.e_number_ins_code!.slice(4)}`) || !euByE.has(`E${sub[1]}`)) continue;
+  const a = euByE.get(`E${sub[1]}`) as any;
+  const family = rows.find((r) => r.e_number_ins_code === `E${sub[1]}` && r.jurisdictions.some((j) => j.jurisdiction === 'EU_EFSA'));
+  const eu = family?.jurisdictions.find((j) => j.jurisdiction === 'EU_EFSA');
+  if (!eu || /^Not /.test(eu.status)) continue;
+  setJurisdiction(row, { ...eu }, { source: 'eu_1333_2008', locator: `Annex II Part B, E${sub[1]} (group covering INS ${row.e_number_ins_code!.slice(4)})`, excerpt: [a.excerpt, ...a.notes].join(' | '), method: 'parsed' });
+}
+
 // The seed's own Codex entries that no INS number confirmed stay, for review.
 for (const row of seedRows) {
   const p = row._prov.find((x) => x.field === 'jurisdictions.CODEX');
@@ -749,19 +820,35 @@ for (const r of rows) for (const ci of r._color?.colour_index ?? []) byColourInd
 for (const h of hk.entries) {
   let targets: Row[] = [];
   if (h.ins) {
-    targets = rows.filter((r) => r.e_number_ins_code === `E${h.ins}`);
-    if (!targets.length) targets = rows.filter((r) => r.e_number_ins_code === `E${h.ins.replace(/\([ivx]+\)$/, '')}`);
+    // HK numbers are INS numbers: match rows coded either way ("E225" from
+    // the EU, "INS 225" from Codex).
+    const codes = (n: string) => [`E${n}`, `INS ${n}`];
+    targets = rows.filter((r) => codes(h.ins).includes(r.e_number_ins_code ?? ''));
+    if (!targets.length) targets = rows.filter((r) => codes(h.ins.replace(/\([ivx]+\)$/, '')).includes(r.e_number_ins_code ?? ''));
+  }
+  // A number joins only if the names agree (see namesAgree).
+  if (targets.length && !targets.some((t) => namesAgree(rowNames(t), [h.name]))) {
+    report.hk_conflicts = [...(report.hk_conflicts ?? []), { hk: h.name, ins: h.ins, rows: targets.map((t) => t.id || t.canonical_name) }];
+    targets = [];
   }
   if (!targets.length && h.colour_index && byColourIndex.has(h.colour_index)) targets = [byColourIndex.get(h.colour_index)!];
   if (!targets.length) {
-    const r = findByName([h.name, h.name.replace(/\s*\([^)]*\)/g, '')]);
+    // "Black PN (Brilliant Black BN)", "Cochineal (Carminic acid)": the
+    // bracket holds an alternative name worth trying on its own.
+    const inner = h.name.match(/\(([^)]+)\)/)?.[1];
+    const r = findByName([h.name, h.name.replace(/\s*\([^)]*\)/g, ''), ...(inner ? [inner] : [])]);
     if (r) targets = [r];
+  }
+  const link = HK_LINKS.find((l: any) => l.hk === h.name);
+  if (!targets.length && link) {
+    targets = rows.filter((r) => link.to.includes(r.e_number_ins_code ?? '') || link.to.includes(`name:${r.canonical_name}`));
+    if (targets.length) report.hk_curated = [...(report.hk_curated ?? []), `${h.name} → ${targets.map((t) => t.id || t.canonical_name).join(', ')}`];
   }
   if (!targets.length) { report.hk_unmatched.push(`${h.cap}: ${h.name}${h.ins ? ` (INS ${h.ins})` : ''}`); continue; }
   for (const row of targets) {
     if (row.jurisdictions.some((j) => j.jurisdiction === 'HK_CFS')) continue;
     setJurisdiction(row, { jurisdiction: 'HK_CFS', status: h.status, citation: h.citation, citation_url: h.citation_url },
-      { source: 'hk_legislation', locator: `Cap. ${h.cap}${h.ins ? `, INS ${h.ins}` : ''}`, excerpt: h.excerpt, method: 'parsed' });
+      { source: 'hk_legislation', locator: `Cap. ${h.cap}${h.ins ? `, INS ${h.ins}` : ''}${link && !h.ins ? ' (curated link)' : ''}`, excerpt: link ? `${h.excerpt} | link: ${link.why}` : h.excerpt, method: link ? 'seed' : 'parsed' });
   }
 }
 
@@ -876,15 +963,26 @@ for (const row of rows) {
 for (const row of rows) {
   if (!row.id) row.id = newId(row.canonical_name, row.cas_number ?? row.e_number_ins_code ?? row._kind);
 }
+for (const a of ALIASES as any[]) {
+  const row = rows.find((r) => r.id === a.id);
+  if (!row) throw new Error(`curation/links.mjs: no row ${a.id}`);
+  for (const n of a.add) if (!row.aka.some((x) => nameKey(x) === nameKey(n))) row.aka.push(n);
+  row._prov.push({ field: 'aka', source: 'seed', locator: 'pipeline/curation/links.mjs', excerpt: `${a.add.join(', ')} — ${a.why}`, method: 'seed' });
+}
 
 // Labels outside the US print "E 211" and "INS 211" as well as "E211"
-// (§12.A). Added only where the row already answers to the compact form, so
-// rows that share an E-number (the lecithins) never contest it.
+// (§12.A). "E 211" is added only where the row already answers to "E211", so
+// rows that share an E-number (the lecithins) never contest it. "INS n" is
+// added only where CODEX itself gives this row number n — the EU and Codex
+// numbers usually coincide but not always (E1210 is carbomer; INS 1210 is
+// sodium polyacrylate), so an E-number never implies an INS number.
 for (const row of rows) {
   const e = row.e_number_ins_code;
-  if (!e || !/^E\d/.test(e) || !row.aka.some((a) => nameKey(a) === nameKey(e))) continue;
-  const n = e.replace(/^E/, '');
-  for (const form of [`E ${n}`, `INS ${n}`]) {
+  const forms: string[] = [];
+  if (e && /^E\d/.test(e) && row.aka.some((a) => nameKey(a) === nameKey(e))) forms.push(`E ${e.slice(1)}`);
+  const ins = row.jurisdictions.find((j) => j.jurisdiction === 'CODEX')?.citation?.match(/INS (\S+)$/)?.[1];
+  if (ins) forms.push(`INS ${ins}`);
+  for (const form of forms) {
     if (!row.aka.some((a) => nameKey(a) === nameKey(form))) row.aka.push(form);
   }
 }
