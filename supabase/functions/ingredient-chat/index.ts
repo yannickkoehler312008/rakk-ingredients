@@ -59,12 +59,22 @@ import {
  *     model changes: Claude Opus 5's minimum is 512 tokens. Do not assume
  *     caching is saving anything here without checking that field.
  */
-const MODEL = 'claude-haiku-4-5';
-const MAX_TOKENS = 800;
+/**
+ * The model is a server setting (secret CHAT_MODEL) so it can be changed, and
+ * rolled back, without a deploy. Claude Haiku 5.5 differs from 4.5 in ways
+ * the request must respect: thinking is on by default and counts toward
+ * max_tokens (so the cap is larger and effort is set `low` to keep cost and
+ * latency down), effort exists (4.5 rejects it), and its safety classifiers
+ * can decline a request (handled below as `refusal`).
+ */
+const MODEL = Deno.env.get('CHAT_MODEL') || 'claude-haiku-4-5';
+const IS_HAIKU_45 = MODEL === 'claude-haiku-4-5';
+const MAX_TOKENS = IS_HAIKU_45 ? 800 : 3000;
 
 /** Per user, per hour. Deliberately low until real usage is observed. */
 const RATE_LIMIT = 30;
-const RATE_WINDOW = '1 hour';
+/** Rolling 24 hours (migration 0008): bounds what one user can cost in a day. */
+const DAILY_LIMIT = 100;
 
 /** Input caps: a malformed or hostile client must not be able to run up a bill. */
 const MAX_QUESTION_CHARS = 600;
@@ -91,8 +101,8 @@ interface ChatRequest {
 /** Error shapes the client renders as designed states (§9), not a toast. */
 type ErrorCode = 'unauthenticated' | 'rate_limited' | 'bad_request' | 'upstream';
 
-function fail(code: ErrorCode, status: number, detail?: string): Response {
-  return new Response(JSON.stringify({ error: code, detail }), {
+function fail(code: ErrorCode, status: number, detail?: string, extra: Record<string, unknown> = {}): Response {
+  return new Response(JSON.stringify({ error: code, detail, ...extra }), {
     status,
     headers: { ...CORS, 'Content-Type': 'application/json' },
   });
@@ -128,15 +138,21 @@ Deno.serve(async (req: Request) => {
   // endpoint to check subscription status server-side rather than trust the
   // client. Billing is out of this phase's build order, so this is the hook
   // point, deliberately left empty.
-  const { data: remaining, error: quotaErr } = await supabase.rpc('consume_chat_quota', {
+  const { data: quota, error: quotaErr } = await supabase.rpc('consume_quotas', {
     p_user_id: userId,
-    p_limit: RATE_LIMIT,
-    p_window: RATE_WINDOW,
+    p_kind: 'chat',
+    p_hour_limit: RATE_LIMIT,
+    p_day_limit: DAILY_LIMIT,
   });
   if (quotaErr) return fail('upstream', 503, 'quota check failed');
-  if (typeof remaining === 'number' && remaining < 0) {
-    return fail('rate_limited', 429, `limit is ${RATE_LIMIT} questions an hour`);
+  const q = (Array.isArray(quota) ? quota[0] : quota) as { hour_left: number; day_left: number } | null;
+  if (q && q.day_left < 0) {
+    return fail('rate_limited', 429, `limit is ${DAILY_LIMIT} questions in 24 hours`, { window: 'day' });
   }
+  if (q && q.hour_left < 0) {
+    return fail('rate_limited', 429, `limit is ${RATE_LIMIT} questions an hour`, { window: 'hour' });
+  }
+  const remaining = q?.hour_left;
 
   // ── Parse and clamp ─────────────────────────────────────────────────────
   let body: ChatRequest;
@@ -170,12 +186,15 @@ Deno.serve(async (req: Request) => {
   const anthropic = new Anthropic({ apiKey: Deno.env.get('ANTHROPIC_API_KEY')! });
 
   let raw: string;
+  let usage: Record<string, number | null | undefined> = {};
   try {
-    const response = await anthropic.messages.create({
+    // Built as a plain object: `output_config` is model-specific (Haiku 4.5
+    // rejects it) and newer than this SDK pin's request type.
+    // deno-lint-ignore no-explicit-any
+    const request: any = {
       model: MODEL,
       max_tokens: MAX_TOKENS,
-      // No `output_config.effort` and no `thinking` — see the notes above.
-      // Both are model-specific on Haiku 4.5 and effort would 400.
+      ...(IS_HAIKU_45 ? {} : { output_config: { effort: 'low' } }),
       system: [
         { type: 'text', text: SYSTEM_PROMPT },
         {
@@ -192,10 +211,19 @@ Deno.serve(async (req: Request) => {
         ...history.map((t) => ({ role: t.role, content: t.content })),
         { role: 'user' as const, content: question },
       ],
-    });
+    };
+    const response = await anthropic.messages.create(request);
+    // Reported with every reply so cost is measured, not estimated
+    // (scripts/live-chat-check.mjs prints it). Token counts only — no content.
+    usage = {
+      input: response.usage.input_tokens,
+      output: response.usage.output_tokens,
+      cache_read: response.usage.cache_read_input_tokens,
+      cache_write: response.usage.cache_creation_input_tokens,
+    };
 
     if (response.stop_reason === 'refusal') {
-      return ok(WITHHELD_REPLY, { withheld: 'model_refusal' });
+      return ok(WITHHELD_REPLY, { withheld: 'model_refusal', model: MODEL, usage });
     }
     raw = response.content
       .filter((b): b is Anthropic.TextBlock => b.type === 'text')
@@ -221,8 +249,8 @@ Deno.serve(async (req: Request) => {
     // §9's copy rule is absolute. A reply that breaks it is not shown, and the
     // match is reported so the system prompt can be tightened against it.
     console.warn(`[guardrail] withheld reply: ${screened.reason} "${screened.matched}"`);
-    return ok(WITHHELD_REPLY, { withheld: screened.reason, matched: screened.matched });
+    return ok(WITHHELD_REPLY, { withheld: screened.reason, matched: screened.matched, model: MODEL, usage });
   }
 
-  return ok(screened.reply, { remaining });
+  return ok(screened.reply, { remaining, model: MODEL, usage });
 });

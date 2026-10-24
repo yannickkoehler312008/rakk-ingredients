@@ -45,3 +45,8 @@ citation-report.json
 .transcription-cases.json
 .transcription-driver.ts
 .matcher-driver.ts
+
+# live check outputs (scripts/live-*-check.mjs)
+live-chat-*.json
+live-ocr-*.json
+.ocr-samples/

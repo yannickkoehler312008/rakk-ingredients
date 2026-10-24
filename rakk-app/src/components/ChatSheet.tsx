@@ -208,6 +208,11 @@ function ChatState({
       title: 'That’s a lot of questions.',
       body: 'You have reached the hourly limit. It resets on the hour, and the cards above keep working in the meantime.',
     },
+    rate_limited_day: {
+      icon: 'clock',
+      title: 'That’s today’s questions.',
+      body: 'You have reached the limit for a 24-hour period. It frees up gradually over the next day, and the cards above keep working in the meantime.',
+    },
     unauthenticated: {
       icon: 'user-x',
       title: 'Couldn’t start a session.',

@@ -23,7 +23,8 @@ import { createClient } from 'npm:@supabase/supabase-js@^2';
 const FDC = 'https://api.nal.usda.gov/fdc/v1/foods/search';
 /** Per user, per hour: a lookup is a free public API call, but not unlimited. */
 const RATE_LIMIT = 120;
-const RATE_WINDOW = '1 hour';
+/** Rolling 24 hours (migration 0008). */
+const DAILY_LIMIT = 500;
 const TIMEOUT_MS = 8000;
 
 const CORS = {
@@ -73,14 +74,15 @@ Deno.serve(async (req: Request) => {
   const { data: userData, error: userErr } = await supabase.auth.getUser(token);
   if (userErr || !userData?.user) return json({ error: 'unauthenticated' }, 401);
 
-  const { data: remaining, error: quotaErr } = await supabase.rpc('consume_quota', {
+  const { data: quota, error: quotaErr } = await supabase.rpc('consume_quotas', {
     p_user_id: userData.user.id,
     p_kind: 'product_lookup',
-    p_limit: RATE_LIMIT,
-    p_window: RATE_WINDOW,
+    p_hour_limit: RATE_LIMIT,
+    p_day_limit: DAILY_LIMIT,
   });
   if (quotaErr) return json({ error: 'upstream', detail: 'quota check failed' }, 503);
-  if (typeof remaining === 'number' && remaining < 0) return json({ error: 'rate_limited' }, 429);
+  const q = (Array.isArray(quota) ? quota[0] : quota) as { hour_left: number; day_left: number } | null;
+  if (q && (q.day_left < 0 || q.hour_left < 0)) return json({ error: 'rate_limited', window: q.day_left < 0 ? 'day' : 'hour' }, 429);
 
   let barcode = '';
   try {

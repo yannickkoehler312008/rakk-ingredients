@@ -27,6 +27,8 @@ export type ChatResult =
   | { kind: 'offline' }
   | { kind: 'not_configured' }
   | { kind: 'rate_limited'; detail?: string }
+  /** The rolling 24-hour cap (migration 0008), distinct so the copy is honest. */
+  | { kind: 'rate_limited_day'; detail?: string }
   | { kind: 'unauthenticated' }
   | { kind: 'error'; detail?: string };
 
@@ -108,10 +110,15 @@ export async function askAboutProduct(
       reply?: string;
       error?: string;
       detail?: string;
+      window?: 'hour' | 'day';
       remaining?: number;
     };
 
-    if (res.status === 429) return { kind: 'rate_limited', detail: body.detail };
+    if (res.status === 429) {
+      return body.window === 'day'
+        ? { kind: 'rate_limited_day', detail: body.detail }
+        : { kind: 'rate_limited', detail: body.detail };
+    }
     if (res.status === 401) return { kind: 'unauthenticated' };
     if (!res.ok || !body.reply) return { kind: 'error', detail: body.detail };
 

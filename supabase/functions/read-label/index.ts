@@ -25,12 +25,20 @@ import {
 } from './transcription.ts';
 
 /** Vision-capable and the cheapest available (§8). */
-const MODEL = 'claude-haiku-4-5';
-const MAX_TOKENS = 1500;
+/**
+ * Server setting (secret OCR_MODEL), changeable and reversible without a
+ * deploy. On Claude Haiku 5.5 thinking is on by default and counts toward
+ * max_tokens, so the cap is larger and effort is `low`: transcription needs
+ * reading, not reasoning.
+ */
+const MODEL = Deno.env.get('OCR_MODEL') || 'claude-haiku-4-5';
+const IS_HAIKU_45 = MODEL === 'claude-haiku-4-5';
+const MAX_TOKENS = IS_HAIKU_45 ? 1500 : 4000;
 
 /** Per user, per hour. Lower than chat: each call carries an image. */
 const RATE_LIMIT = 20;
-const RATE_WINDOW = '1 hour';
+/** Rolling 24 hours (migration 0008). */
+const DAILY_LIMIT = 40;
 
 /**
  * Supabase Edge Functions cap the request body, and a large image costs more
@@ -50,8 +58,8 @@ const CORS = {
 
 type ErrorCode = 'unauthenticated' | 'rate_limited' | 'bad_request' | 'upstream' | 'unreadable';
 
-function fail(code: ErrorCode, status: number, detail?: string): Response {
-  return new Response(JSON.stringify({ error: code, detail }), {
+function fail(code: ErrorCode, status: number, detail?: string, extra: Record<string, unknown> = {}): Response {
+  return new Response(JSON.stringify({ error: code, detail, ...extra }), {
     status,
     headers: { ...CORS, 'Content-Type': 'application/json' },
   });
@@ -71,16 +79,21 @@ Deno.serve(async (req: Request) => {
   const { data: userData, error: userErr } = await supabase.auth.getUser(token);
   if (userErr || !userData?.user) return fail('unauthenticated', 401, 'invalid session');
 
-  const { data: remaining, error: quotaErr } = await supabase.rpc('consume_quota', {
+  const { data: quota, error: quotaErr } = await supabase.rpc('consume_quotas', {
     p_user_id: userData.user.id,
     p_kind: 'ocr',
-    p_limit: RATE_LIMIT,
-    p_window: RATE_WINDOW,
+    p_hour_limit: RATE_LIMIT,
+    p_day_limit: DAILY_LIMIT,
   });
   if (quotaErr) return fail('upstream', 503, `quota check failed: ${quotaErr.message}`);
-  if (typeof remaining === 'number' && remaining < 0) {
-    return fail('rate_limited', 429, `limit is ${RATE_LIMIT} photos an hour`);
+  const q = (Array.isArray(quota) ? quota[0] : quota) as { hour_left: number; day_left: number } | null;
+  if (q && q.day_left < 0) {
+    return fail('rate_limited', 429, `the limit is ${DAILY_LIMIT} label photos in 24 hours`, { window: 'day' });
   }
+  if (q && q.hour_left < 0) {
+    return fail('rate_limited', 429, `the limit is ${RATE_LIMIT} label photos an hour`, { window: 'hour' });
+  }
+  const remaining = q?.hour_left;
 
   let body: { image_base64?: string; media_type?: string };
   try {
@@ -103,10 +116,13 @@ Deno.serve(async (req: Request) => {
   const anthropic = new Anthropic({ apiKey: Deno.env.get('ANTHROPIC_API_KEY')! });
 
   let raw: string;
+  let usage: Record<string, number | null | undefined> = {};
   try {
-    const response = await anthropic.messages.create({
+    // deno-lint-ignore no-explicit-any
+    const request: any = {
       model: MODEL,
       max_tokens: MAX_TOKENS,
+      ...(IS_HAIKU_45 ? {} : { output_config: { effort: 'low' } }),
       system: TRANSCRIPTION_PROMPT,
       messages: [
         {
@@ -117,7 +133,9 @@ Deno.serve(async (req: Request) => {
           ],
         },
       ],
-    });
+    };
+    const response = await anthropic.messages.create(request);
+    usage = { input: response.usage.input_tokens, output: response.usage.output_tokens };
 
     if (response.stop_reason === 'refusal') {
       return fail('unreadable', 422, 'the photo could not be read');
@@ -138,7 +156,7 @@ Deno.serve(async (req: Request) => {
   if (result.kind === 'cannot_read') {
     // §9 wants "OCR failed" to be a designed state with a real reason, not a
     // generic error. The reason comes back so the screen can say what to fix.
-    return fail('unreadable', 422, result.reason);
+    return fail('unreadable', 422, result.reason, { model: MODEL, usage });
   }
 
   return new Response(
@@ -146,6 +164,8 @@ Deno.serve(async (req: Request) => {
       raw_ingredient_text: result.text,
       unreadable_markers: result.unreadableMarkers,
       remaining,
+      model: MODEL,
+      usage,
     }),
     { status: 200, headers: { ...CORS, 'Content-Type': 'application/json' } },
   );

@@ -15,7 +15,7 @@
  * anonymous user, and the function allows 30 questions an hour per user.
  */
 import { execSync } from 'node:child_process';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 if (existsSync('.env.local')) {
   for (const line of readFileSync('.env.local', 'utf8').split('\n')) {
@@ -56,6 +56,10 @@ if (!token) {
 
 console.log(`Asking the deployed assistant ${PROBES.length} questions about "${ctx.product_name}"…\n`);
 const counts = { passed: 0, withheld: 0, routed: 0, error: 0 };
+// Per million tokens: [input, output]. Cache reads 0.1×, cache writes 1.25×.
+const PRICE = { 'claude-haiku-4-5': [1, 5], 'claude-haiku-5-5': [0.1, 0.5] };
+let spent = 0, calls = 0, model = '?';
+const replies = [];
 for (const q of PROBES) {
   const res = await fetch(`${URL_}/functions/v1/ingredient-chat`, {
     method: 'POST',
@@ -69,8 +73,19 @@ for (const q of PROBES) {
   else if (body.refused) { tag = 'DECLINED'; counts.routed++; }
   else { tag = 'passed'; counts.passed++; }
   const text = (body.reply ?? `${body.error ?? ''} ${body.detail ?? ''}`).replace(/\s+/g, ' ');
+  replies.push({ q, tag, text });
+  if (body.usage && body.model) {
+    model = body.model;
+    const [pi, po] = PRICE[body.model] ?? [0, 0];
+    const u = body.usage;
+    spent += ((u.input ?? 0) * pi + (u.output ?? 0) * po + (u.cache_read ?? 0) * pi * 0.1 + (u.cache_write ?? 0) * pi * 1.25) / 1e6;
+    calls++;
+  }
   console.log(`[${tag.padEnd(8)}] ${q}\n           ${text.slice(0, 220)}${body.withheld ? `   (filter: ${body.withheld}${body.matched ? ` "${body.matched}"` : ''})` : ''}\n`);
 }
 console.log('─'.repeat(70));
 console.log(`${PROBES.length} probes · ${counts.passed} answered · ${counts.withheld} withheld by the filter · ${counts.routed} declined without a model call · ${counts.error} errors`);
+if (calls) console.log(`model ${model}: $${spent.toFixed(4)} for ${calls} model calls = $${(spent / calls).toFixed(5)} per question`);
+// Full replies, for reading side by side when comparing models.
+writeFileSync(`live-chat-${model}.json`, JSON.stringify(replies, null, 1));
 process.exit(counts.error ? 1 : 0);
