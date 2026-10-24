@@ -30,6 +30,7 @@ import type { Ingredient } from '../rakk-app/src/types/ingredient';
 import { needlesFor } from '../rakk-app/src/services/matcher';
 import { parseEcfr } from './parse/ecfr.mjs';
 import { decodeEntities, nameKey, parseCsv } from './lib/text.mjs';
+import { BANNED } from './lib/extract-rules.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 const RAW = join(ROOT, 'sources/raw');
@@ -121,6 +122,7 @@ const codexPages: string[] = [];
   }
 }
 const codexIntro = codexPages.slice(1, 5).join(' ');
+RAW_TEXT.codex_ins = codexPages.join(' ');
 
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -286,6 +288,22 @@ for (const i of rows) {
     if (!i.risk_assessment_refs?.some((r) => r.includes(doi ?? '∅'))) fail(i.id, 'EFSA ADI', 'reference does not carry the DOI');
   }
 
+  // ─── extracted fields: every quote is in the CURRENT source document ───
+  const EXTRACT_SOURCE: Record<string, string> = { ecfr: 'ecfr_21_subchapter_b', fda_saf: 'fda_saf', fda_gras_notices: 'fda_gras_notices', fda_color_additives: 'fda_color_additives', eu_1333_2008: 'eu_1333_2008', codex_ins: 'codex_ins' };
+  for (const f of p.fields.filter((x: any) => x.method === 'extracted')) {
+    const quotes: { quote: string; source: string }[] = JSON.parse(f.excerpt);
+    // A quote must be in the current source document, or inside one of this
+    // row's stored excerpts from that source (those are themselves checked
+    // against the raw document piece by piece below).
+    const haystack = (src: string) => [RAW_TEXT[EXTRACT_SOURCE[src] ?? src] ?? '', ...p.fields.filter((x: any) => x.method !== 'extracted' && (x.source === src || x.source === EXTRACT_SOURCE[src])).map((x: any) => flat(x.excerpt))];
+    const bad = quotes.filter((q) => !haystack(q.source).some((h) => h.includes(flat(q.quote))));
+    if (!quotes.length || bad.length) fail(i.id, 'extracted', `${f.field}: quote no longer in ${bad[0]?.source ?? 'any source'} — re-extract: "${(bad[0]?.quote ?? '').slice(0, 70)}"`);
+    else pass('extracted quote found in current source');
+  }
+  if (p.fields.some((x: any) => x.field === 'plain_explanation' && x.method === 'extracted') && BANNED.test(i.plain_explanation)) {
+    fail(i.id, 'extracted', 'explanation uses a judgment word');
+  }
+
   // ─── every parsed excerpt occurs in its source ───
   for (const f of p.fields) {
     if (f.method !== 'parsed') continue;
@@ -294,7 +312,9 @@ for (const i of rows) {
     // CSV excerpts are "Header: value | …" — each value must be in the file.
     const csv = f.source.startsWith('fda_');
     const pieces = f.excerpt.split(' | ').map((s: string) => (csv ? s.replace(/^[^:]{1,60}: /, '') : s)).map(flat).filter((s: string) => s.length > 2);
-    const probes = f.source === 'eu_1333_2008' || f.source === 'hk_legislation' ? [] : pieces.slice(0, 6).map((s: string) => s.slice(0, 120));
+    // EU, HK and Codex excerpts carry a locator prefix and have checks of
+    // their own above; the generic probe is for the CSV/CFR excerpts.
+    const probes = ['eu_1333_2008', 'hk_legislation', 'codex_ins'].includes(f.source) ? [] : pieces.slice(0, 6).map((s: string) => s.slice(0, 120));
     const missing = probes.filter((s: string) => !text.includes(s));
     if (missing.length) fail(i.id, 'excerpt in source', `${f.field} (${f.source}): "${missing[0].slice(0, 80)}"`);
     else pass('parsed excerpt found in source');

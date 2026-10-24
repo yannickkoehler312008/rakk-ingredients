@@ -3,3 +3,6 @@
 sources/raw/
 # Intermediate parse output — derived, rebuilt by `node build.mjs`.
 work/
+
+# Local secrets (Anthropic key for extract.ts). Never committed.
+.env.local

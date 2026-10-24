@@ -23,7 +23,7 @@
  *  - The seed wins on anything a human wrote (explanations, allow-list,
  *    dosage), because it was curated; bulk data fills in what it left empty.
  */
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -51,7 +51,7 @@ const manifest = JSON.parse(readFileSync(join(ROOT, 'sources/manifest.json'), 'u
 // Provenance
 // ─────────────────────────────────────────────────────────────────────────────
 
-type Method = 'parsed' | 'seed' | 'vocabulary';
+type Method = 'parsed' | 'seed' | 'vocabulary' | 'extracted';
 interface Prov {
   field: string;
   source: string; // a SOURCES id, or 'seed'
@@ -112,6 +112,9 @@ const GRN_DATE = fdaDate(grn.updated);
 const COLOR_DATE = fdaDate(colors.updated);
 const ECFR_DATE = manifest.ecfr_21_subchapter_b?.ecfr_date ?? today;
 const EU_DATE = (eu.celex ?? '').match(/-(\d{4})(\d{2})(\d{2})$/)?.slice(1).join('-') ?? today;
+// Every date stamped on a row comes from its source, never from the day the
+// build ran: identical data must rebuild identically on any day.
+const CODEX_DATE = codex.documentDate ?? manifest.codex_ins?.fetched_at?.slice(0, 10) ?? today;
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Helpers
@@ -766,7 +769,7 @@ for (const entry of codex.entries) {
     row = blankRow('codex');
     row.canonical_name = base;
     row.source = 'codex_alimentarius';
-    row.source_updated_at = today;
+    row.source_updated_at = CODEX_DATE;
     const first = entry.functional_classes[0];
     row.category = (CODEX_CLASS_CATEGORY[first] ?? 'other') as IngredientCategory;
     // Codex's own definition of the class, quoted whole: rewording the
@@ -984,6 +987,41 @@ for (const row of rows) {
   if (ins) forms.push(`INS ${ins}`);
   for (const form of forms) {
     if (!row.aka.some((a) => nameKey(a) === nameKey(form))) row.aka.push(form);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// 8b. The grounded extraction pass (extract.ts → curation/extracted.json)
+// ─────────────────────────────────────────────────────────────────────────────
+//
+// Applied only where the extraction passed its gate. Every quote is re-checked
+// against the current source documents by verify.ts; a source that changed
+// under a quote fails verification until that ingredient is re-extracted.
+
+const extractedPath = join(ROOT, 'curation/extracted.json');
+const extracted = existsSync(extractedPath) ? JSON.parse(readFileSync(extractedPath, 'utf8')) : { rows: {} };
+report.extracted_applied = { explanation: 0, origin: 0, us_limit: 0 };
+for (const row of rows) {
+  const x = extracted.rows[row.id];
+  if (!x || row._kind === 'seed') continue;
+  const by = `${extracted.model} (effort ${extracted.effort}), ${String(extracted.extracted_at).slice(0, 10)}`;
+  if (x.explanation) {
+    row.plain_explanation = x.explanation;
+    row._prov = row._prov.filter((p) => p.field !== 'plain_explanation');
+    row._prov.push({ field: 'plain_explanation', source: 'extracted', locator: by, excerpt: JSON.stringify(x.explanation_quotes), method: 'extracted' as Method });
+    report.extracted_applied.explanation++;
+  }
+  if (x.origin && row.origin === 'unknown') {
+    row.origin = x.origin;
+    row._prov.push({ field: 'origin', source: 'extracted', locator: by, excerpt: JSON.stringify([{ quote: x.origin_quote, source: x.origin_source }]), method: 'extracted' as Method });
+    report.extracted_applied.origin++;
+  }
+  const us = row.jurisdictions.find((j) => j.jurisdiction === 'US_FDA');
+  const limits = (x.us_limits ?? []).filter((l: any) => l.kind === 'legal_limit' && us?.citation === `21 CFR ${l.section}`);
+  if (us && limits.length) {
+    us.status = `${us.status}; ${limits.map((l: any) => l.statement).join('; ')}`;
+    row._prov.push({ field: 'jurisdictions.US_FDA.limit', source: 'extracted', locator: by, excerpt: JSON.stringify(limits.map((l: any) => ({ quote: l.quote, source: 'ecfr' }))), method: 'extracted' as Method });
+    report.extracted_applied.us_limit++;
   }
 }
 

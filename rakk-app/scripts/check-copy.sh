@@ -21,7 +21,7 @@ cd "$(dirname "$0")/.." || exit 2
 # Its downloaded sources (pipeline/sources/) and provenance excerpts
 # (pipeline/out/) are regulators' own text, not our copy, and are not scanned;
 # the data it emits is, via ../supabase/migrations and src/data/catalog.
-SCAN_DIRS=(src scripts ../supabase ../pipeline/lib ../pipeline/parse ../pipeline/build.ts ../pipeline/verify.ts ../pipeline/emit.ts ../pipeline/fetch.mjs ../pipeline/sources.mjs)
+SCAN_DIRS=(src scripts ../supabase ../pipeline/lib ../pipeline/parse ../pipeline/build.ts ../pipeline/verify.ts ../pipeline/emit.ts ../pipeline/extract.ts ../pipeline/fetch.mjs ../pipeline/sources.mjs)
 
 # Files whose JOB is to name the banned words, and which therefore cannot obey
 # the rule they enforce. Excluded BY PATH, never by pattern, so the list stays
@@ -30,7 +30,9 @@ SCAN_DIRS=(src scripts ../supabase ../pipeline/lib ../pipeline/parse ../pipeline
 #   guardrails.ts                 — the server-side filter list + system prompt
 #   fixtures/guardrail-cases.json — replies that MUST be blocked, as test input
 #   live-guardrail-check.mjs      — adversarial probes aimed AT the model
-RULE_FILES='scripts/check-copy\.sh|supabase/functions/ingredient-chat/guardrails\.ts|scripts/fixtures/guardrail-cases\.json|scripts/live-guardrail-check\.mjs'
+#   pipeline/lib/extract-rules.mjs — the extraction pass's instructions and
+#                                    banned-word list, enforced in extract/verify
+RULE_FILES='scripts/check-copy\.sh|supabase/functions/ingredient-chat/guardrails\.ts|scripts/fixtures/guardrail-cases\.json|scripts/live-guardrail-check\.mjs|pipeline/lib/extract-rules\.mjs'
 fail=0
 
 # ── Rule 1: verdict-shaped identifiers ───────────────────────────────────────

@@ -83,6 +83,11 @@ async function pagesOf(path) {
     items.edges = rowEdges(await page.getOperatorList(), pdfjs.OPS);
     pages.push(items);
   }
+  // The document's own date (PDF ModDate, e.g. "D:20260115…") — stable until
+  // FAO changes the file, unlike the date the pipeline happens to run.
+  const info = (await doc.getMetadata()).info ?? {};
+  const d = String(info.ModDate || info.CreationDate || '').match(/D:(\d{4})(\d{2})(\d{2})/);
+  pages.documentDate = d ? `${d[1]}-${d[2]}-${d[3]}` : null;
   return pages;
 }
 
@@ -196,7 +201,7 @@ export async function parseCodexIns(path) {
     };
   });
 
-  return { classes, entries: parsed, flatText: flat.join(' ') };
+  return { classes, entries: parsed, flatText: flat.join(' '), documentDate: pages.documentDate };
 }
 
 export const CODEX_URL = 'https://openknowledge.fao.org/handle/20.500.14283/cd8953en';
